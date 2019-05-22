@@ -1,4 +1,4 @@
 package controller;
 
-public class BehaviorRock{
+public class BehaviorRock extends Behavior{
 }

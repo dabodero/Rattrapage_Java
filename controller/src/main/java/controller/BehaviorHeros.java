@@ -1,4 +1,4 @@
 package controller;
 
-public class BehaviorHeros{
+public class BehaviorHeros extends Behavior{
 }

@@ -1,4 +1,4 @@
 package controller;
 
-public class BehaviorDiamond{
+public class BehaviorDiamond extends Behavior{
 }

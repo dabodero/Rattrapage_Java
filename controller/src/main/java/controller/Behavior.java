@@ -1,6 +1,6 @@
 package controller;
 
-public class Behavior {
+abstract class Behavior {
 
         /**
          * The update method, update the position of the sprites.

@@ -5,7 +5,7 @@
 package view;
 import java.awt.*;
 import javax.swing.*;
-
+import controller.behavior;
 public class Screen extends JPanel {
 	
 	public Dimension getPreferredSize() {
@@ -28,9 +28,11 @@ public class Screen extends JPanel {
 			yStart += 1000/16;
 			}
 	}
+	
 	public Screen()
 	{
 		
 	}
-
+	
+	void add(Behavior test) {}
 }

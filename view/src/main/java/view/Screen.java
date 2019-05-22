@@ -28,7 +28,6 @@ public class Screen extends JPanel {
 			g.drawLine ( 0, yStart, 1000, yStart );
 			yStart += 1000/16;
 			}
- 
 	}
 	public Screen()
 	{

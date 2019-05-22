@@ -15,4 +15,5 @@ import contract.IView;
 public class View  {
 
 	
+	
 }

@@ -3,9 +3,12 @@
  * @version 1.0
  */
 package view;
-import java.awt.*;
 import javax.swing.*;
-import controller.behavior;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Graphics;
+import controller.Behavior;
+
 public class Screen extends JPanel {
 	
 	public Dimension getPreferredSize() {

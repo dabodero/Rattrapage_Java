@@ -1,18 +1,15 @@
 /**
- * @author Jean-Aymeric DIET jadiet@cesi.fr
+ * @author Léo Sanchez leo.sanchez@viacesi.fr
  * @version 1.0
  */
 package main;
-
-import contract.ControllerOrder;
-import controller.Controller;
-import model.Model;
-import view.View;
+import view.Window;
+import view.Screen;
 
 /**
  * The Class Main.
  *
- * @author Jean-Aymeric Diet
+ * @author Léo Sanchez
  */
 public abstract class Main {
 
@@ -23,12 +20,8 @@ public abstract class Main {
      *            the arguments
      */
     public static void main(final String[] args) {
-        final Model model = new Model();
-        final View view = new View(model);
-        final Controller controller = new Controller(view, model);
-        view.setController(controller);
-
-        controller.control();
-        controller.orderPerform(ControllerOrder.English);
+     Window fenetre = new Window("Boulder Dash");
+     Screen screen = new Screen();
+     fenetre.addScreen(screen);
     }
 }

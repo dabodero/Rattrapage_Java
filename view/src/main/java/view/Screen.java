@@ -16,7 +16,6 @@ public class Screen extends JPanel {
 
 		int xStart=1000/16;
 		int yStart=1000/16;
-		
 		g.setColor( Color.red );
 		
 		while(xStart < 1000) {

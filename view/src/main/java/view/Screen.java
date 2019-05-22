@@ -21,7 +21,6 @@ public class Screen extends JPanel {
 		while(xStart < 1000) {
 		g.drawLine ( xStart, 0, xStart, 1000 );
 		xStart += 1000/16;
-		
 		}
 		g.setColor( Color.green );
 		while(yStart < 1000) {

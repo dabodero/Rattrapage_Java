@@ -24,7 +24,6 @@ public class Window {
 		window.setVisible(true);
 		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		window.setSize(1000, 1000);
-		
 	}
 	
 	public void addScreen(Screen screen) {

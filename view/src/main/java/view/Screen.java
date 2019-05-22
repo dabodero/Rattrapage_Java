@@ -5,11 +5,11 @@
 package view;
 import java.awt.*;
 import javax.swing.*;
- 
+
 public class Screen extends JPanel {
 	
 	public Dimension getPreferredSize() {
-		return new Dimension(1000, 1000);
+		return new Dimension(1000, 1030);
 	}
 	
 	protected void paintComponent(Graphics g) {
@@ -32,4 +32,5 @@ public class Screen extends JPanel {
 	{
 		
 	}
+
 }

@@ -17,17 +17,16 @@ public class Window {
 	public Window(String text)
 	{
 		window = new JFrame();
-		window.setSize(1000, 1000);
 		window.setTitle(text);
 		window.setLocation(400, 10);
 		window.pack();
 		window.setVisible(true);
 		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		window.setSize(1000, 1000);
+		window.setSize(1000, 1030);
 	}
 	
 	public void addScreen(Screen screen) {
-		screen.setPreferredSize(new Dimension(1000, 1000));
+		screen.setPreferredSize(new Dimension(1000, 1030));
 		screen.setBackground(Color.BLACK);
 		window.setContentPane(screen);
 	}

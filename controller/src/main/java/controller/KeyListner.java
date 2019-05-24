@@ -40,6 +40,12 @@ abstract public class KeyListner implements KeyListener {
         }
     }
 
+    public void keyReleased(KeyEvent key) {
+    }
+
+    public void keyTyped(KeyEvent key) {
+    }
+
 
     public void init_key_listner(JFrame Window){
         Window.addKeyListener(this);

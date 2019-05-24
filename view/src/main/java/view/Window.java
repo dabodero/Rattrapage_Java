@@ -4,13 +4,19 @@
  */
 package view;
 import view.Screen;
+import controller.Behavior;
+
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.awt.Image;
 import java.awt.geom.Line2D;
+import java.io.IOException;
 import java.awt.Color;
 public class Window {
 	private JFrame window;
@@ -22,13 +28,17 @@ public class Window {
 		window.pack();
 		window.setVisible(true);
 		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		window.setSize(1000, 1030);
+		window.setResizable(false);
+		window.setSize(950, 1000);
 	}
+	public JFrame getWindow() {return window;}
 	
 	public void addScreen(Screen screen) {
-		screen.setPreferredSize(new Dimension(1000, 1030));
+		screen.setPreferredSize(new Dimension(950, 1000));
 		screen.setBackground(Color.BLACK);
 		window.setContentPane(screen);
 	}
+	
+	public void repaint() {window.repaint();}
 	
 }

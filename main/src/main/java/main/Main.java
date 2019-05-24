@@ -27,16 +27,23 @@ public abstract class Main {
      int j = 1;
      
     while(j<=16) {
+    	
      while (i<=16)
      {
     	 Behavior test = new Behavior("C:\\\\Users\\\\leosa\\\\Downloads\\\\projet_java\\\\terre.png", i, j);
     	 screen.addCharacter(test, fenetre.getWindow());
     	 i++;
      }
+     
      i = 0;
-     j++;}
+     j++;
+     
+    }
     
-	 
+    Behavior lien = screen.getBehaviorAt(1, 1);
+    lien.deleteBehavior(screen);
+    
+    fenetre.repaint();
     }
    
 }

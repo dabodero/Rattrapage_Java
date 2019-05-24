@@ -8,6 +8,10 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Image;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.ListIterator;
 
 import controller.Behavior;
 
@@ -18,11 +22,9 @@ public class Screen extends JPanel {
 	}
 	
 	protected void paintComponent(Graphics g) {
-
 		int xStart=1000/16;
 		int yStart=1000/16;
 		g.setColor( Color.red );
-		
 		while(xStart < 1000) {
 		g.drawLine ( xStart, 0, xStart, 1000 );
 		xStart += 1000/16;
@@ -37,6 +39,7 @@ public class Screen extends JPanel {
 	public Screen()
 	{
 		this.setLayout(null);
+		map = new ArrayList<Behavior>();
 	}
 	
 	public void addCharacter(Behavior character, JFrame window)
@@ -47,5 +50,19 @@ public class Screen extends JPanel {
 		this.add(character.getJLabel());
 		window.pack();
 		window.repaint();
+		
+		map.add(character);
 	}
+	
+	public List<Behavior> getMapBehavior(){return map;}
+	
+	public Behavior getBehaviorAt(int X, int Y)
+	{
+		//TDTDTTTTDTTDD
+		//TDTDTTTTDDDDT
+		//DDTDTDTDTTTDD
+		return map.get((X-1)+(16*(Y-1)));
+	}
+	
+	List<Behavior> map; 
 }

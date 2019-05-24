@@ -37,8 +37,10 @@ abstract public class KeyListner implements KeyListener {
                 //Behavior.GoDown();
                 System.out.println("DOWN");
                 return "DOWN";
+                break;
 
-            break;
+            default:
+                return "AN OTHER PRESS";
         }
     }
 }

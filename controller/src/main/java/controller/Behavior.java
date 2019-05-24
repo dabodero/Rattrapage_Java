@@ -61,19 +61,19 @@ public class Behavior extends JPanel{
         public int getY() {return Y;}
         
 
-        protected void GoUp(){
+        public void GoUp(){
 
         }  // method to move element above
 
-        protected void GoDown(){
+        public void GoDown(){
 
         }	// method to move element below
 
-        protected void GoRight(){
+        public void GoRight(){
 
         }	// method to move element on right
 
-        protected void GoLeft(){
+        public void GoLeft(){
 
         }	// method to move element on left
         

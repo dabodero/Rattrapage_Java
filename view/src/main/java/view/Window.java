@@ -18,7 +18,7 @@ import java.awt.Image;
 import java.awt.geom.Line2D;
 import java.io.IOException;
 import java.awt.Color;
-public class Window {
+public class Window{
 	private JFrame window;
 	public Window(String text)
 	{

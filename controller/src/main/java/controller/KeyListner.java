@@ -6,7 +6,7 @@ import controller.BehaviorHeros;
 
 import javax.swing.*;
 
-abstract public class KeyListner implements KeyListener {
+ public abstract class KeyListner implements KeyListener {
 
 
     public String KeyPressed(KeyEvent key){
@@ -49,6 +49,5 @@ abstract public class KeyListner implements KeyListener {
 
     public void init_key_listner(JFrame Window){
         Window.addKeyListener(this);
-
     }
 }

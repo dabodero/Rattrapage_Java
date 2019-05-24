@@ -14,6 +14,7 @@ import java.util.List;
 import java.util.ListIterator;
 
 import controller.Behavior;
+import controller.BehaviorDiamond;
 
 public class Screen extends JPanel {
 	
@@ -48,8 +49,6 @@ public class Screen extends JPanel {
 		character.setJLabel(new JLabel(character.getImageIcon())); 
 		character.getJLabel().setBounds(62*(character.getX()-1), 62*(character.getY()-1), 62, 62);
 		this.add(character.getJLabel());
-		window.pack();
-		window.repaint();
 		
 		map.add(character);
 	}
@@ -58,11 +57,42 @@ public class Screen extends JPanel {
 	
 	public Behavior getBehaviorAt(int X, int Y)
 	{
-		//TDTDTTTTDTTDD
-		//TDTDTTTTDDDDT
-		//DDTDTDTDTTTDD
-		return map.get((X-1)+(16*(Y-1)));
+		int i = 0;
+		int max = map.size();
+		if(max > 0) {
+			while (i != max)
+			{
+				if(map.get(i).getX() == X && map.get(i).getY() == Y)
+				{
+					return map.get(i);
+				}
+				i++;
+			}
+		}
+		return new Behavior("", 1, 1); // Default
 	}
 	
-	List<Behavior> map; 
+	public void update(JFrame window) {
+		int i = 0;
+		int max = map.size();
+		if(max > 0) {
+		while (i != max)
+		{
+			map.get(i).update(window, map);
+			System.out.println("Behavior updated !");
+			i++;
+		}
+	}
+	}
+	
+	public void setBehaviorInvisible(Behavior behavior)
+	{
+		behavior.getJLabel().setVisible(false);
+	}
+	
+	public void setBehaviorVisible(Behavior behavior)
+	{
+		behavior.getJLabel().setVisible(true);
+	}
+	ArrayList<Behavior> map; 
 }

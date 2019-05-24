@@ -7,25 +7,38 @@ import controller.BehaviorHeros;
 abstract public class KeyListner implements KeyListener {
 
 
-    public void KeyPressed(KeyEvent key){
+    public String KeyPressed(KeyEvent key){
 
         int touche = key.getKeyCode();
 
         switch (touche){
 
             case KeyEvent.VK_UP:
-                BehaviorHeros.GoUp();
+                //BehaviorHeros.GoUp();
+                System.out.println("UP");
+                return "UP";
                 break;
 
             case KeyEvent.VK_LEFT:
-                break;
+                //Behavior.GoLeft();
+                System.out.println("LEFT");
+                return "LEFT";
+
+            break;
 
             case KeyEvent.VK_RIGHT:
-                break;
+                //Behavior.GoRight();
+                System.out.println("RIGHT");
+                return "RIGHT";
+
+            break;
 
             case KeyEvent.VK_DOWN:
+                //Behavior.GoDown();
+                System.out.println("DOWN");
+                return "DOWN";
 
-                break;
+            break;
         }
     }
 }

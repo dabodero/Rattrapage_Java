@@ -11,15 +11,15 @@ abstract public class character {
         Y = 2;
         alive = true;
     }
-    protected int XPositionGetter(){
+    protected int getXPosition(){
         return X;
     }
 
-    protected int YPositionGetter(){
+    protected int getYPosition(){
         return Y;
     }
 
-    protected boolean aliveGetter(){
+    protected boolean getalive(){
         return alive;
     }
 

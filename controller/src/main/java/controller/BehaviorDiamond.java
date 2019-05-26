@@ -20,6 +20,8 @@ public class BehaviorDiamond extends Behavior{
     {
     	this.update(this.getX(), this.getY(), window, false);
     	window.repaint();
+
+
     }
 	
 }

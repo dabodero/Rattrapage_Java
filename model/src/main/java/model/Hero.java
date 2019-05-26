@@ -1,6 +1,8 @@
 package model;
 
 public class Hero extends character{
+    static String letter = "H";
+
 
 
     public Hero(){

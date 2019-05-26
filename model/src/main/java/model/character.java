@@ -11,11 +11,12 @@ abstract public class character {
         Y = 2;
         alive = true;
     }
-    protected int getXPosition(){
+
+    protected int getX(){
         return X;
     }
 
-    protected int getYPosition(){
+    protected int getY(){
         return Y;
     }
 
@@ -23,5 +24,16 @@ abstract public class character {
         return alive;
     }
 
+    protected void setX(int Xvalue){
+        X = Xvalue;
+    }
+
+    protected void setY(int Yvalue){
+        Y = Yvalue;
+    }
+
+    protected void setAlive(boolean aliveValue){
+        alive = aliveValue;
+    }
 
 }

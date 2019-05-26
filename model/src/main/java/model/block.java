@@ -1,3 +1,7 @@
+/**
+ * @author Basile Lecouturier basile.lecouturier@viacesi.fr
+ * @version 1.0
+ */
 package model;
 import java.util.Random;
 

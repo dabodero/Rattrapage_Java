@@ -9,13 +9,29 @@ import java.util.List;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
+
+/**
+ * class behavior diamond son of behivior
+ */
 public class BehaviorDiamond extends Behavior{
-	
+
+
+	/**
+	 * constructor
+	 * @param spritePath_
+	 * @param X_
+	 * @param Y_
+	 */
 	public BehaviorDiamond(String spritePath_, int X_, int Y_) {
 		super(spritePath_, X_, Y_);
 		this.setType(3);
 	}
-	
+
+	/**
+	 * refresh
+	 * @param window
+	 * @param map
+	 */
     public void update(JFrame window, List<Behavior> map) 
     {
     	this.update(this.getX(), this.getY(), window, false);

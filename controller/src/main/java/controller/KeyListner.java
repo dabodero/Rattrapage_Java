@@ -1,3 +1,7 @@
+/**
+ * @author Basile Lecouturier basile.lecouturier@viacesi.fr
+ * @version 1.0
+ */
 package controller;
 
 import java.awt.event.KeyEvent;
@@ -6,9 +10,16 @@ import controller.BehaviorHeros;
 
 import javax.swing.*;
 
+/**
+ * observer key listner
+ */
  public abstract class KeyListner implements KeyListener {
 
-
+    /**
+     * key pressed checking
+     * @param key
+     * @return pressed key
+     */
     public String KeyPressed(KeyEvent key){
 
         int touche = key.getKeyCode();

@@ -19,7 +19,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 public class Behavior extends JPanel{
-        
+
+    /** elements arround entity type*/
         protected int type; // Type of the block
         protected int type_up; // Indicates of what is composed the up block
         protected int type_down;	// Same
@@ -34,7 +35,9 @@ public class Behavior extends JPanel{
          * Type 4 = Rock
          * Type 5 = Hero
          */
-        
+        /**
+         * position
+         */
         protected int X;
         protected int Y;
       
@@ -57,20 +60,36 @@ public class Behavior extends JPanel{
     		window.repaint();
     		}
         }
-        
+
+    /**
+     * refresh the map
+     * @param window
+     * @param map
+     */
         public void update(JFrame window, ArrayList<Behavior> map) 
         {
         	window.repaint();
         }
-        
-        public Behavior(String spritePath_, int X_, int Y_) 
+
+    /**
+     * constructor
+     * @param spritePath_
+     * @param X_
+     * @param Y_
+     */
+    public Behavior(String spritePath_, int X_, int Y_)
         {
         	X=X_; 
         	Y=Y_;
         	spritePath = spritePath_;
         }
-        
-		public int getType() {return type;}
+
+
+    /**
+     * getters and setters
+     * @return
+     */
+    public int getType() {return type;}
 		public int getTypeUp() {return type_up;}
 		public int getTypeDown() {return type_down;}
 		public int getTypeLeft() {return type_left;}
@@ -87,7 +106,11 @@ public class Behavior extends JPanel{
         public int getX() {return X;}
         public int getY() {return Y;}
 
-        public void GoUp(){
+    /**
+     * mooving methode who moove an élément
+     * of position
+     */
+    public void GoUp(){
 
         }  // method to move element above
 
@@ -104,8 +127,12 @@ public class Behavior extends JPanel{
         }	// method to move element on left
         
         public String getSpritePath() {return spritePath;}
-        
-        public void changeSprite(String pathToSprite)
+
+    /**
+     * change sprite of an element
+     * @param pathToSprite
+     */
+    public void changeSprite(String pathToSprite)
         {
         	spritePath = pathToSprite;
         	icon = new ImageIcon(new ImageIcon(spritePath).getImage().getScaledInstance(62,62, Image.SCALE_DEFAULT));

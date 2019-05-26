@@ -1,17 +1,23 @@
 package model;
 
+/** declaration of character class*/
 abstract public class character {
+
+    /** position attribute*/
     protected int X;
     protected int Y;
+
+    /** alive statement*/
     protected boolean alive;
 
-
+    /** constructor*/
     protected character(){
         X = 2;
         Y = 2;
         alive = true;
     }
 
+    /** getters and setters*/
     protected int getX(){
         return X;
     }

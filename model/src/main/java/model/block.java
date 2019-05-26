@@ -1,12 +1,15 @@
 package model;
-import java.util.*;
+import java.util.Random;
 
+
+/** declaration of block class*/
 public class block {
 
+    /** position attribute*/
     protected int X;
     protected int Y;
 
-
+    /** constructor*/
     protected block(){
 
         Random rand  = new Random();
@@ -14,6 +17,8 @@ public class block {
         Y = rand.nextInt(100);
     }
 
+
+    /** getters and setters*/
     protected int getX() {
         return X;
     }

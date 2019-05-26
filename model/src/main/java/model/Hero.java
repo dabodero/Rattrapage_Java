@@ -1,14 +1,18 @@
 package model;
 
+/** declaration of hero class*/
 public class Hero extends character{
     static String letter = "H";
 
 
-
+    /** constructor*/
     public Hero(){
         super();
     }
 
+    /**
+     * singleton try
+     */
    /* essai de ingletonprivate Hero(){
     }
 

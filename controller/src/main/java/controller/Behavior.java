@@ -170,13 +170,7 @@ public class Behavior extends JPanel{
 	}
 
 
-	/*public void arround(int x, int y, List<Behavior> map){
-
-        type_up = getBehaviorAt(x, y +1, map);
-    }
-      */
-
-	public void changeType(int newtype){
+ void changeType(int newtype){
 
 	    setType(newtype);
 	    BehaviorSpritePath sprite = new BehaviorSpritePath();

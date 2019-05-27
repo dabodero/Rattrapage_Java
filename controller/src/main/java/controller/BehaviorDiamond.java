@@ -4,6 +4,7 @@
  */
 package controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.swing.JFrame;
@@ -31,10 +32,9 @@ public class BehaviorDiamond extends Behavior{
 	 * @param window
 	 * @param map
 	 */
-    public void update(JFrame window, List<Behavior> map) 
+	public void update(JFrame window, ArrayList<Behavior> map) 
     {
-    	this.update(this.getX(), this.getY(), window, false);
-    	window.repaint();
+    	super.update(window, map);
     }
 	
 }

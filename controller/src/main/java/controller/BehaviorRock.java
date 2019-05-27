@@ -4,6 +4,9 @@
  */
 package controller;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
@@ -22,6 +25,15 @@ public class BehaviorRock extends Behavior{
 		super(spritePath_, X_, Y_);
 		this.setType(4);
 	}
+	/**
+	 * refresh
+	 * @param window
+	 * @param map
+	 */
+	public void update(JFrame window, ArrayList<Behavior> map) 
+    {
+    	super.update(window, map);
+    }
 
 
 }

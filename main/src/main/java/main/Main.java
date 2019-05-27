@@ -8,6 +8,7 @@ import view.Window;
 import view.Screen;
 import model.Diamond;
 import model.Dirt;
+import model.Hero;
 
 import java.util.concurrent.TimeUnit;
 
@@ -45,27 +46,32 @@ public abstract class Main {
      i++;
      }i=0; j++;}
      
-     KeyListner test45 = new KeyListner();
-     test45.init_key_listner(fenetre.getWindow());
+    i=1;
+    j=1;
+     while(j <= 6) {
+         while(i <= 6) 
+         {
+        	 Behavior air = screen.getBehaviorAt(i, j);
+             air.changeType(2); 
+         i++;
+         }i=0; j++;}
      
-     Behavior air = screen.getBehaviorAt(5, 5);
-     air.changeType(2);
-     Behavior air2 = screen.getBehaviorAt(5, 6);
-     air2.changeType(2);
-     Behavior air3 = screen.getBehaviorAt(5, 7);
-     air3.changeType(2);
-     Behavior air4 = screen.getBehaviorAt(5, 8);
-     air4.changeType(2);
+     Behavior hero = screen.getBehaviorAt(2, 1);
+     hero.changeType(5);
      
-     Behavior diam = screen.getBehaviorAt(5, 5);
+     
+     Behavior diam = screen.getBehaviorAt(1, 1);
      diam.changeType(3);
+     
+     Behavior diam2 = screen.getBehaviorAt(4, 1);
+     diam2.changeType(3);
      
      fenetre.repaint();
      
      int i2=1;
      while(i2==1)
      { 	 
-    	
+    
     	 screen.update(fenetre.getWindow());
     	
      }

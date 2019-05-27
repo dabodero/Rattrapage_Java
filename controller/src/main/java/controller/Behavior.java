@@ -17,6 +17,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 public class Behavior extends JPanel{
+	
+		protected KeyListner keylistener;
 
     /** elements around entity type*/
         protected int type; // Type of the block
@@ -159,40 +161,11 @@ public class Behavior extends JPanel{
 
     public void updateHero(JFrame window, ArrayList<Behavior> map)
     {
-        KeyListner keylistner = new KeyListner();
-        keylistner.init_key_listner(window);
-
-        switch (keylistner.getKeyPressed())
-        {
-            case 'Z':
-                if(type_up != 1 && type_up != 4)
-                    GoUp();
-                break;
-
-            case 'Q':
-                if(type_left != 1 && type_left != 4)
-                    GoLeft();
-                break;
-
-            case 'S':
-                if(type_down != 1 && type_down != 4)
-                    GoDown();
-                break;
-
-            case 'D':
-                if(type_right != 1 && type_right != 4)
-                    GoRight();
-                break;
-
-            default:
-                System.out.println("no match");
-                break;
-
-        }
-
-
-
+    	
+        
     }
+    
+    protected KeyListner getKeyListener() {return keylistener;}
 
     /**
      * gravity of the Diamond
@@ -260,7 +233,7 @@ public class Behavior extends JPanel{
      * of position
      */
     public void GoUp(){
-
+    	
         }  // method to move element above
 
         public void GoDown(){

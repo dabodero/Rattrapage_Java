@@ -128,7 +128,7 @@ public class Behavior extends JPanel{
             } catch (InterruptedException ie) {
                 Thread.currentThread().interrupt();
             }
-    		this.getBehaviorAt(X, Y+1, map).changeType(3);
+    		this.getBehaviorAt(X, Y+1, map).changeType(4);
     		this.changeType(2);
 
     	}
@@ -138,7 +138,7 @@ public class Behavior extends JPanel{
             } catch (InterruptedException ie) {
                 Thread.currentThread().interrupt();
             }
-            this.getBehaviorAt(X +1, Y+1, map).changeType(3);
+            this.getBehaviorAt(X +1, Y+1, map).changeType(4);
             this.changeType(2);
 
         }
@@ -148,7 +148,7 @@ public class Behavior extends JPanel{
             } catch (InterruptedException ie) {
                 Thread.currentThread().interrupt();
             }
-            this.getBehaviorAt(X -1, Y+1, map).changeType(3);
+            this.getBehaviorAt(X -1, Y+1, map).changeType(4);
             this.changeType(2);
 
         }
@@ -169,7 +169,7 @@ public class Behavior extends JPanel{
             } catch (InterruptedException ie) {
                 Thread.currentThread().interrupt();
             }
-            this.getBehaviorAt(X, Y+1, map).changeType(4);
+            this.getBehaviorAt(X, Y+1, map).changeType(3);
             this.changeType(2);
 
         }
@@ -179,7 +179,7 @@ public class Behavior extends JPanel{
             } catch (InterruptedException ie) {
                 Thread.currentThread().interrupt();
             }
-            this.getBehaviorAt(X +1, Y+1, map).changeType(4);
+            this.getBehaviorAt(X +1, Y+1, map).changeType(3);
             this.changeType(2);
 
         }
@@ -189,7 +189,7 @@ public class Behavior extends JPanel{
             } catch (InterruptedException ie) {
                 Thread.currentThread().interrupt();
             }
-            this.getBehaviorAt(X -1, Y+1, map).changeType(4);
+            this.getBehaviorAt(X -1, Y+1, map).changeType(3);
             this.changeType(2);
 
         }

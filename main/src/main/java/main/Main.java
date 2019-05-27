@@ -5,7 +5,7 @@
 package main;
 import view.Window;
 import view.Screen;
-
+import model.Diamond;
 import java.util.concurrent.TimeUnit;
 
 import controller.Behavior;
@@ -43,8 +43,11 @@ public abstract class Main {
      Behavior test5 = new Behavior("C:\\\\Users\\\\leosa\\\\Downloads\\\\projet_java\\\\Diamand.png", 4, 2); 
      screen.addCharacter(test5, fenetre.getWindow());
      
-     Behavior final_ = screen.getBehaviorAt(2, 1);
-    // screen.setBehaviorInvisible(final_);
+     Diamond test6 = new Diamond("C:\\\\\\\\Users\\\\\\\\leosa\\\\\\\\Downloads\\\\\\\\projet_java\\\\\\\\Diamand.png", 10, 10);
+     screen.addCharacter(test6, fenetre.getWindow());
+     
+     Behavior final_ = screen.getBehaviorAt(10, 10);
+     screen.setBehaviorInvisible(final_);
      
      int i=1;
      while(i==1)

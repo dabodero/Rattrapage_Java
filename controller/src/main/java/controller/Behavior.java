@@ -65,12 +65,12 @@ public class Behavior extends JPanel{
      */
         public void update(JFrame window, ArrayList<Behavior> map)
         {
-            type_up = getBehaviorAt(getX(), getY() +1, map).getType();
-            type_down = getBehaviorAt(getX(), getY() -1, map).getType();
+            type_up = getBehaviorAt(getX(), getY() -1, map).getType();
+            type_down = getBehaviorAt(getX(), getY() +1, map).getType();
             type_left = getBehaviorAt(getX() -1, getY(), map).getType();
             type_right = getBehaviorAt(getX() +1, getY(), map).getType();
-            type_down_left = getBehaviorAt(getX() -1, getY()-1, map).getType();
-            type_down_right = getBehaviorAt(getX() +1, getY() -1, map).getType();
+            type_down_left = getBehaviorAt(getX() -1, getY()+1, map).getType();
+            type_down_right = getBehaviorAt(getX() +1, getY() +1, map).getType();
 
             window.repaint();
         }

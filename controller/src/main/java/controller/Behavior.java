@@ -132,7 +132,7 @@ public class Behavior extends JPanel{
     		this.changeType(2);
 
     	}
-    	else if(type_down_right == 2){
+    	else if(type_down_right == 2 && type_right == 2 && (type_down == 4 || type_down == 1)){
             try {
                 Thread.sleep(500);
             } catch (InterruptedException ie) {
@@ -142,7 +142,7 @@ public class Behavior extends JPanel{
             this.changeType(2);
 
         }
-    	else if(type_down_left ==2){
+    	else if(type_down_left == 2 && type_left == 2 && (type_down == 4 || type_down == 1)){
             try {
                 Thread.sleep(500);
             } catch (InterruptedException ie) {
@@ -173,7 +173,7 @@ public class Behavior extends JPanel{
             this.changeType(2);
 
         }
-        else if(type_down_right == 2){
+        else if(type_down_right == 2 && type_right == 2 && (type_down == 4 || type_down == 1)){
             try {
                 Thread.sleep(500);
             } catch (InterruptedException ie) {
@@ -183,7 +183,7 @@ public class Behavior extends JPanel{
             this.changeType(2);
 
         }
-        else if(type_down_left ==2){
+        else if(type_down_left == 2 && type_left == 2 && (type_down == 4 || type_down == 1)){
             try {
                 Thread.sleep(500);
             } catch (InterruptedException ie) {

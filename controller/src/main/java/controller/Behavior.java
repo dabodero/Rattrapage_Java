@@ -6,6 +6,8 @@ package controller;
 
 import controller.BehaviorSpritePath;
 import java.awt.Image;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 
@@ -95,7 +97,7 @@ public class Behavior extends JPanel{
             }
             else if(this.getType() == 5)
             {
-            	
+            	this.updateHero(window, map);
             }
             
             window.repaint();
@@ -154,6 +156,43 @@ public class Behavior extends JPanel{
         }
     }
 
+
+    public void updateHero(JFrame window, ArrayList<Behavior> map)
+    {
+        KeyListner keylistner = new KeyListner();
+        keylistner.init_key_listner(window);
+
+        switch (keylistner.getKeyPressed())
+        {
+            case 'Z':
+                if(type_up != 1 && type_up != 4)
+                    GoUp();
+                break;
+
+            case 'Q':
+                if(type_left != 1 && type_left != 4)
+                    GoLeft();
+                break;
+
+            case 'S':
+                if(type_down != 1 && type_down != 4)
+                    GoDown();
+                break;
+
+            case 'D':
+                if(type_right != 1 && type_right != 4)
+                    GoRight();
+                break;
+
+            default:
+                System.out.println("no match");
+                break;
+
+        }
+
+
+
+    }
 
     /**
      * gravity of the Diamond

@@ -3,6 +3,8 @@
  * @version 1.0
  */
 package controller;
+import com.sun.java.util.jar.pack.Instruction;
+
 import java.awt.Graphics;
 
 import java.awt.Image;
@@ -18,7 +20,8 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-public class Behavior extends JPanel{
+public class
+Behavior extends JPanel{
 
     /** elements around entity type*/
         protected int type; // Type of the block
@@ -168,5 +171,53 @@ public class Behavior extends JPanel{
 		}
 		return new Behavior("", 1, 1); // Default
 	}
-      
+
+
+	/*public void arround(int x, int y, List<Behavior> map){
+
+        type_up = getBehaviorAt(x, y +1, map);
+    }
+      */
+
+    /**
+     * method witch chang type and Sprite
+     * @param newtype
+     */
+	protected void changeType(int newtype){
+
+	    setType(newtype);
+
+        switch(newtype){
+            case 0:
+                changeSprite("games_pictures\\\\Mur\\\\unbreak_dirt.png");
+                break;
+
+            case 1:
+                changeSprite("games_pictures\\\\Mur\\\\unbreakable_wall.png");
+                break;
+
+            case 2:
+                changeSprite("games_pictures\\\\Mur\\\\broken_wall.png");
+                break;
+
+            case 3:
+                changeSprite("games_pictures\\\\Diamand\\\\Diamand.png");
+                break;
+
+            case 4:
+                changeSprite("games_pictures\\\\rock\\\\rock.png");
+                break;
+
+            case 5:
+                changeSprite("games_pictures\\\\Personnage\\\\Face\\\\Face1.png");
+                break;
+
+            default:
+                System.out.println("bad value");
+                break;
+
+        }
+
+
+    }
 }

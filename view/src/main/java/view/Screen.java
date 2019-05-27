@@ -79,10 +79,9 @@ public class Screen extends JPanel {
 		while (i != max)
 		{
 			map.get(i).update(window, map);
-			System.out.println("Behavior updated !");
 			i++;
 		}
-	}
+		}
 	}
 	
 	public void setBehaviorInvisible(Behavior behavior)

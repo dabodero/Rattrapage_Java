@@ -57,8 +57,8 @@ public abstract class Main {
      Behavior air4 = screen.getBehaviorAt(5, 8);
      air4.changeType(2);
      
-     Behavior diamant = screen.getBehaviorAt(5, 5);
-     diamant.changeType(3);
+     Behavior diam = screen.getBehaviorAt(5, 5);
+     diam.changeType(3);
      
      fenetre.repaint();
      

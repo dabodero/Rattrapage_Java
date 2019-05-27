@@ -91,7 +91,7 @@ public class Behavior extends JPanel{
             }
             else if(this.getType() == 4)
             {
-            	
+            	this.updateRock(window, map);
             }
             else if(this.getType() == 5)
             {

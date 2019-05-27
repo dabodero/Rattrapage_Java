@@ -113,19 +113,86 @@ public class Behavior extends JPanel{
        	Y=Y_;
        	spritePath = spritePath_;
     }
-    
-    public void updateDiamond(JFrame window, ArrayList<Behavior> map)
+
+    /**
+     * gravity of the rock
+     * @param window
+     * @param map
+     */
+    public void updateRock(JFrame window, ArrayList<Behavior> map)
     {
     	if(type_down == 2)
     	{
+            try {
+                Thread.sleep(500);
+            } catch (InterruptedException ie) {
+                Thread.currentThread().interrupt();
+            }
     		this.getBehaviorAt(X, Y+1, map).changeType(3);
     		this.changeType(2);
-    		try {
-             Thread.sleep(500);
-    		} catch (InterruptedException ie) {
-             Thread.currentThread().interrupt();
-    		}
+
     	}
+    	else if(type_down_right == 2){
+            try {
+                Thread.sleep(500);
+            } catch (InterruptedException ie) {
+                Thread.currentThread().interrupt();
+            }
+            this.getBehaviorAt(X +1, Y+1, map).changeType(3);
+            this.changeType(2);
+
+        }
+    	else if(type_down_left ==2){
+            try {
+                Thread.sleep(500);
+            } catch (InterruptedException ie) {
+                Thread.currentThread().interrupt();
+            }
+            this.getBehaviorAt(X -1, Y+1, map).changeType(3);
+            this.changeType(2);
+
+        }
+    }
+
+
+    /**
+     * gravity of the Diamond
+     * @param window
+     * @param map
+     */
+    public void updateDiamond(JFrame window, ArrayList<Behavior> map)
+    {
+        if(type_down == 2)
+        {
+            try {
+                Thread.sleep(500);
+            } catch (InterruptedException ie) {
+                Thread.currentThread().interrupt();
+            }
+            this.getBehaviorAt(X, Y+1, map).changeType(4);
+            this.changeType(2);
+
+        }
+        else if(type_down_right == 2){
+            try {
+                Thread.sleep(500);
+            } catch (InterruptedException ie) {
+                Thread.currentThread().interrupt();
+            }
+            this.getBehaviorAt(X +1, Y+1, map).changeType(4);
+            this.changeType(2);
+
+        }
+        else if(type_down_left ==2){
+            try {
+                Thread.sleep(500);
+            } catch (InterruptedException ie) {
+                Thread.currentThread().interrupt();
+            }
+            this.getBehaviorAt(X -1, Y+1, map).changeType(4);
+            this.changeType(2);
+
+        }
     }
 
     /**

@@ -21,6 +21,8 @@ public class Behavior extends JPanel{
         protected int type_down;	// Same
         protected int type_left; //Same
         protected int type_right; //Same
+        protected int type_down_left;
+        protected int type_down_right;
         protected String spritePath; //Same
         /*
          * Type 0 = dirt
@@ -67,6 +69,8 @@ public class Behavior extends JPanel{
             type_down = getBehaviorAt(getX(), getY() -1, map).getType();
             type_left = getBehaviorAt(getX() -1, getY(), map).getType();
             type_right = getBehaviorAt(getX() +1, getY(), map).getType();
+            type_down_left = getBehaviorAt(getX() -1, getY()-1, map).getType();
+            type_down_right = getBehaviorAt(getX() +1, getY() -1, map).getType();
 
             window.repaint();
         }

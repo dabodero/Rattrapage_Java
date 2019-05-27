@@ -33,7 +33,19 @@ public class BehaviorRock extends Behavior{
 	public void update(JFrame window, ArrayList<Behavior> map) 
     {
     	super.update(window, map);
+
+
+			if (type_down == 2) {
+				changeType(2);
+				getBehaviorAt(getX(), getY() +1, map).changeType(4);
+			} else if (type_down_right == 2) {
+				changeType(2);
+				getBehaviorAt(getX() +1, getY() +1, map).changeType(4);
+			} else if(type_down_left == 2){
+				changeType(2);
+				getBehaviorAt(getX() -1, getY() +1, map).changeType(4);
+			}
+		}
     }
 
 
-}

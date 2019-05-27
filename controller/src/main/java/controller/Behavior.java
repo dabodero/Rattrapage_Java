@@ -20,7 +20,7 @@ import javax.swing.JPanel;
 
 public class Behavior extends JPanel{
 
-    /** elements arround entity type*/
+    /** elements around entity type*/
         protected int type; // Type of the block
         protected int type_up; // Indicates of what is composed the up block
         protected int type_down;	// Same
@@ -107,7 +107,7 @@ public class Behavior extends JPanel{
         public int getY() {return Y;}
 
     /**
-     * mooving methode who moove an élément
+     * moving methode who move an element
      * of position
      */
     public void GoUp(){

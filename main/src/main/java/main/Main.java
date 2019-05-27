@@ -44,17 +44,12 @@ public abstract class Main {
      screen.addCharacter(test5, fenetre.getWindow());
      
      Behavior final_ = screen.getBehaviorAt(2, 1);
-     screen.setBehaviorInvisible(final_);
+    // screen.setBehaviorInvisible(final_);
+     
      int i=1;
      while(i==1)
      {
     	 screen.update(fenetre.getWindow());
-    	 /*try {
-			TimeUnit.SECONDS.sleep(1);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}*/
      }
     
     }

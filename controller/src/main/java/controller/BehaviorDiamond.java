@@ -11,7 +11,7 @@ import javax.swing.JPanel;
 
 
 /**
- * class behavior diamond son of behivior
+ * class behavior diamond son of behavior
  */
 public class BehaviorDiamond extends Behavior{
 

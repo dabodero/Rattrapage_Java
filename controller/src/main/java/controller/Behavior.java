@@ -7,6 +7,7 @@ package controller;
 import controller.BehaviorSpritePath;
 import java.awt.Image;
 import java.util.ArrayList;
+import java.util.concurrent.TimeUnit;
 
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
@@ -71,7 +72,32 @@ public class Behavior extends JPanel{
             type_right = getBehaviorAt(getX() +1, getY(), map).getType();
             type_down_left = getBehaviorAt(getX() -1, getY()+1, map).getType();
             type_down_right = getBehaviorAt(getX() +1, getY() +1, map).getType();
-
+            
+            if(this.getType() == 0)
+            {
+            	
+            }
+            else if(this.getType() == 1)
+            {
+            	
+            }
+            else if(this.getType() == 2)
+            {
+            	
+            }
+            else if(this.getType() == 3)
+            {
+            	this.updateDiamond(window, map);
+            }
+            else if(this.getType() == 4)
+            {
+            	
+            }
+            else if(this.getType() == 5)
+            {
+            	
+            }
+            
             window.repaint();
         }
 
@@ -82,12 +108,25 @@ public class Behavior extends JPanel{
      * @param Y_
      */
     public Behavior(String spritePath_, int X_, int Y_)
-        {
-        	X=X_; 
-        	Y=Y_;
-        	spritePath = spritePath_;
-        }
-
+    {
+        X=X_; 
+       	Y=Y_;
+       	spritePath = spritePath_;
+    }
+    
+    public void updateDiamond(JFrame window, ArrayList<Behavior> map)
+    {
+    	if(type_down == 2)
+    	{
+    		this.getBehaviorAt(X, Y+1, map).changeType(3);
+    		this.changeType(2);
+    		try {
+             Thread.sleep(500);
+    		} catch (InterruptedException ie) {
+             Thread.currentThread().interrupt();
+    		}
+    	}
+    }
 
     /**
      * getters and setters
@@ -174,7 +213,7 @@ public class Behavior extends JPanel{
 	}
 
 
- void changeType(int newtype){
+ public void changeType(int newtype){
 
 	    setType(newtype);
 	    BehaviorSpritePath sprite = new BehaviorSpritePath();

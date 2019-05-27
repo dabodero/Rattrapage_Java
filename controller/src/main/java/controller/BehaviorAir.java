@@ -16,13 +16,5 @@ public class BehaviorAir extends Behavior{
 		super(spritePath_, X_, Y_);
 		this.setType(2);
 	}	
-	/**
-	 * refresh
-	 * @param window
-	 * @param map
-	 */
-    public void update(JFrame window, ArrayList<Behavior> map) 
-    {
-    	super.update(window, map);
-    }
+
 }

@@ -16,13 +16,4 @@ public class BehaviorSolid extends Behavior{
 		super(spritePath_, X_, Y_);
 		this.setType(1);
 	}	
-	/**
-	 * refresh
-	 * @param window
-	 * @param map
-	 */
-	public void update(JFrame window, ArrayList<Behavior> map) 
-    {
-    	super.update(window, map);
-    }
 }

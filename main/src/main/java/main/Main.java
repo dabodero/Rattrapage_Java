@@ -7,6 +7,8 @@ import controller.BehaviorSpritePath;
 import view.Window;
 import view.Screen;
 import model.Diamond;
+import model.Dirt;
+
 import java.util.concurrent.TimeUnit;
 
 import controller.Behavior;
@@ -18,7 +20,6 @@ import controller.KeyListner;
  * @author Léo Sanchez
  */
 public abstract class Main {
-
     /**
      * The main method.
      *
@@ -32,22 +33,42 @@ public abstract class Main {
      fenetre.addScreen(screen);
      
      BehaviorSpritePath sprites = new BehaviorSpritePath();
-    
-     Diamond test = new Diamond(sprites.Diamond, 10, 10);
-     screen.addCharacter(test, fenetre.getWindow());
      
-    
+     int i=1;
+     int j=1;
+     
+     while(j <= 16) {
+     while(i <= 16) 
+     {
+     Dirt test = new Dirt(sprites.unbreak_dirt, i, j);
+     screen.addCharacter(test, fenetre.getWindow()); 
+     i++;
+     }i=0; j++;}
+     
      KeyListner test45 = new KeyListner();
      test45.init_key_listner(fenetre.getWindow());
      
-     int i=1;
-     while(i==1)
-     {
-    	 System.out.println(test45.getKeyPressed());
+     Behavior air = screen.getBehaviorAt(5, 5);
+     air.changeType(2);
+     Behavior air2 = screen.getBehaviorAt(5, 6);
+     air2.changeType(2);
+     Behavior air3 = screen.getBehaviorAt(5, 7);
+     air3.changeType(2);
+     Behavior air4 = screen.getBehaviorAt(5, 8);
+     air4.changeType(2);
+     
+     Behavior diamant = screen.getBehaviorAt(5, 5);
+     diamant.changeType(3);
+     
+     fenetre.repaint();
+     
+     int i2=1;
+     while(i2==1)
+     { 	 
+    	
     	 screen.update(fenetre.getWindow());
-    	 
+    	
      }
-    
     }
    
 }

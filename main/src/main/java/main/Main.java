@@ -25,6 +25,7 @@ public abstract class Main {
      *            the arguments
      */
     public static void main(final String[] args) {
+    	
      Window fenetre = new Window("Boulder Dash");
      Screen screen = new Screen();
      fenetre.addScreen(screen);

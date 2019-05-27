@@ -23,6 +23,7 @@ import javax.swing.*;
 	 
 	 char key_pressed;
 	 
+	 
 	 public KeyListner(){
 		 key_pressed = '%';
 	 }

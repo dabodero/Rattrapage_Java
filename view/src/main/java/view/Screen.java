@@ -69,6 +69,7 @@ public class Screen extends JPanel {
 				i++;
 			}
 		}
+		
 		return new Behavior("", 1, 1); // Default
 	}
 	

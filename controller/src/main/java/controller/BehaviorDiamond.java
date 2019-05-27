@@ -15,7 +15,6 @@ import javax.swing.JPanel;
  */
 public class BehaviorDiamond extends Behavior{
 
-
 	/**
 	 * constructor
 	 * @param spritePath_
@@ -36,8 +35,6 @@ public class BehaviorDiamond extends Behavior{
     {
     	this.update(this.getX(), this.getY(), window, false);
     	window.repaint();
-
-
     }
 	
 }

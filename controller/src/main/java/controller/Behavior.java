@@ -133,14 +133,40 @@ public class Behavior extends JPanel{
      * @param pathToSprite
      */
     public void changeSprite(String pathToSprite)
-        {
+    {
         	spritePath = pathToSprite;
         	icon = new ImageIcon(new ImageIcon(spritePath).getImage().getScaledInstance(62,62, Image.SCALE_DEFAULT));
         	label.setIcon(icon);
-        }
-        public void deleteBehavior(JPanel panel)
-        {
-        	panel.remove(label);
-        }
+    }
+    /**
+     * Delete the behavior
+     * @param panel
+     */
+    public void deleteBehavior(JPanel panel)
+    {
+    		panel.remove(label);
+    }
+    /**
+     * get the behavior at a specific location
+     * @param X
+     * @param Y
+     * @param map
+     */
+    public Behavior getBehaviorAt(int X, int Y, List<Behavior> map)
+	{
+		int i = 0;
+		int max = map.size();
+		if(max > 0) {
+			while (i != max)
+			{
+				if(map.get(i).getX() == X && map.get(i).getY() == Y)
+				{
+					return map.get(i);
+				}
+				i++;
+			}
+		}
+		return new Behavior("", 1, 1); // Default
+	}
       
 }

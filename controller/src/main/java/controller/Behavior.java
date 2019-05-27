@@ -176,10 +176,6 @@ public class Behavior extends JPanel{
     }
       */
 
-    /**
-     * method witch chang type and Sprite
-     * @param newtype
-     */
 	public void changeType(int newtype){
 
 	    setType(newtype);

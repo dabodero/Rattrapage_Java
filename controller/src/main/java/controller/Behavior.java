@@ -3,25 +3,17 @@
  * @version 1.0
  */
 package controller;
-import com.sun.java.util.jar.pack.Instruction;
 
-import java.awt.Graphics;
-
+import controller.BehaviorSpritePath;
 import java.awt.Image;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
 import java.util.ArrayList;
-import java.util.List;
 
-import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-public class
-Behavior extends JPanel{
+public class Behavior extends JPanel{
 
     /** elements around entity type*/
         protected int type; // Type of the block
@@ -110,7 +102,7 @@ Behavior extends JPanel{
         public int getY() {return Y;}
 
     /**
-     * moving methode who move an element
+     * moving methode which move an element
      * of position
      */
     public void GoUp(){
@@ -155,7 +147,7 @@ Behavior extends JPanel{
      * @param Y
      * @param map
      */
-    public Behavior getBehaviorAt(int X, int Y, List<Behavior> map)
+    public Behavior getBehaviorAt(int X, int Y, ArrayList<Behavior> map)
 	{
 		int i = 0;
 		int max = map.size();
@@ -183,39 +175,39 @@ Behavior extends JPanel{
      * method witch chang type and Sprite
      * @param newtype
      */
-	protected void changeType(int newtype){
+	public void changeType(int newtype){
 
 	    setType(newtype);
+	    BehaviorSpritePath sprite = new BehaviorSpritePath();
 
         switch(newtype){
             case 0:
-                changeSprite("games_pictures\\\\Mur\\\\unbreak_dirt.png");
+                changeSprite(sprite.unbreak_dirt);
                 break;
 
             case 1:
-                changeSprite("games_pictures\\\\Mur\\\\unbreakable_wall.png");
+                changeSprite(sprite.solid);
                 break;
 
             case 2:
-                changeSprite("games_pictures\\\\Mur\\\\broken_wall.png");
+                changeSprite(sprite.broken_wall);
                 break;
 
             case 3:
-                changeSprite("games_pictures\\\\Diamand\\\\Diamand.png");
+                changeSprite(sprite.Diamond);
                 break;
 
             case 4:
-                changeSprite("games_pictures\\\\rock\\\\rock.png");
+                changeSprite(sprite.rock);
                 break;
 
             case 5:
-                changeSprite("games_pictures\\\\Personnage\\\\Face\\\\Face1.png");
+                changeSprite(sprite.hero);
                 break;
 
             default:
                 System.out.println("bad value");
                 break;
-
         }
 
 

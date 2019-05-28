@@ -41,6 +41,7 @@ public class Screen extends JPanel {
 	{
 		this.setLayout(null);
 		map = new ArrayList<Behavior>();
+		update_id = 0;
 	}
 	
 	public void addCharacter(Behavior character, JFrame window)
@@ -77,11 +78,17 @@ public class Screen extends JPanel {
 		int i = 0;
 		int max = map.size();
 		if(max > 0) {
-		while (i != max)
-		{
-			map.get(i).update(window, map);
-			i++;
-		}
+			double updateID =  (Math.random() * ( 1000 - 100 ));
+			while (i != max)
+			{
+				if(map.get(i).getUpdateID() != updateID) 
+				{
+					map.get(i).setUpdateID(updateID);
+					map.get(i).update(window, map);
+				}
+				
+				i++;
+			}
 		}
 	}
 	
@@ -94,5 +101,6 @@ public class Screen extends JPanel {
 	{
 		behavior.getJLabel().setVisible(true);
 	}
+	long update_id;
 	ArrayList<Behavior> map; 
 }

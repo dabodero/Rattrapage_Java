@@ -63,14 +63,14 @@ public abstract class Main {
      Behavior diam = screen.getBehaviorAt(1, 1);
      diam.changeType(3);
      
-     Behavior rock = screen.getBehaviorAt(2, 5);
+     Behavior rock = screen.getBehaviorAt(3, 5);
      rock.changeType(4);
      
      fenetre.repaint();
      
      int i2=1;
      while(i2==1)
-     { 	 
+     { 	 try{Thread.sleep(500);}catch(InterruptedException e){System.out.println(e);}  
     	 screen.update(fenetre.getWindow());
      }
     }

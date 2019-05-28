@@ -19,6 +19,7 @@ import javax.swing.JPanel;
 public class Behavior extends JPanel{
 	
 		protected KeyListner keylistener;
+		public boolean hasMooved = false;
 
     /** elements around entity type*/
         protected int type; // Type of the block
@@ -36,6 +37,7 @@ public class Behavior extends JPanel{
          * Type 3 = Diamond
          * Type 4 = Rock
          * Type 5 = Hero
+         * Type 6 = up_Moved
          */
         
         /**
@@ -126,17 +128,21 @@ public class Behavior extends JPanel{
      */
     public void updateRock(JFrame window, ArrayList<Behavior> map)
     {
-    	if(type_down == 2) // If air
-    	{
+        if(type_down == 2){
+            if(type_up == 6){
+
+                this.getBehaviorAt(X, Y -1, map).changeType(2);
+            }
             try {
                 Thread.sleep(500);
             } catch (InterruptedException ie) {
                 Thread.currentThread().interrupt();
             }
-    		this.getBehaviorAt(X, Y+1, map).changeType(4);
-    		this.changeType(2);
-    	}
-    	else if (type_down == 5){
+            this.getBehaviorAt(X, Y+1, map).changeType(4);
+            this.changeType(6);
+        }
+
+        else if(type_down == 5 && type_up == 6){
             try {
                 Thread.sleep(500);
             } catch (InterruptedException ie) {
@@ -144,19 +150,45 @@ public class Behavior extends JPanel{
             }
             this.getBehaviorAt(X, Y+1, map).changeType(4);
             this.changeType(2);
+            gameover();
+        }
+
+        else if(type_down_right == 2 && type_right == 2 && (type_down == 4 || type_down == 1)){
+            try {
+                Thread.sleep(500);
+            } catch (InterruptedException ie) {
+                Thread.currentThread().interrupt();
+            }
+            if (type_up == 6){
+                this.getBehaviorAt(X, Y -1, map).changeType(2);
+            }
+            this.getBehaviorAt(X +1, Y+1, map).changeType(4);
+            this.changeType(6);
+        }
+        else if(type_down_right == 5 && type_right == 2 && (type_down == 4 || type_down == 1)){
+            try {
+                Thread.sleep(500);
+            } catch (InterruptedException ie) {
+                Thread.currentThread().interrupt();
+            }
+            this.getBehaviorAt(X +1, Y+1, map).changeType(4);
+            this.changeType(2);
             this.gameover();
         }
-    	else if(type_down_right == 2 && type_right == 2 && (type_down == 4 || type_down == 1)){
+
+        else if(type_down_left == 2 && type_left == 2 && (type_down == 4 || type_down == 1)){
             try {
                 Thread.sleep(500);
             } catch (InterruptedException ie) {
                 Thread.currentThread().interrupt();
             }
-            this.getBehaviorAt(X +1, Y+1, map).changeType(4);
-            this.changeType(2);
-
+            if (type_up == 6){
+                this.getBehaviorAt(X, Y -1, map).changeType(2);
+            }
+            this.getBehaviorAt(X -1, Y+1, map).changeType(4);
+            this.changeType(6);
         }
-    	else if(type_down_left == 2 && type_left == 2 && (type_down == 4 || type_down == 1)){
+        else if(type_down_left == 5 && type_left == 2 && (type_down == 4 || type_down == 1)){
             try {
                 Thread.sleep(500);
             } catch (InterruptedException ie) {
@@ -164,30 +196,14 @@ public class Behavior extends JPanel{
             }
             this.getBehaviorAt(X -1, Y+1, map).changeType(4);
             this.changeType(2);
+            this.gameover();
         }
 
-    	else if(type_down_right == 5 && type_right == 2 && (type_down == 4 || type_down == 1)){
-            try {
-                Thread.sleep(500);
-            } catch (InterruptedException ie) {
-                Thread.currentThread().interrupt();
-            }
-            this.getBehaviorAt(X +1, Y+1, map).changeType(4);
-            this.changeType(2);
-            gameover();
-        }
 
-    	else if(type_down_left == 5 && type_left == 2 && (type_down == 4 || type_down == 1)){
-            try {
-                Thread.sleep(500);
-            } catch (InterruptedException ie) {
-                Thread.currentThread().interrupt();
-            }
-            this.getBehaviorAt(X -1, Y+1, map).changeType(4);
-            this.changeType(2);
-            gameover();
-        }
-}
+
+
+
+    }
 
 
     public void updateHero(JFrame window, ArrayList<Behavior> map)
@@ -352,6 +368,9 @@ public class Behavior extends JPanel{
             case 5:
                 changeSprite(sprite.hero);
                 break;
+
+            case 6:
+                changeSprite(sprite.broken_wall);
 
             default:
                 System.out.println("bad value");

@@ -55,6 +55,7 @@ public class Screen extends JPanel {
 	}
 	
 	public List<Behavior> getMapBehavior(){return map;}
+	public void setMap(ArrayList<Behavior> map) {map = map;}
 	
 	public Behavior getBehaviorAt(int X, int Y)
 	{

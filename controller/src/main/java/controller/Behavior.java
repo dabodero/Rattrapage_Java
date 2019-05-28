@@ -108,6 +108,8 @@ public class Behavior extends JPanel{
             else if(this.getType() == 5)
             {
             	this.updateHero(window, map);
+                this.GoRight(window, map);
+
             }
         }
 
@@ -298,21 +300,77 @@ public class Behavior extends JPanel{
      * moving methode which move an element
      * of position
      */
-    public void GoUp(){
-    	
-        }  // method to move element above
+    public void GoUp(JFrame window, ArrayList<Behavior> map){
 
-        public void GoDown(){
+            if (type_up == 2 || type_up == 0) {
+                this.getBehaviorAt(X, Y - 1, map).setUpdateID(this.getUpdateID());
+                this.getBehaviorAt(X, Y - 1, map).changeType(5);
+                this.changeType(2);
+            }
+            if (type_up == 3) {
+                this.getBehaviorAt(X, Y - 1, map).setUpdateID(this.getUpdateID());
+                this.getBehaviorAt(X, Y - 1, map).changeType(5);
+                this.changeType(2);
+                win();
+            }
+        }
 
-        }	// method to move element below
+        public void GoDown(JFrame window, ArrayList<Behavior> map){
 
-        public void GoRight(){
+            if (type_down == 2 || type_down == 0) {
+                this.getBehaviorAt(X, Y + 1, map).setUpdateID(this.getUpdateID());
+                this.getBehaviorAt(X, Y + 1, map).changeType(5);
+                this.changeType(2);
+            }
+            if (type_down == 3) {
+                this.getBehaviorAt(X, Y + 1, map).setUpdateID(this.getUpdateID());
+                this.getBehaviorAt(X, Y + 1, map).changeType(5);
+                this.changeType(2);
+                win();
+            }
+        }
 
-        }	// method to move element on right
+        public void GoRight(JFrame window, ArrayList<Behavior> map){
+            if (type_right == 2 || type_right == 0){
+                this.getBehaviorAt(X +1, Y , map).setUpdateID(this.getUpdateID());
+                this.getBehaviorAt(X +1, Y , map).changeType(5);
+                this.changeType(2);
+            }
+            else if (type_right == 3){
+                this.getBehaviorAt(X +1, Y , map).setUpdateID(this.getUpdateID());
+                this.getBehaviorAt(X +1, Y , map).changeType(5);
+                this.changeType(2);
+                win();
+            }
+            else if(type_right == 4 && getBehaviorAt(X +2, Y, map).getType() == 2){
+                this.getBehaviorAt(X +2, Y, map).setUpdateID(this.getUpdateID());
+                this.getBehaviorAt(X +2, Y , map).changeType(4);
+                this.getBehaviorAt(X +1, Y, map).setUpdateID(this.getUpdateID());
+                this.getBehaviorAt(X +1, Y , map).changeType(5);
+                this.changeType(2);
+            }
+        }
 
-        public void GoLeft(){
-
-        }	// method to move element on left
+        public void GoLeft(JFrame window, ArrayList<Behavior> map) {
+            if (type_left == 2 || type_left == 0) {
+                this.getBehaviorAt(X - 1, Y, map).setUpdateID(this.getUpdateID());
+                this.getBehaviorAt(X - 1, Y, map).changeType(5);
+                this.changeType(2);
+            }
+            else if (type_left == 3) {
+                this.getBehaviorAt(X - 1, Y, map).setUpdateID(this.getUpdateID());
+                this.getBehaviorAt(X - 1, Y, map).changeType(5);
+                this.changeType(2);
+                win();
+            }
+            else if(type_left == 4 && getBehaviorAt(X -2, Y, map).getType() == 2){
+                this.getBehaviorAt(X -2, Y, map).setUpdateID(this.getUpdateID());
+                this.getBehaviorAt(X -2, Y , map).changeType(4);
+                this.getBehaviorAt(X -1, Y, map).setUpdateID(this.getUpdateID());
+                this.getBehaviorAt(X -1, Y , map).changeType(5);
+                this.changeType(2);
+            }
+        }
         
         public String getSpritePath() {return spritePath;}
 
@@ -402,6 +460,11 @@ public class Behavior extends JPanel{
     protected void gameover(){
     	System.out.println("GAMEOVER");
     	System.exit(0);
+    }
+
+    protected void win(){
+
+
     }
 }
 

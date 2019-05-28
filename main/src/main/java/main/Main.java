@@ -15,6 +15,9 @@ import java.util.concurrent.TimeUnit;
 import controller.Behavior;
 import controller.BehaviorDiamond;
 import controller.KeyListner;
+
+import javax.swing.*;
+
 /**
  * The Class Main.
  *
@@ -65,8 +68,9 @@ public abstract class Main {
      Behavior rock = screen.getBehaviorAt(2, 6);
      rock.changeType(4);
 
-     Behavior rock1 = screen.getBehaviorAt(2, 4);
-     rock1.changeType(4);
+     /*Behavior rock1 = screen.getBehaviorAt(4, 6);
+     rock1.changeType(4);*/
+
      
      fenetre.repaint();
      

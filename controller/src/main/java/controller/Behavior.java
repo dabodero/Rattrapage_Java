@@ -370,7 +370,7 @@ public class Behavior extends JPanel{
                 break;
 
             case 6:
-                changeSprite(sprite.moving);
+                changeSprite(sprite.broken_wall);
 
             default:
                 

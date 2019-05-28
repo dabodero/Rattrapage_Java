@@ -131,11 +131,66 @@ public class Behavior extends JPanel{
      */
     public void updateRock(JFrame window, ArrayList<Behavior> map)
     {
-    	if(type_down == 2)
-        {
-        	this.getBehaviorAt(X, Y+1, map).setUpdateID(this.getUpdateID());
-        	this.getBehaviorAt(X, Y+1, map).changeType(4);
-        	this.changeType(2);
+        if(type_down == 2){
+            if(type_up == 6){
+                this.getBehaviorAt(X, Y -1, map).setUpdateID(this.getUpdateID());
+                this.getBehaviorAt(X, Y -1, map).changeType(2);
+            }
+
+            this.getBehaviorAt(X, Y+1, map).setUpdateID(this.getUpdateID());
+            this.getBehaviorAt(X, Y+1, map).changeType(4);
+            this.changeType(6);
+        }
+
+        else if(type_down == 5 && type_up == 6){
+
+            this.getBehaviorAt(X, Y+1, map).setUpdateID(this.getUpdateID());
+            this.getBehaviorAt(X, Y+1, map).changeType(4);
+            this.changeType(2);
+            gameover();
+        }
+
+        else if(type_down_right == 2 && type_right == 2 && (type_down == 4 || type_down == 1)){
+
+            if (type_up == 6){
+                this.getBehaviorAt(X, Y -1, map).setUpdateID(this.getUpdateID());
+                this.getBehaviorAt(X, Y -1, map).changeType(2);
+            }
+            this.getBehaviorAt(X +1, Y+1, map).setUpdateID(this.getUpdateID());
+            this.getBehaviorAt(X +1, Y+1, map).changeType(4);
+            this.changeType(6);
+        }
+        else if(type_down_right == 5 && type_right == 2 && (type_down == 4 || type_down == 1)){
+
+            this.getBehaviorAt(X +1, Y+1, map).setUpdateID(this.getUpdateID());
+            this.getBehaviorAt(X +1, Y+1, map).changeType(4);
+            this.changeType(2);
+            this.gameover();
+        }
+
+        else if(type_down_left == 2 && type_left == 2 && (type_down == 4 || type_down == 1)){
+
+            if (type_up == 6){
+                this.getBehaviorAt(X, Y -1, map).setUpdateID(this.getUpdateID());
+                this.getBehaviorAt(X, Y -1, map).changeType(2);
+            }
+            this.getBehaviorAt(X -1, Y+1, map).setUpdateID(this.getUpdateID());
+            this.getBehaviorAt(X -1, Y+1, map).changeType(4);
+            this.changeType(6);
+        }
+        else if(type_down_left == 5 && type_left == 2 && (type_down == 4 || type_down == 1)){
+
+            this.getBehaviorAt(X -1, Y+1, map).setUpdateID(this.getUpdateID());
+            this.getBehaviorAt(X -1, Y+1, map).changeType(4);
+            this.changeType(2);
+            this.gameover();
+        }
+        else{
+            if(type_up == 6){
+
+                //this.getBehaviorAt(X, Y -1, map).setUpdateID(this.getUpdateID());
+                this.getBehaviorAt(X, Y -1, map).changeType(2);
+            }
         }
     }
 
@@ -153,11 +208,65 @@ public class Behavior extends JPanel{
      */
     public void updateDiamond(JFrame window, ArrayList<Behavior> map)
     {
-        if(type_down == 2)
-        {
-        	this.getBehaviorAt(X, Y+1, map).setUpdateID(this.getUpdateID());
-        	this.getBehaviorAt(X, Y+1, map).changeType(3);
-        	this.changeType(2);
+        if(type_down == 2){
+            if(type_up == 6){
+                this.getBehaviorAt(X, Y -1, map).setUpdateID(this.getUpdateID());
+                this.getBehaviorAt(X, Y -1, map).changeType(2);
+            }
+
+            this.getBehaviorAt(X, Y+1, map).setUpdateID(this.getUpdateID());
+            this.getBehaviorAt(X, Y+1, map).changeType(3);
+            this.changeType(6);
+        }
+
+        else if(type_down == 5 && type_up == 6){
+
+            this.getBehaviorAt(X, Y+1, map).setUpdateID(this.getUpdateID());
+            this.getBehaviorAt(X, Y+1, map).changeType(3);
+            this.changeType(2);
+            gameover();
+        }
+
+        else if(type_down_right == 2 && type_right == 2 && (type_down == 4 || type_down == 1)){
+
+            if (type_up == 6){
+                this.getBehaviorAt(X, Y -1, map).setUpdateID(this.getUpdateID());
+                this.getBehaviorAt(X, Y -1, map).changeType(2);
+            }
+            this.getBehaviorAt(X +1, Y+1, map).setUpdateID(this.getUpdateID());
+            this.getBehaviorAt(X +1, Y+1, map).changeType(3);
+            this.changeType(6);
+        }
+        else if(type_down_right == 5 && type_right == 2 && (type_down == 4 || type_down == 1)){
+
+            this.getBehaviorAt(X +1, Y+1, map).setUpdateID(this.getUpdateID());
+            this.getBehaviorAt(X +1, Y+1, map).changeType(3);
+            this.changeType(2);
+            this.gameover();
+        }
+
+        else if(type_down_left == 2 && type_left == 2 && (type_down == 4 || type_down == 1)){
+
+            if (type_up == 6){
+                this.getBehaviorAt(X, Y -1, map).setUpdateID(this.getUpdateID());
+                this.getBehaviorAt(X, Y -1, map).changeType(2);
+            }
+            this.getBehaviorAt(X -1, Y+1, map).setUpdateID(this.getUpdateID());
+            this.getBehaviorAt(X -1, Y+1, map).changeType(3);
+            this.changeType(6);
+        }
+        else if(type_down_left == 5 && type_left == 2 && (type_down == 4 || type_down == 1)){
+
+            this.getBehaviorAt(X -1, Y+1, map).setUpdateID(this.getUpdateID());
+            this.getBehaviorAt(X -1, Y+1, map).changeType(3);
+            this.changeType(2);
+            this.gameover();
+        }
+        else{
+            if(type_up == 6){
+                this.getBehaviorAt(X, Y -1, map).setUpdateID(this.getUpdateID());
+                this.getBehaviorAt(X, Y -1, map).changeType(2);
+            }
         }
     }
     

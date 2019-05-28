@@ -56,15 +56,17 @@ public abstract class Main {
          i++;
          }i=0; j++;}
      
-     Behavior hero = screen.getBehaviorAt(2, 6);
+     Behavior hero = screen.getBehaviorAt(3, 6);
      hero.changeType(5);
-     
      
      Behavior diam = screen.getBehaviorAt(1, 1);
      diam.changeType(3);
      
-     Behavior rock = screen.getBehaviorAt(3, 5);
+     Behavior rock = screen.getBehaviorAt(2, 6);
      rock.changeType(4);
+
+     Behavior rock1 = screen.getBehaviorAt(2, 4);
+     rock1.changeType(4);
      
      fenetre.repaint();
      

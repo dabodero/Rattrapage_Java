@@ -6,11 +6,11 @@ package controller;
 
 public class BehaviorSpritePath {
 
-	public String unbreak_dirt = "C:\\\\Users\\\\leosa\\\\Downloads\\\\projet_java\\\\sprite\\\\unbreak_dirt.png";
-	public String solid = "C:\\\\Users\\\\leosa\\\\Downloads\\\\projet_java\\\\sprite\\\\unbreakable_wall.png";
-	public String broken_wall = "C:\\\\Users\\\\leosa\\\\Downloads\\\\projet_java\\\\sprite\\\\broken_wall.png";
-	public String Diamond = "C:\\\\Users\\\\leosa\\\\Downloads\\\\projet_java\\\\sprite\\\\Diamand.png";
-	public String rock = "C:\\\\Users\\\\leosa\\\\Downloads\\\\projet_java\\\\sprite\\\\rock.png";
-	public String hero = "C:\\\\Users\\\\leosa\\\\Downloads\\\\projet_java\\\\sprite\\\\hero.png";
-	public String moving = "C:\\\\Users\\\\leosa\\\\Downloads\\\\projet_java\\\\sprite\\\\moving.png";
+	public String unbreak_dirt = "C:\\\\Users\\\\TRAVAIL\\\\mes_projets\\\\projet_java\\\\boulder_dash\\\\games_pictures\\\\Mur\\\\unbreak_dirt.png";
+	public String solid = "C:\\\\Users\\\\TRAVAIL\\\\mes_projets\\\\projet_java\\\\boulder_dash\\\\games_pictures\\\\Mur\\\\unbreakable_wall.png";
+	public String broken_wall = "C:\\\\Users\\\\TRAVAIL\\\\mes_projets\\\\projet_java\\\\boulder_dash\\\\games_pictures\\\\Mur\\\\broken_wall.png";
+	public String Diamond = "C:\\\\Users\\\\TRAVAIL\\\\mes_projets\\\\projet_java\\\\boulder_dash\\\\games_pictures\\\\Diamand\\\\Diamand.png";
+	public String rock = "C:\\\\Users\\\\TRAVAIL\\\\mes_projets\\\\projet_java\\\\boulder_dash\\\\games_pictures\\\\rock\\\\rock.png";
+	public String hero = "C:\\\\Users\\\\TRAVAIL\\\\mes_projets\\\\projet_java\\\\boulder_dash\\\\games_pictures\\\\Personnage\\\\Face\\\\Face1.png";
+
 }

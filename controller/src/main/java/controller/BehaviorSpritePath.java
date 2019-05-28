@@ -12,5 +12,5 @@ public class BehaviorSpritePath {
 	public String Diamond = "C:\\\\Users\\\\leosa\\\\Downloads\\\\projet_java\\\\sprite\\\\Diamand.png";
 	public String rock = "C:\\\\Users\\\\leosa\\\\Downloads\\\\projet_java\\\\sprite\\\\rock.png";
 	public String hero = "C:\\\\Users\\\\leosa\\\\Downloads\\\\projet_java\\\\sprite\\\\hero.png";
-	
+	public String moving = "C:\\\\\\\\Users\\\\\\\\leosa\\\\\\\\Downloads\\\\\\\\projet_java\\\\\\\\sprite\\\\\\\\moving.png";
 }

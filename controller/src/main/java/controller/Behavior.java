@@ -37,7 +37,7 @@ public class Behavior extends JPanel{
          * Type 3 = Diamond
          * Type 4 = Rock
          * Type 5 = Hero
-         * Type 6 = up_Moved
+         * Type 6 = up Moved
          */
         
         /**
@@ -370,10 +370,10 @@ public class Behavior extends JPanel{
                 break;
 
             case 6:
-                changeSprite(sprite.broken_wall);
+                changeSprite(sprite.moving);
 
             default:
-                System.out.println("bad value");
+                
                 break;
         }
 

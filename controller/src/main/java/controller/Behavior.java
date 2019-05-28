@@ -37,6 +37,7 @@ public class Behavior extends JPanel{
          * Type 4 = Rock
          * Type 5 = Hero
          */
+        
         /**
          * position
          */
@@ -125,7 +126,7 @@ public class Behavior extends JPanel{
      */
     public void updateRock(JFrame window, ArrayList<Behavior> map)
     {
-    	if(type_down == 2)
+    	if(type_down == 2) // If air
     	{
             try {
                 Thread.sleep(500);
@@ -134,18 +135,17 @@ public class Behavior extends JPanel{
             }
     		this.getBehaviorAt(X, Y+1, map).changeType(4);
     		this.changeType(2);
-    		if (type_down == 5){
-                try {
-                    Thread.sleep(500);
-                } catch (InterruptedException ie) {
-                    Thread.currentThread().interrupt();
-                }
-                this.getBehaviorAt(X, Y+1, map).changeType(4);
-                this.changeType(2);
-                gameover();
-            }
-
     	}
+    	else if (type_down == 5){
+            try {
+                Thread.sleep(500);
+            } catch (InterruptedException ie) {
+                Thread.currentThread().interrupt();
+            }
+            this.getBehaviorAt(X, Y+1, map).changeType(4);
+            this.changeType(2);
+            this.gameover();
+        }
     	else if(type_down_right == 2 && type_right == 2 && (type_down == 4 || type_down == 1)){
             try {
                 Thread.sleep(500);
@@ -164,7 +164,6 @@ public class Behavior extends JPanel{
             }
             this.getBehaviorAt(X -1, Y+1, map).changeType(4);
             this.changeType(2);
-
         }
 
     	else if(type_down_right == 5 && type_right == 2 && (type_down == 4 || type_down == 1)){
@@ -178,7 +177,7 @@ public class Behavior extends JPanel{
             gameover();
         }
 
-        else if(type_down_left == 5 && type_left == 2 && (type_down == 4 || type_down == 1)){
+    	else if(type_down_left == 5 && type_left == 2 && (type_down == 4 || type_down == 1)){
             try {
                 Thread.sleep(500);
             } catch (InterruptedException ie) {
@@ -188,9 +187,6 @@ public class Behavior extends JPanel{
             this.changeType(2);
             gameover();
         }
-
-
-
 }
 
 
@@ -261,7 +257,7 @@ public class Behavior extends JPanel{
 		public void setJLabel(JLabel LABEL) {label = LABEL;}
 		
         public int getX() {return X;}
-        public int getY() {return Y;}
+        public int getY() {return Y;} 
 
     /**
      * moving methode which move an element
@@ -365,8 +361,9 @@ public class Behavior extends JPanel{
 
     }
 
-    private void gameover(){
-
+    protected void gameover(){
+    	System.out.println("GAMEOVER");
+    	System.exit(0);
     }
 }
 

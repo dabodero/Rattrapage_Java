@@ -77,7 +77,7 @@ public class Connector {
 	   break;
       
         case 'W' :
-        	Solid wall = new Solid("C:\\\\\\\\Users\\\\\\\\loisc\\\\\\\\Desktop\\\\\\\\PROJET\\\\\\\\GIT\\\\\\\\boulder_dash\\\\\\\\games_pictures\\\\\\\\image\\\\\\\\\\\\solid.png",X,Y);  //New Object (path,X,Y)   	   
+        	Solid wall = new Solid("C:\\\\\\\\Users\\\\\\\\loisc\\\\\\\\Desktop\\\\\\\\PROJET\\\\\\\\GIT\\\\\\\\boulder_dash\\\\\\\\games_pictures\\\\\\\\image\\\\\\\\\\\\solid.png",X,Y);  //New Object (path,X,Y)
         	map.add (wall); // method to add a sprite and his behavior in the case
         	break;
         case 'J' :
@@ -95,7 +95,7 @@ public class Connector {
         	break;
         
         case 'E' :
-          Exit exit = new Exit("C:\\\\\\\\Users\\\\\\\\loisc\\\\\\\\Desktop\\\\\\\\PROJET\\\\\\\\GIT\\\\\\\\boulder_dash\\\\\\\\games_pictures\\\\\\\\image\\\\\\\\\\\\door.png",X,Y);  //New Object (path,X,Y)       
+          EndBlock exit = new EndBlock("C:\\\\\\\\Users\\\\\\\\loisc\\\\\\\\Desktop\\\\\\\\PROJET\\\\\\\\GIT\\\\\\\\boulder_dash\\\\\\\\games_pictures\\\\\\\\image\\\\\\\\\\\\door.png",X,Y);  //New Object (path,X,Y)
           map.add (exit); // method to add a sprite and his behavior in the case
           break;
         case 'H' :

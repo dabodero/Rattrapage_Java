@@ -43,6 +43,7 @@ public class Behavior extends JPanel{
          * Type 4 = Rock
          * Type 5 = Hero
          * Type 6 = up Moved
+         * Type 7 = end block
          */
         
         /**

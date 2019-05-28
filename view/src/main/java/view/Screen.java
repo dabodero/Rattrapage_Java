@@ -9,12 +9,10 @@ import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
-import java.util.ListIterator;
 
 import controller.Behavior;
-import controller.BehaviorDiamond;
+import controller.Counter;
 
 public class Screen extends JPanel {
 	
@@ -75,7 +73,7 @@ public class Screen extends JPanel {
 		return new Behavior("", 1, 1); // Default
 	}
 	
-	public void update(JFrame window) {
+	public void update(JFrame window, Counter counter) {
 		int i = 0;
 		int max = map.size();
 		if(max > 0) {
@@ -85,7 +83,7 @@ public class Screen extends JPanel {
 				if(map.get(i).getUpdateID() != updateID) 
 				{
 					map.get(i).setUpdateID(updateID);
-					map.get(i).update(window, map);
+					map.get(i).update(window, map, counter);
 				}
 				
 				i++;

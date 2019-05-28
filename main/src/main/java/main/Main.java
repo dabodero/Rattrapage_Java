@@ -3,20 +3,10 @@
  * @version 1.0
  */
 package main;
-import controller.BehaviorSpritePath;
+import controller.*;
 import view.Window;
 import view.Screen;
-import model.Diamond;
 import model.Dirt;
-import model.Hero;
-
-import java.util.concurrent.TimeUnit;
-
-import controller.Behavior;
-import controller.BehaviorDiamond;
-import controller.KeyListner;
-
-import javax.swing.*;
 
 /**
  * The Class Main.
@@ -35,7 +25,8 @@ public abstract class Main {
      Window fenetre = new Window("Boulder Dash");
      Screen screen = new Screen();
      fenetre.addScreen(screen);
-     
+
+     Counter counter = new Counter();
      BehaviorSpritePath sprites = new BehaviorSpritePath();
      
      int i=1;
@@ -77,7 +68,7 @@ public abstract class Main {
      int i2=1;
      while(i2==1)
      { 	 try{Thread.sleep(500);}catch(InterruptedException e){System.out.println(e);}  
-    	 screen.update(fenetre.getWindow());
+    	 screen.update(fenetre.getWindow(), counter);
      }
     }
    

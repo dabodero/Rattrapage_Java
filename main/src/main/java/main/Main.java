@@ -30,7 +30,7 @@ public abstract class Main {
      fenetre.addScreen(screen);
 
      Connector test = new Connector();
-     test.run(screen, fenetre.getWindow(), 1);
+     test.run(screen, fenetre.getWindow(), 2);
      
      fenetre.repaint();
      Counter counter = new Counter();
@@ -43,5 +43,4 @@ public abstract class Main {
     	 screen.update(fenetre.getWindow());
      }
     }
-   
 }

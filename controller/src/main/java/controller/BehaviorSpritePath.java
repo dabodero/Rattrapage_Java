@@ -12,5 +12,6 @@ public class BehaviorSpritePath {
 	public String Diamond = "C:\\\\Users\\\\TRAVAIL\\\\mes_projets\\\\projet_java\\\\boulder_dash\\\\games_pictures\\\\Diamand\\\\Diamand.png";
 	public String rock = "C:\\\\Users\\\\TRAVAIL\\\\mes_projets\\\\projet_java\\\\boulder_dash\\\\games_pictures\\\\rock\\\\rock.png";
 	public String hero = "C:\\\\Users\\\\TRAVAIL\\\\mes_projets\\\\projet_java\\\\boulder_dash\\\\games_pictures\\\\Personnage\\\\Face\\\\Face1.png";
+	public String endBlock = "C:\\Users\\\\TRAVAIL\\\\mes_projets\\\\projet_java\\\\boulder_dash\\\\games_pictures\\\\door\\\\door.png";
 
 }

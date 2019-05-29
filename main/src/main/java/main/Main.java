@@ -7,6 +7,7 @@ import controller.*;
 import view.Window;
 import view.Screen;
 import model.Dirt;
+import model.EndBlock;
 
 /**
  * The Class Main.
@@ -26,7 +27,6 @@ public abstract class Main {
      Screen screen = new Screen();
      fenetre.addScreen(screen);
 
-     Counter counter = new Counter();
      BehaviorSpritePath sprites = new BehaviorSpritePath();
      
      int i=1;
@@ -52,20 +52,50 @@ public abstract class Main {
      
      Behavior hero = screen.getBehaviorAt(3, 6);
      hero.changeType(5);
+  
      
      Behavior diam = screen.getBehaviorAt(1, 1);
      diam.changeType(3);
      
-     Behavior rock = screen.getBehaviorAt(2, 5);
-     rock.changeType(4);
+     Behavior door = screen.getBehaviorAt(2, 5);
+     door.changeType(7);
 
      
      fenetre.repaint();
      
+     Counter counter = new Counter();
+     
+     KeyListner key = new KeyListner();
+     key.init_key_listner(fenetre.getWindow());
+    
      int i2=1;
      while(i2==1)
-     { 	 try{Thread.sleep(500);}catch(InterruptedException e){System.out.println(e);}  
-    	 screen.update(fenetre.getWindow(), counter);
+     { 	 try{Thread.sleep(200);}catch(InterruptedException e){System.out.println(e);} 
+     if(key.getKeyPressed() == 'z') {
+    	    int last_hero_x = screen.getBehaviorByType(5).getX();
+    	    int last_hero_y = screen.getBehaviorByType(5).getY();
+    	 	screen.getBehaviorAt(last_hero_x, last_hero_y-1).changeType(5);
+    	 	screen.getBehaviorAt(last_hero_x, last_hero_y).changeType(2);
+    	 }
+     if(key.getKeyPressed() == 's') {
+ 	    int last_hero_x = screen.getBehaviorByType(5).getX();
+ 	    int last_hero_y = screen.getBehaviorByType(5).getY();
+ 	 	screen.getBehaviorAt(last_hero_x, last_hero_y+1).changeType(5);
+ 	 	screen.getBehaviorAt(last_hero_x, last_hero_y).changeType(2);
+ 	 }
+     if(key.getKeyPressed() == 'q') {
+ 	    int last_hero_x = screen.getBehaviorByType(5).getX();
+ 	    int last_hero_y = screen.getBehaviorByType(5).getY();
+ 	 	screen.getBehaviorAt(last_hero_x-1, last_hero_y).changeType(5);
+ 	 	screen.getBehaviorAt(last_hero_x, last_hero_y).changeType(2);
+ 	 }
+     if(key.getKeyPressed() == 'd') {
+ 	    int last_hero_x = screen.getBehaviorByType(5).getX();
+ 	    int last_hero_y = screen.getBehaviorByType(5).getY();
+ 	 	screen.getBehaviorAt(last_hero_x+1, last_hero_y).changeType(5);
+ 	 	screen.getBehaviorAt(last_hero_x, last_hero_y).changeType(2);
+ 	 }
+    	 screen.update(fenetre.getWindow());
      }
     }
    

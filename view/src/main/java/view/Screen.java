@@ -52,7 +52,7 @@ public class Screen extends JPanel {
 		map.add(character);
 	}
 	
-	public List<Behavior> getMapBehavior(){return map;}
+	public ArrayList<Behavior> getMapBehavior(){return map;}
 	public void setMap(ArrayList<Behavior> map) {map = map;}
 	
 	public Behavior getBehaviorAt(int X, int Y)
@@ -73,7 +73,25 @@ public class Screen extends JPanel {
 		return new Behavior("", 1, 1); // Default
 	}
 	
-	public void update(JFrame window, Counter counter) {
+	public Behavior getBehaviorByType(int type)
+	{
+		int i = 0;
+		int max = map.size();
+		if(max > 0) {
+			while (i != max)
+			{
+				if(map.get(i).getType() == type)
+				{
+					return map.get(i);
+				}
+				i++;
+			}
+		}
+		
+		return new Behavior("", 1, 1); // Default
+	}
+	
+	public void update(JFrame window) {
 		int i = 0;
 		int max = map.size();
 		if(max > 0) {
@@ -83,7 +101,7 @@ public class Screen extends JPanel {
 				if(map.get(i).getUpdateID() != updateID) 
 				{
 					map.get(i).setUpdateID(updateID);
-					map.get(i).update(window, map, counter);
+					map.get(i).update(window, map);
 				}
 				
 				i++;

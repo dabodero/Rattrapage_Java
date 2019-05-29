@@ -5,6 +5,7 @@
 package controller;
 
 import java.awt.Image;
+import java.awt.event.*;
 import java.util.ArrayList;
 
 import javax.swing.ImageIcon;
@@ -13,9 +14,6 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 public class Behavior extends JPanel{
-	
-		protected KeyListner keylistener;
-		public boolean hasMooved = false;
 
     /** elements around entity type*/
         protected int type; // Type of the block
@@ -40,7 +38,6 @@ public class Behavior extends JPanel{
          * Type 5 = Hero
          * Type 6 = up Moved
          * Type 7 = end block
-         * Type 8 = Hero on end Block
          */
         
         /**
@@ -75,7 +72,7 @@ public class Behavior extends JPanel{
      * @param map
      * @param counter
      */
-        public void update(JFrame window, ArrayList<Behavior> map, Counter counter)
+        public void update(JFrame window, ArrayList<Behavior> map)
         {
             type_up = getBehaviorAt(getX(), getY() -1, map).getType();
             type_down = getBehaviorAt(getX(), getY() +1, map).getType();
@@ -104,9 +101,13 @@ public class Behavior extends JPanel{
             {
             	this.updateRock(window, map);
             }
-            else if(this.getType() == 5)
+            else if(this.getType() == 5) // hero
             {
-            	this.updateHero(window, map);
+            	//this.updateHero(window, map);
+            }
+            else if(this.getType() == 7) // end block
+            {
+            	
             }
         }
 
@@ -194,10 +195,10 @@ public class Behavior extends JPanel{
     }
 
 
-    public void updateHero(JFrame window, ArrayList<Behavior> map)
+    public void updateHero(JFrame window, ArrayList<Behavior> map, int X, int Y)
     {
-    	
-        
+    	this.getBehaviorAt(X, Y, map).changeType(5);
+    	this.changeType(2);
     }
     
     /**
@@ -268,8 +269,6 @@ public class Behavior extends JPanel{
             }
         }
     }
-    
-    protected KeyListner getKeyListener() {return keylistener;}
 
 
     /**
@@ -293,112 +292,6 @@ public class Behavior extends JPanel{
         public int getX() {return X;}
         public int getY() {return Y;} 
 
-    /**
-     * moving methode which move an element
-     * of position
-     */
-        public void GoUp(JFrame window, ArrayList<Behavior> map, Counter counter){
-
-            if (type_up == 2 || type_up == 0 || type_up == 3) {
-                this.getBehaviorAt(X, Y - 1, map).setUpdateID(this.getUpdateID());
-                this.getBehaviorAt(X, Y - 1, map).changeType(5);
-                if(type != 8) {
-                    this.changeType(2); }
-                else {
-                    this.changeType(7); }
-                if (type_up == 3){
-                    counter.addDiamond();
-                }
-            }
-
-            else if(type_up == 7){
-                this.getBehaviorAt(X, Y - 1, map).setUpdateID(this.getUpdateID());
-                this.getBehaviorAt(X, Y -1, map).changeType(8);
-                this.changeType(2);
-                if (counter.getNbDiamond() == 20){
-                win();}
-
-            }
-        }
-
-        public void GoDown(JFrame window, ArrayList<Behavior> map, Counter counter){
-
-            if (type_down == 2 || type_down == 0 || type_down == 3) {
-                this.getBehaviorAt(X, Y + 1, map).setUpdateID(this.getUpdateID());
-                this.getBehaviorAt(X, Y + 1, map).changeType(5);
-                if(type != 8) {
-                    this.changeType(2); }
-                else {
-                    this.changeType(7); }
-                if (type_down == 3){
-                    counter.addDiamond(); }
-
-            }
-            else if(type_down == 7){
-                this.getBehaviorAt(X, Y + 1, map).setUpdateID(this.getUpdateID());
-                this.getBehaviorAt(X, Y + 1, map).changeType(8);
-                this.changeType(2);
-                if (counter.getNbDiamond() == 20){
-                    win();}
-            }
-        }
-
-        public void GoRight(JFrame window, ArrayList<Behavior> map, Counter counter){
-            if (type_right == 2 || type_right == 0 || type_right == 3){
-                this.getBehaviorAt(X +1, Y , map).setUpdateID(this.getUpdateID());
-                this.getBehaviorAt(X +1, Y , map).changeType(5);
-                if(type != 8) {
-                    this.changeType(2); }
-                else {
-                    this.changeType(7); }
-                if (type_right == 3){
-                    counter.addDiamond(); }
-
-            }
-            else if(type_right == 7){
-                this.getBehaviorAt(X +1, Y, map).setUpdateID(this.getUpdateID());
-                this.getBehaviorAt(X +1, Y, map).changeType(8);
-                this.changeType(2);
-                if (counter.getNbDiamond() == 20){
-                    win();}
-            }
-
-            else if(type_right == 4 && getBehaviorAt(X +2, Y, map).getType() == 2){
-                this.getBehaviorAt(X +2, Y, map).setUpdateID(this.getUpdateID());
-                this.getBehaviorAt(X +2, Y , map).changeType(4);
-                this.getBehaviorAt(X +1, Y, map).setUpdateID(this.getUpdateID());
-                this.getBehaviorAt(X +1, Y , map).changeType(5);
-                if(type != 8) {
-                    this.changeType(2); }
-                else {
-                    this.changeType(7); }
-            }
-        }
-
-        public void GoLeft(JFrame window, ArrayList<Behavior> map, Counter counter) {
-            if (type_left == 2 || type_left == 0 || type_left == 3) {
-                this.getBehaviorAt(X - 1, Y, map).setUpdateID(this.getUpdateID());
-                this.getBehaviorAt(X - 1, Y, map).changeType(5);
-                if(type != 8) {
-                    this.changeType(2); }
-                else {
-                    this.changeType(7); }
-                if (type_left == 3){
-                    counter.addDiamond(); }
-
-            }
-
-            else if(type_left == 4 && getBehaviorAt(X -2, Y, map).getType() == 2){
-                this.getBehaviorAt(X -2, Y, map).setUpdateID(this.getUpdateID());
-                this.getBehaviorAt(X -2, Y , map).changeType(4);
-                this.getBehaviorAt(X -1, Y, map).setUpdateID(this.getUpdateID());
-                this.getBehaviorAt(X -1, Y , map).changeType(5);
-                if(type != 8) {
-                    this.changeType(2); }
-                else {
-                    this.changeType(7); }
-            }
-        }
         
         public String getSpritePath() {return spritePath;}
 
@@ -476,9 +369,11 @@ public class Behavior extends JPanel{
 
             case 6:
                 changeSprite(sprite.broken_wall);
-
+                break;
+            case 7:
+            	changeSprite(sprite.endBlock);
             default:
-                
+             
                 break;
         }
 
@@ -491,9 +386,10 @@ public class Behavior extends JPanel{
     }
 
     protected void win(){
-
-
+    	System.out.println("WIN");
+    	System.exit(0);
     }
+    
 }
 
 

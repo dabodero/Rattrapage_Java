@@ -65,6 +65,8 @@ public class Behavior extends JPanel{
     		}
         }
 
+
+
     /**
      * refresh the map
      * @param window
@@ -97,10 +99,18 @@ public class Behavior extends JPanel{
                     break;
                 case 7:
                     break;
+                case 8:
+                    this.updateOctopus(window, map);
+                    break;
+                case 9:
+                    break;
                 default:
                     break;
             }
         }
+
+
+
 
     /**
      * constructor
@@ -113,6 +123,54 @@ public class Behavior extends JPanel{
         X=X_; 
        	Y=Y_;
        	spritePath = spritePath_;
+    }
+
+
+    public void updateOctopus(JFrame window, ArrayList<Behavior> map){
+        String direction = "nothing";
+
+
+        /*if (type_left != 2 || type_right != 2 || type_left != 5 || type_right != 5){
+            left = true;
+        } else {
+            left = false;
+        }*/
+
+        if (type_left != 2 || type_left != 5){
+            direction = "right";
+        }
+        else if (type_right != 2 || type_right != 5){
+            direction = "left";
+        }
+
+             if (type_left == 2 && direction.equals("left")){
+            this.getBehaviorAt(X -1,Y, map).setUpdateID(this.getUpdateID());
+            this.getBehaviorAt(X -1,Y, map).changeType(8);
+            this.changeType(2);
+        }
+        else if(type_right == 2 && direction.equals("right")){
+            this.getBehaviorAt(X +1,Y, map).setUpdateID(this.getUpdateID());
+            this.getBehaviorAt(X +1,Y, map).changeType(8);
+            this.changeType(2);
+        }
+
+        else if (type_left == 5 && direction.equals("left")){
+            this.getBehaviorAt(X -1,Y, map).setUpdateID(this.getUpdateID());
+            this.getBehaviorAt(X -1,Y, map).changeType(8);
+            this.changeType(2);
+            gameover();
+
+        }
+        else if (type_right == 5 && direction.equals("right")){
+            this.getBehaviorAt(X +1,Y, map).setUpdateID(this.getUpdateID());
+            this.getBehaviorAt(X +1,Y, map).changeType(8);
+            this.changeType(2);
+            gameover();
+        }
+
+
+
+
     }
 
     /**

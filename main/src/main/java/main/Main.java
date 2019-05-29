@@ -158,6 +158,7 @@ public abstract class Main {
              screen.getBehaviorAt(last_hero_x, last_hero_y).changeType(2);
              counter.addDiamond();
              System.out.println(counter.getNbDiamond());
+
          }
 
          else if (screen.getBehaviorAt(last_hero_x +1, last_hero_y).getType() == 4 && screen.getBehaviorAt(last_hero_x +2, last_hero_y).getType() == 2){

@@ -6,6 +6,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 import controller.Behavior;
+import controller.Octopus;
 import view.Screen;
 
 public class Connector {
@@ -101,8 +102,17 @@ public class Connector {
         case 'H' :
           Hero hero = new Hero("C:\\\\\\\\Users\\\\\\\\loisc\\\\\\\\Desktop\\\\\\\\PROJET\\\\\\\\GIT\\\\\\\\boulder_dash\\\\\\\\games_pictures\\\\\\\\image\\\\\\\\\\\\Face1.png",X,Y);  //New Object (path,X,Y)       
           map.add (hero); // method to add a sprite and his behavior in the case
-          break;   
-   
+          break;
+
+       case 'B' :
+           Butterfly butterfly = new Butterfly("frfr00", X, Y);
+           map.add (butterfly);
+           break;
+
+       case 'O' :
+           Octopus octopus = new Octopus("frfr00", X, Y);
+           map.add (octopus);
+           break;
         }
         }
       }

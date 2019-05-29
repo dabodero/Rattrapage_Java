@@ -372,6 +372,7 @@ public class Behavior extends JPanel{
                 break;
             case 7:
             	changeSprite(sprite.endBlock);
+            	break;
             default:
              
                 break;

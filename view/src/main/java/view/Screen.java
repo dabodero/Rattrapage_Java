@@ -13,13 +13,19 @@ import java.util.List;
 
 import controller.Behavior;
 import controller.Counter;
+import controller.KeyListner;
 
 public class Screen extends JPanel {
+	
+	KeyListner key;
 	
 	public Dimension getPreferredSize() {
 		return new Dimension(1000, 1030);
 	}
-	
+	public void delay()
+	{
+		try{Thread.sleep(200);}catch(InterruptedException e){System.out.println(e);} 
+	}
 	protected void paintComponent(Graphics g) {
 		int xStart=1000/16;
 		int yStart=1000/16;
@@ -35,11 +41,13 @@ public class Screen extends JPanel {
 			}
 	}
 	
-	public Screen()
+	public Screen(JFrame window)
 	{
 		this.setLayout(null);
 		map = new ArrayList<Behavior>();
 		update_id = 0;
+		key = new KeyListner();
+		key.init_key_listner(window);
 	}
 	
 	public void addCharacter(Behavior character, JFrame window)
@@ -71,6 +79,108 @@ public class Screen extends JPanel {
 		}
 		
 		return new Behavior("", 1, 1); // Default
+	}
+	
+	public void updateHeroOnMap(Screen screen, Counter counter)
+	{
+		if(key.getKeyPressed() == 'z') {
+            int last_hero_x = screen.getBehaviorByType(5).getX();
+    	    int last_hero_y = screen.getBehaviorByType(5).getY();
+
+    	    if (screen.getBehaviorAt(last_hero_x, last_hero_y -1).getType() == 2 || screen.getBehaviorAt(last_hero_x, last_hero_y -1).getType() == 0){
+                screen.getBehaviorAt(last_hero_x, last_hero_y-1).changeType(5);
+                screen.getBehaviorAt(last_hero_x, last_hero_y).changeType(2);
+
+            }
+
+            else if (screen.getBehaviorAt(last_hero_x, last_hero_y -1).getType() == 3){
+                screen.getBehaviorAt(last_hero_x, last_hero_y-1).changeType(5);
+                screen.getBehaviorAt(last_hero_x, last_hero_y).changeType(2);
+                counter.addDiamond();
+                System.out.println(counter.getNbDiamond());
+            }
+
+    	    else if(screen.getBehaviorAt(last_hero_x, last_hero_y -1).getType() == 7 && counter.getNbDiamond() == 10){
+                screen.getBehaviorAt(last_hero_x, last_hero_y-1).changeType(5);
+                screen.getBehaviorAt(last_hero_x, last_hero_y).changeType(2);
+                Behavior.win();
+    	    }
+    	 }
+
+     if(key.getKeyPressed() == 's') {
+         int last_hero_x = screen.getBehaviorByType(5).getX();
+         int last_hero_y = screen.getBehaviorByType(5).getY();
+
+         if (screen.getBehaviorAt(last_hero_x, last_hero_y +1).getType() == 2 || screen.getBehaviorAt(last_hero_x, last_hero_y +1).getType() == 0){
+             screen.getBehaviorAt(last_hero_x, last_hero_y +1).changeType(5);
+             screen.getBehaviorAt(last_hero_x, last_hero_y).changeType(2);
+         }
+
+         if (screen.getBehaviorAt(last_hero_x, last_hero_y +1).getType() == 3){
+             screen.getBehaviorAt(last_hero_x, last_hero_y +1).changeType(5);
+             screen.getBehaviorAt(last_hero_x, last_hero_y).changeType(2);
+             counter.addDiamond();
+         }
+         else if(screen.getBehaviorAt(last_hero_x, last_hero_y +1).getType() == 7 && counter.getNbDiamond() == 10){
+             screen.getBehaviorAt(last_hero_x, last_hero_y +1).changeType(5);
+             screen.getBehaviorAt(last_hero_x, last_hero_y).changeType(2);
+             Behavior.win();
+         }
+     }
+     if(key.getKeyPressed() == 'q') {
+         int last_hero_x = screen.getBehaviorByType(5).getX();
+         int last_hero_y = screen.getBehaviorByType(5).getY();
+
+         if (screen.getBehaviorAt(last_hero_x -1, last_hero_y).getType() == 2 || screen.getBehaviorAt(last_hero_x -1, last_hero_y).getType() == 0) {
+             screen.getBehaviorAt(last_hero_x - 1, last_hero_y).changeType(5);
+             screen.getBehaviorAt(last_hero_x, last_hero_y).changeType(2);
+
+         }
+
+         else if (screen.getBehaviorAt(last_hero_x -1, last_hero_y).getType() == 3) {
+             screen.getBehaviorAt(last_hero_x - 1, last_hero_y).changeType(5);
+             screen.getBehaviorAt(last_hero_x, last_hero_y).changeType(2);
+             counter.addDiamond();
+         }
+
+         else if (screen.getBehaviorAt(last_hero_x -1, last_hero_y).getType() == 4 && screen.getBehaviorAt(last_hero_x -2, last_hero_y).getType() == 2){
+             screen.getBehaviorAt(last_hero_x -2,last_hero_y).changeType(4);
+             screen.getBehaviorAt(last_hero_x -1, last_hero_y).changeType(5);
+             screen.getBehaviorAt(last_hero_x, last_hero_y).changeType(2);
+         }
+         else if (screen.getBehaviorAt(last_hero_x -1, last_hero_y).getType() == 7 && counter.getNbDiamond() == 10){
+             screen.getBehaviorAt(last_hero_x - 1, last_hero_y).changeType(5);
+             screen.getBehaviorAt(last_hero_x, last_hero_y).changeType(2);
+             Behavior.win();
+         }
+ 	 }
+     if(key.getKeyPressed() == 'd') {
+         int last_hero_x = screen.getBehaviorByType(5).getX();
+         int last_hero_y = screen.getBehaviorByType(5).getY();
+
+         if (screen.getBehaviorAt(last_hero_x +1, last_hero_y).getType() == 2 || screen.getBehaviorAt(last_hero_x +1, last_hero_y).getType() == 0) {
+             screen.getBehaviorAt(last_hero_x + 1, last_hero_y).changeType(5);
+             screen.getBehaviorAt(last_hero_x, last_hero_y).changeType(2);
+         }
+
+         if (screen.getBehaviorAt(last_hero_x +1, last_hero_y).getType() == 3) {
+             screen.getBehaviorAt(last_hero_x + 1, last_hero_y).changeType(5);
+             screen.getBehaviorAt(last_hero_x, last_hero_y).changeType(2);
+             counter.addDiamond();
+
+         }
+
+         else if (screen.getBehaviorAt(last_hero_x +1, last_hero_y).getType() == 4 && screen.getBehaviorAt(last_hero_x +2, last_hero_y).getType() == 2){
+             screen.getBehaviorAt(last_hero_x +2,last_hero_y).changeType(4);
+             screen.getBehaviorAt(last_hero_x +1, last_hero_y).changeType(5);
+             screen.getBehaviorAt(last_hero_x, last_hero_y).changeType(2);
+         }
+         else if (screen.getBehaviorAt(last_hero_x +1, last_hero_y).getType() == 7 && counter.getNbDiamond() == 10){
+             screen.getBehaviorAt(last_hero_x + 1, last_hero_y).changeType(5);
+             screen.getBehaviorAt(last_hero_x, last_hero_y).changeType(2);
+             Behavior.win();
+         }
+ 	 }
 	}
 	
 	public Behavior getBehaviorByType(int type)

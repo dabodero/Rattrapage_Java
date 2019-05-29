@@ -16,16 +16,15 @@ import javax.swing.JPanel;
 public class Behavior extends JPanel{
 
     /** elements around entity type*/
-        protected int type; // Type of the block
-        protected int type_up; // Indicates of what is composed the up block
-        protected int type_down;	// Same
-        protected int type_left; //Same
-        protected int type_right; //Same
-        protected int type_down_left;
-        protected int type_down_right;
-        protected String spritePath; //Same
-        
-        protected double updateID;
+    private int type; // Type of the block
+        private int type_up; // Indicates of what is composed the up block
+        private int type_down;	// Same
+        private int type_left; //Same
+        private int type_right; //Same
+        private int type_down_left;
+        private int type_down_right;
+        private String spritePath; //Same
+        private double updateID;
         public double getUpdateID() {return updateID;}
         public void setUpdateID(double ID) {updateID = ID;}
         
@@ -43,8 +42,8 @@ public class Behavior extends JPanel{
         /**
          * position
          */
-        protected int X;
-        protected int Y;
+        private int X;
+        private int Y;
       
         ImageIcon icon;
 		JLabel label;
@@ -79,34 +78,27 @@ public class Behavior extends JPanel{
             type_right = getBehaviorAt(getX() +1, getY(), map).getType();
             type_down_left = getBehaviorAt(getX() -1, getY()+1, map).getType();
             type_down_right = getBehaviorAt(getX() +1, getY() +1, map).getType();
-            
-            if(this.getType() == 0)
-            {
-            	
-            }
-            else if(this.getType() == 1)
-            {
-            	
-            }
-            else if(this.getType() == 2)
-            {
-            	
-            }
-            else if(this.getType() == 3)
-            {
-            	this.updateDiamond(window, map);
-            }
-            else if(this.getType() == 4)
-            {
-            	this.updateRock(window, map);
-            }
-            else if(this.getType() == 5) // hero
-            {
-            	//this.updateHero(window, map);
-            }
-            else if(this.getType() == 7) // end block
-            {
-            	
+
+            switch (this.getType()){
+
+                case 0:
+                    break;
+                case 1:
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    this.updateDiamond(window, map);
+                    break;
+                case 4:
+                    this.updateRock(window, map);
+                    break;
+                case 5:
+                    break;
+                case 7:
+                    break;
+                default:
+                    break;
             }
         }
 
@@ -128,7 +120,7 @@ public class Behavior extends JPanel{
      * @param window
      * @param map
      */
-    public void updateRock(JFrame window, ArrayList<Behavior> map)
+    private void updateRock(JFrame window, ArrayList<Behavior> map)
     {
         if(type_down == 2){
             if(type_up == 6){
@@ -164,7 +156,7 @@ public class Behavior extends JPanel{
             this.getBehaviorAt(X +1, Y+1, map).setUpdateID(this.getUpdateID());
             this.getBehaviorAt(X +1, Y+1, map).changeType(4);
             this.changeType(2);
-            this.gameover();
+            gameover();
         }
 
         else if(type_down_left == 2 && type_left == 2 && (type_down == 4 || type_down == 1)){
@@ -182,7 +174,7 @@ public class Behavior extends JPanel{
             this.getBehaviorAt(X -1, Y+1, map).setUpdateID(this.getUpdateID());
             this.getBehaviorAt(X -1, Y+1, map).changeType(4);
             this.changeType(2);
-            this.gameover();
+            gameover();
         }
         else{
             if(type_up == 6){
@@ -205,7 +197,7 @@ public class Behavior extends JPanel{
      * @param window
      * @param map
      */
-    public void updateDiamond(JFrame window, ArrayList<Behavior> map)
+    private void updateDiamond(JFrame window, ArrayList<Behavior> map)
     {
         if(type_down == 2){
             if(type_up == 6){
@@ -241,7 +233,7 @@ public class Behavior extends JPanel{
             this.getBehaviorAt(X +1, Y+1, map).setUpdateID(this.getUpdateID());
             this.getBehaviorAt(X +1, Y+1, map).changeType(3);
             this.changeType(2);
-            this.gameover();
+            gameover();
         }
 
         else if(type_down_left == 2 && type_left == 2 && (type_down == 4 || type_down == 1)){
@@ -259,7 +251,7 @@ public class Behavior extends JPanel{
             this.getBehaviorAt(X -1, Y+1, map).setUpdateID(this.getUpdateID());
             this.getBehaviorAt(X -1, Y+1, map).changeType(3);
             this.changeType(2);
-            this.gameover();
+            gameover();
         }
         else{
             if(type_up == 6){
@@ -279,15 +271,11 @@ public class Behavior extends JPanel{
 		public int getTypeDown() {return type_down;}
 		public int getTypeLeft() {return type_left;}
 		public int getTypeRight() {return type_right;}
-		
-		public void setType(int TYPE) {type = TYPE;}
-		
+		void setType(int TYPE) {type = TYPE;}
 		public ImageIcon getImageIcon() {return icon;}
 		public JLabel getJLabel() {return label;}
-		
 		public void setImageIcon(ImageIcon image) {icon = image;}
 		public void setJLabel(JLabel LABEL) {label = LABEL;}
-		
         public int getX() {return X;}
         public int getY() {return Y;} 
 
@@ -298,7 +286,7 @@ public class Behavior extends JPanel{
      * change sprite of an element
      * @param pathToSprite
      */
-    public void changeSprite(String pathToSprite)
+    private void changeSprite(String pathToSprite)
     {
         	spritePath = pathToSprite;
         	icon = new ImageIcon(new ImageIcon(spritePath).getImage().getScaledInstance(62,62, Image.SCALE_DEFAULT));
@@ -318,7 +306,7 @@ public class Behavior extends JPanel{
      * @param Y
      * @param map
      */
-    public Behavior getBehaviorAt(int X, int Y, ArrayList<Behavior> map)
+    private Behavior getBehaviorAt(int X, int Y, ArrayList<Behavior> map)
 	{
 		int i = 0;
 		int max = map.size();
@@ -380,7 +368,7 @@ public class Behavior extends JPanel{
 
     }
 
-    public static void gameover(){
+    private static void gameover(){
     	System.out.println("GAMEOVER");
     	System.exit(0);
     }

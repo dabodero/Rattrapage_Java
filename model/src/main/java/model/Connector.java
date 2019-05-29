@@ -113,7 +113,16 @@ public class Connector {
        Hero hero = new Hero(new BehaviorSpritePath().hero,X,Y);  //New Object (path,X,Y)
        screen_.addCharacter(hero, window);
         break;
-     }
+     case 'O' :
+        Octopus octopus= new Octopus (new BehaviorSpritePath().octopus,X,Y);
+        screen_.addCharacter(octopus,window);
+        break;
+     case 'B' :
+         Butterfly butterfly = new Butterfly (new BehaviorSpritePath().butterfly,X,Y);
+         screen_.addCharacter(butterfly, window);
+         break;
+
+    	}
     	
     	}
       }

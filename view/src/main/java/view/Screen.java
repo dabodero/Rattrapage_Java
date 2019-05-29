@@ -9,6 +9,7 @@ import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import controller.Behavior;
@@ -26,6 +27,7 @@ public class Screen extends JPanel {
 	{
 		try{Thread.sleep(200);}catch(InterruptedException e){System.out.println(e);} 
 	}
+	
 	protected void paintComponent(Graphics g) {
 		int xStart=1000/16;
 		int yStart=1000/16;
@@ -61,7 +63,7 @@ public class Screen extends JPanel {
 	}
 	
 	public ArrayList<Behavior> getMapBehavior(){return map;}
-	public void setMap(ArrayList<Behavior> map) {map = map;}
+	public void setMap(ArrayList<Behavior> map_) {Collections.copy(map, map_);}
 	
 	public Behavior getBehaviorAt(int X, int Y)
 	{

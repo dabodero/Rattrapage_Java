@@ -5,7 +5,10 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 
+import javax.swing.JFrame;
+
 import controller.Behavior;
+import controller.BehaviorSpritePath;
 import view.Screen;
 
 public class Connector {
@@ -14,23 +17,18 @@ public class Connector {
 *     Variable for position
 */	
 	
-	static int  X = 0;
+	static int  X = 1;
 	static int  Y= 0;
 	
 /**
 *	identifiers for connection to DB
 */  
-
 	final static String url = "jdbc:mysql://localhost:3306/jpublankproject";
     final static String user = "root";
     final static String passwd = "";
     
     
-
-	public void run(Screen screen_) {
-
-    	
-        
+	public void run(Screen screen_, JFrame window, int map) {
         /*
         *Try to connect to the database
         */
@@ -41,72 +39,86 @@ public class Connector {
       //Creation of Statement object
       Statement state = conn.createStatement();
       //The ResultSet object contains the result of the SQL query
-      ResultSet result = state.executeQuery("CALL Show_Map_One"); //Change for the differents maps
+      ResultSet result = null;
+      
+      if(map == 1) {
+      result = state.executeQuery("CALL Show_Map_One"); //Change for the differents maps
+      }
+      else if(map == 2)
+      {
+    	result = state.executeQuery("CALL Show_Map_Two"); //Change for the differents maps
+      }
+      else if(map == 3)
+      {
+    	  result = state.executeQuery("CALL Show_Map_Three"); //Change for the differents maps
+      }
+      else if(map == 4)
+      {
+    	result = state.executeQuery("CALL Show_Map_Four"); //Change for the differents maps
+      }
+      else if(map == 5)
+      {
+    	  result = state.executeQuery("CALL Show_Map_Five"); //Change for the differents maps
+      }
       //metadata recoveries
       java.sql.ResultSetMetaData resultMeta = result.getMetaData();
       
-      
-      ArrayList<Behavior> map = new ArrayList<Behavior>();
      
       //assigning the position of each character in the table   
-     String res = null ;
-      while(result.next()){         
+      String res = null ;
+      while(result.next()){
       for(int i = 1; i <= resultMeta.getColumnCount(); i++)
       res = result.getObject(i).toString();
-      for(int position = 1; position <=256; position++) {
-       
-    	  if(Y<16) {
-    		      		  
-    		  Y++;
-    	  }
-    	  else {
-    		 X++;
-    		  Y=1;
-    	  }
-    	  	
-    	 
-    	 
-   switch (res.charAt(position)) {
-   
-   		case 'D' : 
-   			Dirt dirt = new Dirt("C:\\\\Users\\\\loisc\\\\Desktop\\\\PROJET\\\\GIT\\\\boulder_dash\\\\games_pictures\\\\image\\\\unbreak_dirt.png",X,Y); //New Object (path,X,Y) 
-   			
-   				
-	  map.add (dirt); // method to add a sprite and his behavior in the case
-	   
-	   break;
-      
-        case 'W' :
-        	Solid wall = new Solid("C:\\\\\\\\Users\\\\\\\\loisc\\\\\\\\Desktop\\\\\\\\PROJET\\\\\\\\GIT\\\\\\\\boulder_dash\\\\\\\\games_pictures\\\\\\\\image\\\\\\\\\\\\solid.png",X,Y);  //New Object (path,X,Y)
-        	map.add (wall); // method to add a sprite and his behavior in the case
-        	break;
-        case 'J' :
-        	Diamond diamond = new Diamond("C:\\\\\\\\Users\\\\\\\\loisc\\\\\\\\Desktop\\\\\\\\PROJET\\\\\\\\GIT\\\\\\\\boulder_dash\\\\\\\\games_pictures\\\\\\\\image\\\\\\\\\\\\Diamand.png",X,Y);  //New Object (path,X,Y)    	   
-        	map.add (diamond);// method to add a sprite and his behavior in the case
-        	break;  
-        case 'R' :
-        	Rock rock = new Rock("C:\\\\\\\\Users\\\\\\\\loisc\\\\\\\\Desktop\\\\\\\\PROJET\\\\\\\\GIT\\\\\\\\boulder_dash\\\\\\\\games_pictures\\\\\\\\image\\\\\\\\\\\\rock.png",X,Y);    //New Object (path,X,Y)  	   
-        	map.add (rock);// method to add a sprite and his behavior in the case
-        	break; 
-        	
-        case 'A' :
-        	Air air = new Air("C:\\\\\\\\Users\\\\\\\\loisc\\\\\\\\Desktop\\\\\\\\PROJET\\\\\\\\GIT\\\\\\\\boulder_dash\\\\\\\\games_pictures\\\\\\\\image\\\\\\\\\\\\broken_wall.png",X,Y);  //New Object (path,X,Y)    	   
-        	map.add (air);	// method to add a sprite and his behavior in the case   
-        	break;
-        
-        case 'E' :
-          EndBlock exit = new EndBlock("C:\\\\\\\\Users\\\\\\\\loisc\\\\\\\\Desktop\\\\\\\\PROJET\\\\\\\\GIT\\\\\\\\boulder_dash\\\\\\\\games_pictures\\\\\\\\image\\\\\\\\\\\\door.png",X,Y);  //New Object (path,X,Y)
-          map.add (exit); // method to add a sprite and his behavior in the case
-          break;
-        case 'H' :
-          Hero hero = new Hero("C:\\\\\\\\Users\\\\\\\\loisc\\\\\\\\Desktop\\\\\\\\PROJET\\\\\\\\GIT\\\\\\\\boulder_dash\\\\\\\\games_pictures\\\\\\\\image\\\\\\\\\\\\Face1.png",X,Y);  //New Object (path,X,Y)       
-          map.add (hero); // method to add a sprite and his behavior in the case
-           break;
-        }
-        }
+      for(int position = 1; position <=257; position++) {
+          if(Y<16) {
+
+              Y++;
+          }
+          else {
+             X++;
+              Y=1;
+          }
+    	char resultat = res.charAt(position);
+
+    	switch (resultat) {
+
+        case 'D' : 
+            Dirt dirt = new Dirt(new BehaviorSpritePath().unbreak_dirt,X,Y); //New Object (path,X,Y) 
+            screen_.addCharacter(dirt, window);
+
+    break;
+
+     case 'W' :
+         Solid wall = new Solid(new BehaviorSpritePath().solid,X,Y);  //New Object (path,X,Y)
+         screen_.addCharacter(wall, window);
+         break;
+     case 'J' :
+         Diamond diamond = new Diamond(new BehaviorSpritePath().Diamond,X,Y);  //New Object (path,X,Y)
+         screen_.addCharacter(diamond, window);
+         break;
+     case 'R' :
+         Rock rock = new Rock(new BehaviorSpritePath().rock,X,Y);    //New Object (path,X,Y)
+         screen_.addCharacter(rock, window);
+         break; 
+
+     case 'A' :
+         Air air = new Air(new BehaviorSpritePath().broken_wall,X,Y);  //New Object (path,X,Y)
+         screen_.addCharacter(air, window);
+         break;
+
+     case 'E' :
+       EndBlock exit = new EndBlock(new BehaviorSpritePath().endBlock,X,Y);  //New Object (path,X,Y)
+       screen_.addCharacter(exit, window);
+       break;
+     case 'H' :
+       Hero hero = new Hero(new BehaviorSpritePath().hero,X,Y);  //New Object (path,X,Y)
+       screen_.addCharacter(hero, window);
+        break;
+     }
+    	
+    	}
       }
-      
-      screen_.setMap(map);
+
       
 //release memory
       result.close(); 

@@ -29,7 +29,7 @@ public class Window{
 		window.setVisible(true);
 		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		window.setResizable(false);
-		window.setSize(950, 1000);
+		window.setSize(1000, 1020);
 	}
 	public JFrame getWindow() {return window;}
 	

@@ -27,7 +27,6 @@ public class Connector {
     final static String user = "root";
     final static String passwd = "";
     
-    
 	public void run(Screen screen_, JFrame window, int map) {
         /*
         *Try to connect to the database

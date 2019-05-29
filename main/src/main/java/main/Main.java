@@ -56,11 +56,8 @@ public abstract class Main {
      Behavior diam = screen.getBehaviorAt(1, 1);
      diam.changeType(3);
      
-     Behavior rock = screen.getBehaviorAt(2, 6);
+     Behavior rock = screen.getBehaviorAt(2, 5);
      rock.changeType(4);
-
-     /*Behavior rock1 = screen.getBehaviorAt(4, 6);
-     rock1.changeType(4);*/
 
      
      fenetre.repaint();

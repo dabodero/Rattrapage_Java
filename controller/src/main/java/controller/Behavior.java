@@ -107,8 +107,6 @@ public class Behavior extends JPanel{
             else if(this.getType() == 5)
             {
             	this.updateHero(window, map);
-                this.GoRight(window, map, counter);
-
             }
         }
 

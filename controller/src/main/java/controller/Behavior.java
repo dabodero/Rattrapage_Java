@@ -45,8 +45,8 @@ public class Behavior extends JPanel{
         private int X;
         private int Y;
       
-        ImageIcon icon;
-		JLabel label;
+        private ImageIcon icon;
+		private JLabel label;
 		
 		/**
          * The update method, update the position of the sprites.

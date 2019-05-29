@@ -4,9 +4,9 @@
  */
 package model;
 import controller.BehaviorSolid;
-public class Solid extends BehaviorSolid {
+class Solid extends BehaviorSolid {
 
-	public Solid(String spritePath_, int X_, int Y_) {
+	Solid(String spritePath_, int X_, int Y_) {
 		super(spritePath_, X_, Y_);
 	}
 

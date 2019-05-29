@@ -1,3 +1,7 @@
+/**
+ * @author Léo Sanchez leo.sanchez@viacesi.fr
+ * @version 1.0
+ */
 package model;
 import controller.BehaviorAir;
 class Air extends BehaviorAir {

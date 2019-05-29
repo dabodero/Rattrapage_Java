@@ -4,9 +4,9 @@
  */
 package model;
 import controller.BehaviorHeros;
-public class Hero extends BehaviorHeros {
+class Hero extends BehaviorHeros {
 
-	public Hero(String spritePath_, int X_, int Y_) {
+	Hero(String spritePath_, int X_, int Y_) {
 		super(spritePath_, X_, Y_);
 	}
 

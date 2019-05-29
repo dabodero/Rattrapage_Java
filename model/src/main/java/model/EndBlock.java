@@ -9,7 +9,7 @@ public class EndBlock extends BehaviorEndBlock{
      * @param X_
      * @param Y_
      */
-    public EndBlock(String spritePath_, int X_, int Y_) {
+    EndBlock(String spritePath_, int X_, int Y_) {
         super(spritePath_, X_, Y_);
     }
 }

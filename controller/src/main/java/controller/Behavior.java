@@ -381,13 +381,13 @@ public class Behavior extends JPanel{
 
     }
 
-    protected void gameover(){
+    public void gameover(){
     	System.out.println("GAMEOVER");
     	System.exit(0);
     }
 
-    protected void win(){
-    	System.out.println("WIN");
+    public void win(){
+    	System.out.println("WIN !");
     	System.exit(0);
     }
     

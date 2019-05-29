@@ -70,7 +70,6 @@ public class Behavior extends JPanel{
      * refresh the map
      * @param window
      * @param map
-     * @param counter
      */
         public void update(JFrame window, ArrayList<Behavior> map)
         {
@@ -381,12 +380,12 @@ public class Behavior extends JPanel{
 
     }
 
-    public void gameover(){
+    public static void gameover(){
     	System.out.println("GAMEOVER");
     	System.exit(0);
     }
 
-    public void win(){
+    public static void win(){
     	System.out.println("WIN !");
     	System.exit(0);
     }

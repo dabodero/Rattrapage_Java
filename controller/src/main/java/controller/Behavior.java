@@ -37,6 +37,8 @@ public class Behavior extends JPanel{
          * Type 5 = Hero
          * Type 6 = up Moved
          * Type 7 = end block
+         * Type 8 = octopus
+         * Type 9 = butterfly
          */
         
         /**
@@ -103,6 +105,7 @@ public class Behavior extends JPanel{
                     this.updateOctopus(window, map);
                     break;
                 case 9:
+                	this.updateButterfly(window, map);
                     break;
                 default:
                     break;
@@ -127,50 +130,50 @@ public class Behavior extends JPanel{
 
 
     public void updateOctopus(JFrame window, ArrayList<Behavior> map){
-        String direction = "nothing";
-
-
-        /*if (type_left != 2 || type_right != 2 || type_left != 5 || type_right != 5){
-            left = true;
-        } else {
-            left = false;
-        }*/
-
-        if (type_left != 2 || type_left != 5){
-            direction = "right";
-        }
-        else if (type_right != 2 || type_right != 5){
-            direction = "left";
-        }
-
-             if (type_left == 2 && direction.equals("left")){
-            this.getBehaviorAt(X -1,Y, map).setUpdateID(this.getUpdateID());
-            this.getBehaviorAt(X -1,Y, map).changeType(8);
-            this.changeType(2);
-        }
-        else if(type_right == 2 && direction.equals("right")){
-            this.getBehaviorAt(X +1,Y, map).setUpdateID(this.getUpdateID());
-            this.getBehaviorAt(X +1,Y, map).changeType(8);
-            this.changeType(2);
-        }
-
-        else if (type_left == 5 && direction.equals("left")){
-            this.getBehaviorAt(X -1,Y, map).setUpdateID(this.getUpdateID());
-            this.getBehaviorAt(X -1,Y, map).changeType(8);
-            this.changeType(2);
-            gameover();
-
-        }
-        else if (type_right == 5 && direction.equals("right")){
-            this.getBehaviorAt(X +1,Y, map).setUpdateID(this.getUpdateID());
-            this.getBehaviorAt(X +1,Y, map).changeType(8);
-            this.changeType(2);
-            gameover();
-        }
-
-
-
-
+    	// kill hero only if it is on it's left or right
+       if(this.getBehaviorAt(X-1, Y, map).getType() == 5 || this.getBehaviorAt(X+1, Y, map).getType() == 5)
+       {
+    	   gameover();
+       }
+       else if(this.getBehaviorAt(X-1, Y, map).getType() == 2 && this.getBehaviorAt(X+1, Y, map).getType() == 2)
+       {
+    	   double resultat = Math.random() * ( 2 - 1 );
+    	   if(resultat >= 0.5) {this.getBehaviorAt(X, Y, map).changeType(2); this.getBehaviorAt(X-1, Y, map).changeType(8);} // go left
+    	   else {this.getBehaviorAt(X, Y, map).changeType(2); this.getBehaviorAt(X+1, Y, map).changeType(8);} // go right
+       }
+       else if(this.getBehaviorAt(X-1, Y, map).getType() == 2 && this.getBehaviorAt(X+1, Y, map).getType() != 2)
+       {
+    	   this.getBehaviorAt(X, Y, map).changeType(2); 
+    	   this.getBehaviorAt(X-1, Y, map).changeType(8);;
+       }
+       else if(this.getBehaviorAt(X-1, Y, map).getType() != 2 && this.getBehaviorAt(X+1, Y, map).getType() == 2)
+       {
+    	   this.getBehaviorAt(X, Y, map).changeType(2); 
+    	   this.getBehaviorAt(X+1, Y, map).changeType(8);
+       }
+    }
+    
+    public void updateButterfly(JFrame window, ArrayList<Behavior> map){
+    	 if(this.getBehaviorAt(X, Y-1, map).getType() == 5 || this.getBehaviorAt(X, Y+1, map).getType() == 5)
+         {
+      	   gameover();
+         }
+         else if(this.getBehaviorAt(X, Y-1, map).getType() == 2 && this.getBehaviorAt(X, Y+1, map).getType() == 2)
+         {
+      	   double resultat = Math.random() * ( 2 - 1 );
+      	   if(resultat >= 0.5) {this.getBehaviorAt(X, Y, map).changeType(2); this.getBehaviorAt(X, Y-1, map).changeType(9);} // go left
+      	   else {this.getBehaviorAt(X, Y, map).changeType(2); this.getBehaviorAt(X, Y+1, map).changeType(9);} // go right
+         }
+         else if(this.getBehaviorAt(X, Y-1, map).getType() == 2 && this.getBehaviorAt(X, Y+1, map).getType() != 2)
+         {
+      	   this.getBehaviorAt(X, Y, map).changeType(2); 
+      	   this.getBehaviorAt(X, Y-1, map).changeType(9);;
+         }
+         else if(this.getBehaviorAt(X, Y-1, map).getType() != 2 && this.getBehaviorAt(X, Y-1, map).getType() == 2)
+         {
+      	   this.getBehaviorAt(X, Y, map).changeType(2); 
+      	   this.getBehaviorAt(X, Y+1, map).changeType(9);
+         }
     }
 
     /**
@@ -417,6 +420,12 @@ public class Behavior extends JPanel{
                 break;
             case 7:
             	changeSprite(sprite.endBlock);
+            	break;
+            case 8:
+            	changeSprite(sprite.octopus);
+            	break;
+            case 9:
+            	changeSprite(sprite.butterfly);
             	break;
             default:
              

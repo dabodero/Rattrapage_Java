@@ -34,6 +34,11 @@ public abstract class Main {
      
      fenetre.repaint();
      Counter counter = new Counter();
+     
+     screen.getBehaviorAt(10, 11).changeType(9);
+     screen.getBehaviorAt(10, 12).changeType(2);
+     screen.getBehaviorAt(10, 13).changeType(2);
+     screen.getBehaviorAt(10, 10).changeType(2);
     
      int boucle=1;
      while(boucle==1)

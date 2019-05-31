@@ -154,26 +154,55 @@ public class Behavior extends JPanel{
     }
     
     public void updateButterfly(JFrame window, ArrayList<Behavior> map){
-    	 if(this.getBehaviorAt(X, Y-1, map).getType() == 5 || this.getBehaviorAt(X, Y+1, map).getType() == 5)
-         {
-      	   gameover();
-         }
-         else if(this.getBehaviorAt(X, Y-1, map).getType() == 2 && this.getBehaviorAt(X, Y+1, map).getType() == 2)
-         {
-      	   double resultat = Math.random() * ( 2 - 1 );
-      	   if(resultat >= 0.5) {this.getBehaviorAt(X, Y, map).changeType(2); this.getBehaviorAt(X, Y-1, map).changeType(9);} // go left
-      	   else {this.getBehaviorAt(X, Y, map).changeType(2); this.getBehaviorAt(X, Y+1, map).changeType(9);} // go right
-         }
-         else if(this.getBehaviorAt(X, Y-1, map).getType() == 2 && this.getBehaviorAt(X, Y+1, map).getType() != 2)
-         {
-      	   this.getBehaviorAt(X, Y, map).changeType(2); 
-      	   this.getBehaviorAt(X, Y-1, map).changeType(9);;
-         }
-         else if(this.getBehaviorAt(X, Y-1, map).getType() != 2 && this.getBehaviorAt(X, Y-1, map).getType() == 2)
-         {
-      	   this.getBehaviorAt(X, Y, map).changeType(2); 
-      	   this.getBehaviorAt(X, Y+1, map).changeType(9);
-         }
+    	int n;
+        n = (int)(Math.random() * 4);
+
+        if ( n == 0 && type_up == 2){
+            this.getBehaviorAt(X, Y -1, map).setUpdateID(this.getUpdateID());
+            this.getBehaviorAt(X, Y -1, map).changeType(9);
+            this.changeType(2);
+        }
+        else if (n == 0 && type_up == 5){
+            this.getBehaviorAt(X, Y -1, map).setUpdateID(this.getUpdateID());
+            this.getBehaviorAt(X, Y -1, map).changeType(9);
+            this.changeType(2);
+            gameover();
+        }
+        else if (n == 1 && type_down == 2){
+            this.getBehaviorAt(X, Y ++, map).setUpdateID(this.getUpdateID());
+            this.getBehaviorAt(X, Y ++, map).changeType(9);
+            this.changeType(2);
+        }
+        else if(n == 1 && type_down == 5){
+            this.getBehaviorAt(X, Y ++, map).setUpdateID(this.getUpdateID());
+            this.getBehaviorAt(X, Y ++, map).changeType(9);
+            this.changeType(2);
+            gameover();
+        }
+        else if (n == 2 && type_right == 2){
+            this.getBehaviorAt(X ++, Y, map).setUpdateID(this.getUpdateID());
+            this.getBehaviorAt(X ++, Y, map).changeType(9);
+            this.changeType(2);
+        }
+        else if (n == 2 && type_right == 5){
+            this.getBehaviorAt(X ++, Y, map).setUpdateID(this.getUpdateID());
+            this.getBehaviorAt(X ++, Y, map).changeType(9);
+            this.changeType(2);
+            gameover();
+        }
+        else if(n == 3 && type_left == 2){
+            this.getBehaviorAt(X --, Y, map).setUpdateID(this.getUpdateID());
+            this.getBehaviorAt(X --, Y, map).changeType(9);
+            this.changeType(2);
+        }
+        else if(n == 3 && type_left == 5){
+            this.getBehaviorAt(X --, Y, map).setUpdateID(this.getUpdateID());
+            this.getBehaviorAt(X --, Y, map).changeType(9);
+            this.changeType(2);
+            gameover();
+        }
+        else {updateButterfly(window, map);}
+
     }
 
     /**

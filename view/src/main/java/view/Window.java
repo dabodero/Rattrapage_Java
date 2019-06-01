@@ -19,7 +19,7 @@ import java.awt.geom.Line2D;
 import java.io.IOException;
 import java.awt.Color;
 public class Window{
-	private JFrame window;
+	public static JFrame window;
 	public Window(String text)
 	{
 		window = new JFrame();

@@ -1,6 +1,5 @@
 
-
-/*import static org.junit.Assert.*;
+import static org.junit.Assert.*;
 
 
 import javax.swing.JFrame;
@@ -15,7 +14,6 @@ import view.Window;
 
 
 public class ScreenTest {
-	String expected_title = "Boulder Dash";
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
 	}
@@ -26,9 +24,16 @@ public class ScreenTest {
 
 	@Before
 	public void setUp() throws Exception {
-		
-		Window window = new Window("yotlm");
-		
+		JFrame window_bis;
+		{
+			window_bis = new JFrame();
+			window_bis.setLocation(400, 10);
+			window_bis.pack();
+			window_bis.setVisible(true);
+			window_bis.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+			window_bis.setResizable(false);
+			window_bis.setSize(1000, 1020);
+		}
 		}
 	
 
@@ -39,8 +44,13 @@ public class ScreenTest {
 	@Test
 	public void testWindows() {
 		
+		Window window_bis;
+		window_bis = new Window("Boulder Dash");
 		
-		assertTrue("hello",(expected_title == Window.text));
+		
+		assertTrue(Window.window == window_bis.window);
 	}
 
-}*/
+	
+
+}

@@ -6,7 +6,7 @@ package model;
 import controller.BehaviorRock;
 class Rock extends BehaviorRock {
 
-	Rock(String spritePath_, int X_, int Y_) {
+	Rock(String spritePath_, int X_, int Y_) throws Exception {
 		super(spritePath_, X_, Y_);
 	}
 

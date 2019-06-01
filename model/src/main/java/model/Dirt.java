@@ -6,7 +6,7 @@ package model;
 import controller.BehaviorDirt;
 public class Dirt extends BehaviorDirt {
 
-	public Dirt(String spritePath_, int X_, int Y_) {
+	public Dirt(String spritePath_, int X_, int Y_) throws Exception {
 		super(spritePath_, X_, Y_);
 	}
 

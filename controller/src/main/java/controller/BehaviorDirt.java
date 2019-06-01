@@ -24,5 +24,3 @@ public class BehaviorDirt extends Behavior{
 			  } 
 			 }
 	}
-
-

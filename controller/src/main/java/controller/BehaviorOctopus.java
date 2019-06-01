@@ -8,7 +8,7 @@ public class BehaviorOctopus extends Behavior{
      * @param X_
      * @param Y_
      */
-    public BehaviorOctopus(String spritePath_, int X_, int Y_) throws Exception {
+	public BehaviorOctopus(String spritePath_, int X_, int Y_) throws Exception {
         super(spritePath_, X_, Y_);
         this.setType(8);
         if ((X_ < 0) || (X_> 16)) { 
@@ -20,5 +20,4 @@ public class BehaviorOctopus extends Behavior{
 			  } 
 			 } 
     }
-
 

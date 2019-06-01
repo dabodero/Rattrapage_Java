@@ -1,10 +1,8 @@
-package model;
+
 
 import static org.junit.Assert.*;
 
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.Statement;
+import java.util.ArrayList;
 
 import org.junit.After;
 import org.junit.AfterClass;
@@ -12,9 +10,9 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import com.mysql.jdbc.Connection;
+import controller.Behavior;
 
-public class ConnectorTest {
+public class ViewTest {
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
@@ -26,7 +24,6 @@ public class ConnectorTest {
 
 	@Before
 	public void setUp() throws Exception {
-		
 	}
 
 	@After
@@ -36,19 +33,13 @@ public class ConnectorTest {
 	@Test
 	public void test() {
 		
-		try {
-			
-		    try {		     
-		      DriverManager.getConnection(Connector.url, Connector.user, Connector.passwd);
-		    } catch (Exception e){
-		        e.printStackTrace();
-		        fail("Not yet implemented");
-		        System.exit(0);
-		        
-		        }
-		 
-		    }
-		   finally {
-       	}
-}
+		
+
+		Object[] expecteds = null;
+		Object[] actuals = null;
+		assertArrayEquals(expecteds, actuals);
+		
+		fail("Not yet implemented");
 	}
+
+}

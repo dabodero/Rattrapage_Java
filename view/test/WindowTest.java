@@ -13,7 +13,7 @@ import static org.junit.Assert.assertTrue;
 import view.Window;
 
 
-public class ScreenTest {
+public class WindowTest {
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
 	}

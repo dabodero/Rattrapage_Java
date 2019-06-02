@@ -4,6 +4,7 @@ import static org.junit.Assert.*;
 
 import java.awt.AWTException;
 import java.awt.Component;
+import java.awt.Dimension;
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
@@ -43,21 +44,19 @@ public class ScreenTest {
 
 	@Test
 	public void test() {
-		KeyListner key;
-		key = new KeyListner();
+		
 		 
 			
 			
 		
 		try {
-			char key_pressed = 'z';
-			if (key_pressed == 'z') {
-				assertEquals(1,2);
-			}
+			
+			fail("Should throw exception");
 		} catch (final Exception e) {
-			if (key.getKeyPressed()== 'w') {
-				assertEquals(1,1);
+			final String expected = "X out of range";
+			assertEquals(expected, e.getMessage());
 		}
+			}
 		
 		
 	    	
@@ -71,9 +70,9 @@ public class ScreenTest {
 		
 							 
 		 	
+	
 	}
-	}
-}
+
 
 
 

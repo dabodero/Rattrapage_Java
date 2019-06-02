@@ -21,7 +21,11 @@ public class Screen extends JPanel {
 	KeyListner key;
 	
 	public Dimension getPreferredSize() {
-		return new Dimension(1000, 1030);
+		
+				
+			
+						  
+			  return new Dimension(1000, 1030);
 	}
 	public void delay()
 	{

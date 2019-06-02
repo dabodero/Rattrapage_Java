@@ -3,20 +3,22 @@ package model;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
-
 import javax.swing.JFrame;
-
 import controller.SpritePath;
 import view.Screen;
 
+/**
+ * class Connector 
+ * make connexion between code and database
+ */
 public class Connector {
 
 /**
 *     Variable for position
 */	
 	
-	static int  X = 1;
-	static int  Y= 0;
+	private static int  X = 1;
+	private static int  Y = 0;
 	
 	
 /**
@@ -25,7 +27,16 @@ public class Connector {
 	final static String url = "jdbc:mysql://localhost:3306/jpublankproject";
     final static String user = "root";
     final static String passwd = "";
-    
+
+    /**
+     * run method
+     * @param screen_
+     *          the screen
+     * @param window
+     *          the window
+     * @param map
+     *          the map
+     */
 	public void run(Screen screen_, JFrame window, int map) {
         /*
         *Try to connect to the database
@@ -137,13 +148,9 @@ public class Connector {
             
     } catch (Exception e) {
       e.printStackTrace();
-    } ;
-        
-    
+    }
         
         
-        
-	 
-
-}}
+    }
+}
  

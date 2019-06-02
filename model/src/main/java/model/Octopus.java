@@ -2,17 +2,24 @@ package model;
 
 import controller.BehaviorOctopus;
 
+/**
+ * class ocopus son of BehaviorOctopus
+ */
 class Octopus extends BehaviorOctopus {
 
     /**
      * constructor
      *
      * @param spritePath_
+     * 			path of sprites
      * @param X_
+     * 			X position
      * @param Y_
-     * @throws Exception 
+     * 			Y position
+     * @throws Exception
+     * 			exception
      */
-    public Octopus(String spritePath_, int X_, int Y_) throws Exception {
+    Octopus(String spritePath_, int X_, int Y_) throws Exception {
         super(spritePath_, X_, Y_);
     }
 }

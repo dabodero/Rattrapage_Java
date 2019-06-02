@@ -1,12 +1,23 @@
-/**
- * @author Léo Sanchez leo.sanchez@viacesi.fr
- * @version 1.0
- */
 package model;
 import controller.BehaviorDirt;
-public class Dirt extends BehaviorDirt {
 
-	public Dirt(String spritePath_, int X_, int Y_) throws Exception {
+/**
+ * class Dirt son of BehaviorDirt
+ */
+class Dirt extends BehaviorDirt {
+
+	/**
+	 * constructor
+	 * @param spritePath_
+	 * 			path of sprites
+	 * @param X_
+	 * 			X position
+	 * @param Y_
+	 * 			Y position
+	 * @throws Exception
+	 * 			exception
+	 */
+	Dirt(String spritePath_, int X_, int Y_) throws Exception {
 		super(spritePath_, X_, Y_);
 	}
 

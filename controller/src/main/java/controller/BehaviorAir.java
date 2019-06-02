@@ -4,11 +4,13 @@
  */
 package controller;
 
-
+/**
+ * class BehaviorAir son of Behavior
+ */
 public class BehaviorAir extends Behavior{
 
 	/**
-	 * Behavior of Air
+	 * constructor
 	 * @param spritePath_
 	 * @param X_
 	 * @param Y_

@@ -4,14 +4,8 @@
  */
 package controller;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-
 /**
- * rock displacement class
+ * class BehaviorRock son of Behavior
  */
 public class BehaviorRock extends Behavior {
 

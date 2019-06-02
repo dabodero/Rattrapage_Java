@@ -2,7 +2,15 @@ package controller;
 
 import javax.swing.*;
 
+/**
+ * class overScreen
+ */
 public class OverScreen {
+
+    /**
+     * constructor
+     * @param msg
+     */
 	public OverScreen(String msg)
 	{
 		JFrame frame = new JFrame("Game is over !");  

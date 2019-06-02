@@ -1,10 +1,12 @@
 package controller;
 
+/**
+ * class BehaviorEndBlock son of Behavior
+ */
 public class BehaviorEndBlock extends Behavior{
 
     /**
      * constructor
-     *
      * @param spritePath_
      * @param X_
      * @param Y_

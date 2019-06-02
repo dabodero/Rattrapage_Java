@@ -1,9 +1,11 @@
 package controller;
 
+/**
+ * class BehaviorOctopus son of Behavior
+ */
 public class BehaviorOctopus extends Behavior{
     /**
      * constructor
-     *
      * @param spritePath_
      * @param X_
      * @param Y_

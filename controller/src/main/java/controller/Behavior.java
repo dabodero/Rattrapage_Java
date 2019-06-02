@@ -14,7 +14,9 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import controller.OverScreen;
 
-
+/**
+ * class Behavior mother of all element's Behavior
+ */
 public class Behavior extends JPanel{
 
     /** elements around entity type*/

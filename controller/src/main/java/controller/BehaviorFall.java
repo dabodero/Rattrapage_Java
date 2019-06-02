@@ -1,13 +1,16 @@
 package controller;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-
+/**
+ * class BehaviorFall son of Behavior
+ */
 public class BehaviorFall extends Behavior{
-
+	/**
+	 * constructor
+	 * @param spritePath_
+	 * @param X_
+	 * @param Y_
+	 * @throws Exception
+	 */
 	 public BehaviorFall (String spritePath_, int X_, int Y_) throws Exception {
 	        super(spritePath_, X_, Y_);
 	        this.setType(6);

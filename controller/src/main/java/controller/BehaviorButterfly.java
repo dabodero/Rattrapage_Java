@@ -5,11 +5,13 @@
 package controller;
 
 
-
+/**
+ * class BehaviorButterfly son of Behavior
+ */
 public class BehaviorButterfly extends Behavior{
 
 	/**
-	 * Behavior of butterfly
+	 * constructor
 	 * @param spritePath_
 	 * @param X_
 	 * @param Y_

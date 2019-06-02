@@ -4,22 +4,18 @@ import static org.junit.Assert.*;
 
 
 import java.sql.DriverManager;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 
+import controller.SpritePath;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import com.mysql.jdbc.Connection;
-
 import controller.BehaviorDiamond;
 import controller.BehaviorRock;
-import controller.BehaviorSpritePath;
-import model.Connector;
+
 public class ConnectorTest {
 
 	@BeforeClass
@@ -64,8 +60,8 @@ public void test2() throws Exception {
 	
 					    		
 		try {
-			BehaviorRock rock = new controller.BehaviorRock(new BehaviorSpritePath().rock, 15, 15);
-			BehaviorDiamond diamond = new controller.BehaviorDiamond(new BehaviorSpritePath().Diamond, 16, 16);
+			BehaviorRock rock = new controller.BehaviorRock(new SpritePath().rock, 15, 15);
+			BehaviorDiamond diamond = new controller.BehaviorDiamond(new SpritePath().Diamond, 16, 16);
 				
 			assertNotSame(rock,diamond);
 		} catch (SQLException e) {

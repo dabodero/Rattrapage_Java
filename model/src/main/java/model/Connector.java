@@ -3,12 +3,10 @@ package model;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
-import java.util.ArrayList;
 
 import javax.swing.JFrame;
 
-import controller.Behavior;
-import controller.BehaviorSpritePath;
+import controller.SpritePath;
 import view.Screen;
 
 public class Connector {
@@ -83,43 +81,43 @@ public class Connector {
     	switch (resultat) {
 
         case 'D' : 
-            Dirt dirt = new Dirt(new BehaviorSpritePath().unbreak_dirt,X,Y); //New Object (path,X,Y) 
+            Dirt dirt = new Dirt(new SpritePath().unbreak_dirt,X,Y); //New Object (path,X,Y)
             screen_.addCharacter(dirt, window);
 
     break;
 
      case 'W' :
-         Solid wall = new Solid(new BehaviorSpritePath().solid,X,Y);  //New Object (path,X,Y)
+         Solid wall = new Solid(new SpritePath().solid,X,Y);  //New Object (path,X,Y)
          screen_.addCharacter(wall, window);
          break;
      case 'J' :
-         Diamond diamond = new Diamond(new BehaviorSpritePath().Diamond,X,Y);  //New Object (path,X,Y)
+         Diamond diamond = new Diamond(new SpritePath().Diamond,X,Y);  //New Object (path,X,Y)
          screen_.addCharacter(diamond, window);
          break;
      case 'R' :
-         Rock rock = new Rock(new BehaviorSpritePath().rock,X,Y);    //New Object (path,X,Y)
+         Rock rock = new Rock(new SpritePath().rock,X,Y);    //New Object (path,X,Y)
          screen_.addCharacter(rock, window);
          break; 
 
      case 'A' :
-         Air air = new Air(new BehaviorSpritePath().broken_wall,X,Y);  //New Object (path,X,Y)
+         Air air = new Air(new SpritePath().broken_wall,X,Y);  //New Object (path,X,Y)
          screen_.addCharacter(air, window);
          break;
 
      case 'E' :
-       EndBlock exit = new EndBlock(new BehaviorSpritePath().endBlock,X,Y);  //New Object (path,X,Y)
+       EndBlock exit = new EndBlock(new SpritePath().endBlock,X,Y);  //New Object (path,X,Y)
        screen_.addCharacter(exit, window);
        break;
      case 'H' :
-       Hero hero = new Hero(new BehaviorSpritePath().hero,X,Y);  //New Object (path,X,Y)
+       Hero hero = new Hero(new SpritePath().hero,X,Y);  //New Object (path,X,Y)
        screen_.addCharacter(hero, window);
         break;
      case 'O' :
-        Octopus octopus= new Octopus (new BehaviorSpritePath().octopus,X,Y);
+        Octopus octopus= new Octopus (new SpritePath().octopus,X,Y);
         screen_.addCharacter(octopus,window);
         break;
      case 'B' :
-         Butterfly butterfly = new Butterfly (new BehaviorSpritePath().butterfly,X,Y);
+         Butterfly butterfly = new Butterfly (new SpritePath().butterfly,X,Y);
          screen_.addCharacter(butterfly, window);
          break;
          

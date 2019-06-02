@@ -5,14 +5,12 @@
 package controller;
 
 import java.awt.Image;
-import java.awt.event.*;
 import java.util.ArrayList;
 
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import controller.OverScreen;
 
 /**
  * class Behavior mother of all element's Behavior
@@ -401,7 +399,7 @@ public class Behavior extends JPanel{
  public void changeType(int newtype){
 
 	    setType(newtype);
-	    BehaviorSpritePath sprite = new BehaviorSpritePath();
+	    SpritePath sprite = new SpritePath();
 
         switch(newtype){
             case 0:

@@ -4,7 +4,7 @@
  */
 package controller;
 
-public class BehaviorSpritePath {
+public class SpritePath {
 
 	public String unbreak_dirt = "C:\\\\Users\\\\leosa\\\\Downloads\\\\projet_java\\\\sprite\\\\unbreak_dirt.png";
 	public String solid = "C:\\\\Users\\\\leosa\\\\Downloads\\\\projet_java\\\\sprite\\\\solid.png";

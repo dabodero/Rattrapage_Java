@@ -2,7 +2,7 @@ package controller;
 
 public class Counter {
 
-    int nbDiamond = 0;
+    static int nbDiamond = 0;
 
     public Counter() {
 
@@ -16,7 +16,7 @@ public class Counter {
         return nbDiamond;
     }
 
-    public void addDiamond(){
+    public static void addDiamond(){
         nbDiamond = nbDiamond +1;
     }
 }

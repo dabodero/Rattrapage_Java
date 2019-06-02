@@ -129,12 +129,12 @@ public class Behavior extends JPanel{
        	Y=Y_;
        	spritePath = spritePath_;
     }
-    
+
+
     /**
-     * Octopus update
-     * @param spritePath_
-     * @param X_
-     * @param Y_
+     *update octopus
+     * @param window
+     * @param map
      */
     public void updateOctopus(JFrame window, ArrayList<Behavior> map){
     	if(this.getBehaviorAt(X+1, Y, map).getType() == 5 || this.getBehaviorAt(X-1, Y, map).getType() == 5)
@@ -394,7 +394,6 @@ public class Behavior extends JPanel{
 
     /**
      * Change the type of the entity
-     * @param spritePath_
      * @param newtype
      */
  public void changeType(int newtype){

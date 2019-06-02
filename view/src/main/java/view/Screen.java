@@ -106,11 +106,13 @@ public class Screen extends JPanel {
                 System.out.println(counter.getNbDiamond());
             }
 
-    	    else if(screen.getBehaviorAt(last_hero_x, last_hero_y -1).getType() == 7 && counter.getNbDiamond() == 10){
+            else if (screen.getBehaviorAt(last_hero_x, last_hero_y-1).getType() == 7){
+           	 System.out.println("Tried to escape with "+counter.getNbDiamond());
+           	if(counter.getNbDiamond() == 10) {
                 screen.getBehaviorAt(last_hero_x, last_hero_y-1).changeType(5);
                 screen.getBehaviorAt(last_hero_x, last_hero_y).changeType(2);
-                Behavior.win();
-    	    }
+                Behavior.win();}
+            }
     	 }
 
      if(key.getKeyPressed() == 's') {
@@ -127,10 +129,12 @@ public class Screen extends JPanel {
              screen.getBehaviorAt(last_hero_x, last_hero_y).changeType(2);
              counter.addDiamond();
          }
-         else if(screen.getBehaviorAt(last_hero_x, last_hero_y +1).getType() == 7 && counter.getNbDiamond() == 10){
-             screen.getBehaviorAt(last_hero_x, last_hero_y +1).changeType(5);
+         else if (screen.getBehaviorAt(last_hero_x, last_hero_y+1).getType() == 7){
+        	 System.out.println("Tried to escape with "+counter.getNbDiamond());
+        	if(counter.getNbDiamond() == 10) {
+             screen.getBehaviorAt(last_hero_x, last_hero_y+1).changeType(5);
              screen.getBehaviorAt(last_hero_x, last_hero_y).changeType(2);
-             Behavior.win();
+             Behavior.win();}
          }
      }
      if(key.getKeyPressed() == 'q') {
@@ -154,10 +158,12 @@ public class Screen extends JPanel {
              screen.getBehaviorAt(last_hero_x -1, last_hero_y).changeType(5);
              screen.getBehaviorAt(last_hero_x, last_hero_y).changeType(2);
          }
-         else if (screen.getBehaviorAt(last_hero_x -1, last_hero_y).getType() == 7 && counter.getNbDiamond() == 10){
+         else if (screen.getBehaviorAt(last_hero_x -1, last_hero_y).getType() == 7){
+        	 System.out.println("Tried to escape with "+counter.getNbDiamond());
+        	if(counter.getNbDiamond() == 10) {
              screen.getBehaviorAt(last_hero_x - 1, last_hero_y).changeType(5);
              screen.getBehaviorAt(last_hero_x, last_hero_y).changeType(2);
-             Behavior.win();
+             Behavior.win();}
          }
  	 }
      if(key.getKeyPressed() == 'd') {
@@ -181,10 +187,12 @@ public class Screen extends JPanel {
              screen.getBehaviorAt(last_hero_x +1, last_hero_y).changeType(5);
              screen.getBehaviorAt(last_hero_x, last_hero_y).changeType(2);
          }
-         else if (screen.getBehaviorAt(last_hero_x +1, last_hero_y).getType() == 7 && counter.getNbDiamond() == 10){
+         else if (screen.getBehaviorAt(last_hero_x +1, last_hero_y).getType() == 7){
+        	 System.out.println("Tried to escape with "+counter.getNbDiamond());
+        	if(counter.getNbDiamond() == 10) {
              screen.getBehaviorAt(last_hero_x + 1, last_hero_y).changeType(5);
              screen.getBehaviorAt(last_hero_x, last_hero_y).changeType(2);
-             Behavior.win();
+             Behavior.win();}
          }
  	 }
 	}

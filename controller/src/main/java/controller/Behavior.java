@@ -12,6 +12,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import controller.OverScreen;
 
 public class Behavior extends JPanel{
 
@@ -127,82 +128,65 @@ public class Behavior extends JPanel{
        	Y=Y_;
        	spritePath = spritePath_;
     }
-
-
+    
+    /**
+     * Octopus update
+     * @param spritePath_
+     * @param X_
+     * @param Y_
+     */
     public void updateOctopus(JFrame window, ArrayList<Behavior> map){
-    	// kill hero only if it is on it's left or right
-       if(this.getBehaviorAt(X-1, Y, map).getType() == 5 || this.getBehaviorAt(X+1, Y, map).getType() == 5)
-       {
-    	   gameover();
-       }
-       else if(this.getBehaviorAt(X-1, Y, map).getType() == 2 && this.getBehaviorAt(X+1, Y, map).getType() == 2)
-       {
-    	   double resultat = Math.random() * ( 2 - 1 );
-    	   if(resultat >= 0.5) {this.getBehaviorAt(X, Y, map).changeType(2); this.getBehaviorAt(X-1, Y, map).changeType(8);} // go left
-    	   else {this.getBehaviorAt(X, Y, map).changeType(2); this.getBehaviorAt(X+1, Y, map).changeType(8);} // go right
-       }
-       else if(this.getBehaviorAt(X-1, Y, map).getType() == 2 && this.getBehaviorAt(X+1, Y, map).getType() != 2)
-       {
-    	   this.getBehaviorAt(X, Y, map).changeType(2); 
-    	   this.getBehaviorAt(X-1, Y, map).changeType(8);;
-       }
-       else if(this.getBehaviorAt(X-1, Y, map).getType() != 2 && this.getBehaviorAt(X+1, Y, map).getType() == 2)
-       {
-    	   this.getBehaviorAt(X, Y, map).changeType(2); 
-    	   this.getBehaviorAt(X+1, Y, map).changeType(8);
-       }
+    	if(this.getBehaviorAt(X+1, Y, map).getType() == 5 || this.getBehaviorAt(X-1, Y, map).getType() == 5)
+    	{
+    		gameover();
+    	}
+    	else if(this.getBehaviorAt(X-1, Y, map).getType() == 2 && this.getBehaviorAt(X+1, Y, map).getType() == 2)
+    	{
+    		double random = Math.round(Math.random());
+    		if(random==0) {this.getBehaviorAt(X-1, Y, map).changeType(8);}
+    		else if(random == 1) {this.getBehaviorAt(X+1, Y, map).changeType(8);}
+    		this.getBehaviorAt(X, Y, map).changeType(2);
+    	}
+    	else if(this.getBehaviorAt(X-1, Y, map).getType() == 2 && this.getBehaviorAt(X+1, Y, map).getType() != 2)
+    	{
+    		this.getBehaviorAt(X-1, Y, map).changeType(8);
+    		this.changeType(2);
+    	}
+    	else if(this.getBehaviorAt(X-1, Y, map).getType() != 2 && this.getBehaviorAt(X+1, Y, map).getType() == 2)
+    	{
+    		this.getBehaviorAt(X+1, Y, map).changeType(8);
+    		this.changeType(2);
+    	}
     }
     
+    /**
+     * Butterfly update
+     * @param spritePath_
+     * @param X_
+     * @param Y_
+     */
     public void updateButterfly(JFrame window, ArrayList<Behavior> map){
-    	int n;
-        n = (int)(Math.random() * 4);
-
-        if ( n == 0 && type_up == 2){
-            this.getBehaviorAt(X, Y -1, map).setUpdateID(this.getUpdateID());
-            this.getBehaviorAt(X, Y -1, map).changeType(9);
-            this.changeType(2);
-        }
-        else if (n == 0 && type_up == 5){
-            this.getBehaviorAt(X, Y -1, map).setUpdateID(this.getUpdateID());
-            this.getBehaviorAt(X, Y -1, map).changeType(9);
-            this.changeType(2);
-            gameover();
-        }
-        else if (n == 1 && type_down == 2){
-            this.getBehaviorAt(X, Y ++, map).setUpdateID(this.getUpdateID());
-            this.getBehaviorAt(X, Y ++, map).changeType(9);
-            this.changeType(2);
-        }
-        else if(n == 1 && type_down == 5){
-            this.getBehaviorAt(X, Y ++, map).setUpdateID(this.getUpdateID());
-            this.getBehaviorAt(X, Y ++, map).changeType(9);
-            this.changeType(2);
-            gameover();
-        }
-        else if (n == 2 && type_right == 2){
-            this.getBehaviorAt(X ++, Y, map).setUpdateID(this.getUpdateID());
-            this.getBehaviorAt(X ++, Y, map).changeType(9);
-            this.changeType(2);
-        }
-        else if (n == 2 && type_right == 5){
-            this.getBehaviorAt(X ++, Y, map).setUpdateID(this.getUpdateID());
-            this.getBehaviorAt(X ++, Y, map).changeType(9);
-            this.changeType(2);
-            gameover();
-        }
-        else if(n == 3 && type_left == 2){
-            this.getBehaviorAt(X --, Y, map).setUpdateID(this.getUpdateID());
-            this.getBehaviorAt(X --, Y, map).changeType(9);
-            this.changeType(2);
-        }
-        else if(n == 3 && type_left == 5){
-            this.getBehaviorAt(X --, Y, map).setUpdateID(this.getUpdateID());
-            this.getBehaviorAt(X --, Y, map).changeType(9);
-            this.changeType(2);
-            gameover();
-        }
-        else {updateButterfly(window, map);}
-
+    	if(this.getBehaviorAt(X, Y+1, map).getType() == 5 || this.getBehaviorAt(X, Y-1, map).getType() == 5)
+    	{
+    		gameover();
+    	}
+    	else if(this.getBehaviorAt(X, Y-1, map).getType() == 2 && this.getBehaviorAt(X, Y+1, map).getType() == 2)
+    	{
+    		double random = Math.round(Math.random());
+    		if(random==0) {this.getBehaviorAt(X, Y-1, map).changeType(8);}
+    		else if(random == 1) {this.getBehaviorAt(X, Y+1, map).changeType(8);}
+    		this.getBehaviorAt(X, Y, map).changeType(2);
+    	}
+    	else if(this.getBehaviorAt(X, Y-1, map).getType() == 2 && this.getBehaviorAt(X, Y+1, map).getType() != 2)
+    	{
+    		this.getBehaviorAt(X, Y-1, map).changeType(8);
+    		this.changeType(2);
+    	}
+    	else if(this.getBehaviorAt(X, Y-1, map).getType() != 2 && this.getBehaviorAt(X, Y+1, map).getType() == 2)
+    	{
+    		this.getBehaviorAt(X, Y+1, map).changeType(8);
+    		this.changeType(2);
+    	}
     }
 
     /**
@@ -273,13 +257,6 @@ public class Behavior extends JPanel{
                 this.getBehaviorAt(X, Y -1, map).changeType(2);
             }
         }
-    }
-
-
-    public void updateHero(JFrame window, ArrayList<Behavior> map, int X, int Y)
-    {
-    	this.getBehaviorAt(X, Y, map).changeType(5);
-    	this.changeType(2);
     }
     
     /**
@@ -414,6 +391,11 @@ public class Behavior extends JPanel{
 	}
 
 
+    /**
+     * Change the type of the entity
+     * @param spritePath_
+     * @param newtype
+     */
  public void changeType(int newtype){
 
 	    setType(newtype);
@@ -464,14 +446,19 @@ public class Behavior extends JPanel{
 
     }
 
+ 
+ /**
+  * Game over
+  */
     private static void gameover(){
-    	System.out.println("GAMEOVER");
-    	System.exit(0);
+    	OverScreen gameover = new OverScreen("You lose, the game is over you should retry :)");
     }
 
+    /**
+     * Win
+     */
     public static void win(){
-    	System.out.println("WIN !");
-    	System.exit(0);
+    	OverScreen gameover = new OverScreen("You won congratulations ! :)");
     }
     
 }

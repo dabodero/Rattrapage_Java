@@ -12,7 +12,6 @@ public class SpritePath {
 	public String Diamond = "C:\\\\Users\\\\leosa\\\\Downloads\\\\projet_java\\\\sprite\\\\Diamand.png";
 	public String rock = "C:\\\\Users\\\\leosa\\\\Downloads\\\\projet_java\\\\sprite\\\\rock.png";
 	public String hero = "C:\\\\Users\\\\leosa\\\\Downloads\\\\projet_java\\\\sprite\\\\hero.png";
-	public String moving = "C:\\\\Users\\\\leosa\\\\Downloads\\\\projet_java\\\\sprite\\\\moving.png";
 	public String endBlock= "C:\\\\Users\\\\leosa\\\\Downloads\\\\projet_java\\\\sprite\\\\endBlock.png";
     public String octopus = "C:\\\\Users\\\\leosa\\\\Downloads\\\\projet_java\\\\sprite\\\\octopus.png";
 	public String butterfly = "C:\\\\Users\\\\leosa\\\\Downloads\\\\projet_java\\\\sprite\\\\butterfly.png";

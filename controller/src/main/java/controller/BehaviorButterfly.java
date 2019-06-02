@@ -1,6 +1,20 @@
+/**
+ * @author Basile LECOUTURIER basile.lecouturier@viacesi.fr
+ * @version 1.0
+ */
 package controller;
 
+
+
 public class BehaviorButterfly extends Behavior{
+
+	/**
+	 * Behavior of butterfly
+	 * @param spritePath_
+	 * @param X_
+	 * @param Y_
+	 * @throws Exception
+	 */
 	public BehaviorButterfly(String spritePath_, int X_, int Y_) throws Exception {
         super(spritePath_, X_, Y_);
         this.setType(9);

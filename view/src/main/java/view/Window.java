@@ -19,9 +19,10 @@ import java.awt.geom.Line2D;
 import java.io.IOException;
 import java.awt.Color;
 public class Window{
-	public JFrame window;
-	public Window(String text)
+	static JFrame window;
+	public Window(String text) 
 	{
+		
 		window = new JFrame();
 		window.setTitle(text);
 		window.setLocation(400, 10);
@@ -30,6 +31,7 @@ public class Window{
 		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		window.setResizable(false);
 		window.setSize(1000, 1020);
+		
 	}
 	public JFrame getWindow() {return window;}
 	

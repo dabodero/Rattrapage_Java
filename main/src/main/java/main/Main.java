@@ -21,8 +21,9 @@ public abstract class Main {
      *
      * @param args
      *            the arguments
+     * @throws Exception 
      */
-    public static void main(final String[] args) {
+    public static void main(final String[] args) throws Exception {
     	
      Window fenetre = new Window("Boulder Dash");
      

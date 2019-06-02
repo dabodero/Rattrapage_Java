@@ -137,6 +137,7 @@ public class Screen extends JPanel {
              Behavior.win();}
          }
      }
+     
      if(key.getKeyPressed() == 'q') {
          int last_hero_x = screen.getBehaviorByType(5).getX();
          int last_hero_y = screen.getBehaviorByType(5).getY();

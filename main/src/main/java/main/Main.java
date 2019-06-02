@@ -41,6 +41,7 @@ public abstract class Main {
      screen.getBehaviorAt(11, 11).changeType(2);
      screen.getBehaviorAt(12, 11).changeType(2);
     
+     
      int boucle=1;
      while(boucle==1)
      { 	 

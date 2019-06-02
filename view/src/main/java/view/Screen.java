@@ -1,7 +1,3 @@
-/**
- * @author Léo Sanchez leo.sanchez@viacesi.fr
- * @version 1.0
- */
 package view;
 import javax.swing.*;
 import java.awt.Color;
@@ -10,15 +6,13 @@ import java.awt.Graphics;
 import java.awt.Image;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.List;
-
 import controller.Behavior;
 import controller.Counter;
 import controller.KeyListner;
 
 public class Screen extends JPanel {
 	
-	KeyListner key;
+	private KeyListner key;
 	
 	public Dimension getPreferredSize() {
 		
@@ -102,7 +96,7 @@ public class Screen extends JPanel {
             else if (screen.getBehaviorAt(last_hero_x, last_hero_y -1).getType() == 3){
                 screen.getBehaviorAt(last_hero_x, last_hero_y-1).changeType(5);
                 screen.getBehaviorAt(last_hero_x, last_hero_y).changeType(2);
-                counter.addDiamond();
+                Counter.addDiamond();
                 System.out.println(counter.getNbDiamond());
             }
 
@@ -127,7 +121,7 @@ public class Screen extends JPanel {
          if (screen.getBehaviorAt(last_hero_x, last_hero_y +1).getType() == 3){
              screen.getBehaviorAt(last_hero_x, last_hero_y +1).changeType(5);
              screen.getBehaviorAt(last_hero_x, last_hero_y).changeType(2);
-             counter.addDiamond();
+             Counter.addDiamond();
          }
          else if (screen.getBehaviorAt(last_hero_x, last_hero_y+1).getType() == 7){
         	 System.out.println("Tried to escape with "+counter.getNbDiamond());
@@ -151,7 +145,7 @@ public class Screen extends JPanel {
          else if (screen.getBehaviorAt(last_hero_x -1, last_hero_y).getType() == 3) {
              screen.getBehaviorAt(last_hero_x - 1, last_hero_y).changeType(5);
              screen.getBehaviorAt(last_hero_x, last_hero_y).changeType(2);
-             counter.addDiamond();
+             Counter.addDiamond();
          }
 
          else if (screen.getBehaviorAt(last_hero_x -1, last_hero_y).getType() == 4 && screen.getBehaviorAt(last_hero_x -2, last_hero_y).getType() == 2){
@@ -179,7 +173,7 @@ public class Screen extends JPanel {
          if (screen.getBehaviorAt(last_hero_x +1, last_hero_y).getType() == 3) {
              screen.getBehaviorAt(last_hero_x + 1, last_hero_y).changeType(5);
              screen.getBehaviorAt(last_hero_x, last_hero_y).changeType(2);
-             counter.addDiamond();
+             Counter.addDiamond();
 
          }
 
@@ -198,7 +192,7 @@ public class Screen extends JPanel {
  	 }
 	}
 	
-	public Behavior getBehaviorByType(int type)
+	private Behavior getBehaviorByType(int type)
 	{
 		int i = 0;
 		int max = map.size();
@@ -243,6 +237,6 @@ public class Screen extends JPanel {
 	{
 		behavior.getJLabel().setVisible(true);
 	}
-	long update_id;
-	ArrayList<Behavior> map; 
+	private long update_id;
+	private ArrayList<Behavior> map;
 }

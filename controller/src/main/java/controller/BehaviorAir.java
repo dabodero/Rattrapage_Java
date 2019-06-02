@@ -4,14 +4,16 @@
  */
 package controller;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import javax.swing.JFrame;
-import javax.swing.JPanel;
 
 public class BehaviorAir extends Behavior{
 
+	/**
+	 * Behavior of Air
+	 * @param spritePath_
+	 * @param X_
+	 * @param Y_
+	 * @throws Exception
+	 */
 	public BehaviorAir(String spritePath_, int X_, int Y_) throws Exception {
 		super(spritePath_, X_, Y_);
 		this.setType(2);

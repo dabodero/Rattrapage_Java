@@ -2,8 +2,10 @@ package model;
 
 import static org.junit.Assert.*;
 
+
 import java.sql.DriverManager;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 
 import org.junit.After;
@@ -14,6 +16,10 @@ import org.junit.Test;
 
 import com.mysql.jdbc.Connection;
 
+import controller.BehaviorDiamond;
+import controller.BehaviorRock;
+import controller.BehaviorSpritePath;
+import model.Connector;
 public class ConnectorTest {
 
 	@BeforeClass
@@ -34,9 +40,9 @@ public class ConnectorTest {
 	}
 
 	@Test
-	public void test() {
+	public void test1() {
 		
-		try {
+		
 			
 		    try {		     
 		      DriverManager.getConnection(Connector.url, Connector.user, Connector.passwd);
@@ -48,7 +54,30 @@ public class ConnectorTest {
 		        }
 		 
 		    }
-		   finally {
-       	}
-}
+		 
+
+	
+
+
+@Test
+public void test2() throws Exception {
+	
+					    		
+		try {
+			BehaviorRock rock = new controller.BehaviorRock(new BehaviorSpritePath().rock, 15, 15);
+			BehaviorDiamond diamond = new controller.BehaviorDiamond(new BehaviorSpritePath().Diamond, 16, 16);
+				
+			assertNotSame(rock,diamond);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+
+		
+		}
 	}
+
+
+
+

@@ -20,6 +20,7 @@ public class Connector {
 	static int  X = 1;
 	static int  Y= 0;
 	
+	
 /**
 *	identifiers for connection to DB
 */  
@@ -121,6 +122,10 @@ public class Connector {
          Butterfly butterfly = new Butterfly (new BehaviorSpritePath().butterfly,X,Y);
          screen_.addCharacter(butterfly, window);
          break;
+         
+     default :
+    	 
+    	 System.out.println("False Char");
 
     	}
     	

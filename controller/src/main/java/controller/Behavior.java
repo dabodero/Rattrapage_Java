@@ -1,7 +1,3 @@
-/**
- * @author Léo Sanchez leo.sanchez@viacesi.fr
- * @version 1.0
- */
 package controller;
 
 import java.awt.Image;
@@ -54,7 +50,6 @@ public class Behavior extends JPanel{
 		
 		/**
          * The update method, update the position of the sprites.
-         * @version 1.0
          */
         public void update(int X_, int Y_, JFrame window, boolean haveToRepaint) 
         {
@@ -74,7 +69,9 @@ public class Behavior extends JPanel{
     /**
      * refresh the map
      * @param window
+     *          the window
      * @param map
+     *          the map
      */
         public void update(JFrame window, ArrayList<Behavior> map)
         {
@@ -120,8 +117,11 @@ public class Behavior extends JPanel{
     /**
      * constructor
      * @param spritePath_
+     *          path of sprites
      * @param X_
+     *          X position
      * @param Y_
+     *          Y position
      */
     public Behavior(String spritePath_, int X_, int Y_)
     {
@@ -134,9 +134,11 @@ public class Behavior extends JPanel{
     /**
      *update octopus
      * @param window
+     *          the window
      * @param map
+     *          the map
      */
-    public void updateOctopus(JFrame window, ArrayList<Behavior> map){
+    private void updateOctopus(JFrame window, ArrayList<Behavior> map){
     	if(this.getBehaviorAt(X+1, Y, map).getType() == 5 || this.getBehaviorAt(X-1, Y, map).getType() == 5)
     	{
     		gameover();
@@ -159,14 +161,15 @@ public class Behavior extends JPanel{
     		this.changeType(2);
     	}
     }
-    
+
     /**
-     * Butterfly update
-     * @param spritePath_
-     * @param X_
-     * @param Y_
+     * update Butterfly
+     * @param window
+     *          the window
+     *@param map
+     *          the map
      */
-    public void updateButterfly(JFrame window, ArrayList<Behavior> map){
+    private void updateButterfly(JFrame window, ArrayList<Behavior> map){
     	if(this.getBehaviorAt(X, Y+1, map).getType() == 5 || this.getBehaviorAt(X, Y-1, map).getType() == 5)
     	{
     		gameover();
@@ -193,7 +196,9 @@ public class Behavior extends JPanel{
     /**
      * gravity of the rock
      * @param window
-     * @param map
+     *          the window
+     *@param map
+     *          the map
      */
     private void updateRock(JFrame window, ArrayList<Behavior> map)
     {
@@ -263,7 +268,9 @@ public class Behavior extends JPanel{
     /**
      * gravity of the Diamond
      * @param window
-     * @param map
+     *          the window
+     *@param map
+     *          the map
      */
     private void updateDiamond(JFrame window, ArrayList<Behavior> map)
     {
@@ -333,6 +340,7 @@ public class Behavior extends JPanel{
     /**
      * getters and setters
      * @return
+     *        type of each type around
      */
     public int getType() {return type;}
 		public int getTypeUp() {return type_up;}
@@ -353,6 +361,7 @@ public class Behavior extends JPanel{
     /**
      * change sprite of an element
      * @param pathToSprite
+     *              path of sprites
      */
     private void changeSprite(String pathToSprite)
     {
@@ -363,6 +372,7 @@ public class Behavior extends JPanel{
     /**
      * Delete the behavior
      * @param panel
+     *          window part
      */
     public void deleteBehavior(JPanel panel)
     {
@@ -371,8 +381,11 @@ public class Behavior extends JPanel{
     /**
      * get the behavior at a specific location
      * @param X
+     *          X position
      * @param Y
+     *          Y position
      * @param map
+     *          map
      */
     private Behavior getBehaviorAt(int X, int Y, ArrayList<Behavior> map)
 	{
@@ -395,6 +408,7 @@ public class Behavior extends JPanel{
     /**
      * Change the type of the entity
      * @param newtype
+     *          new type
      */
  public void changeType(int newtype){
 

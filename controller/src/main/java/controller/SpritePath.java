@@ -1,7 +1,4 @@
-/**
- * @author Léo Sanchez leo.sanchez@viacesi.fr
- * @version 1.0
- */
+
 package controller;
 
 public class SpritePath {

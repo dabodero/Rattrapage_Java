@@ -5,13 +5,14 @@ import javax.swing.*;
 /**
  * class overScreen
  */
-public class OverScreen {
+class OverScreen {
 
     /**
      * constructor
      * @param msg
+     *          the message
      */
-	public OverScreen(String msg)
+    OverScreen(String msg)
 	{
 		JFrame frame = new JFrame("Game is over !");  
         JPanel panel = new JPanel();  

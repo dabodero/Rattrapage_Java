@@ -1,27 +1,18 @@
-/**
- * @author Basile Lecouturier basile.lecouturier@viacesi.fr
- * @version 1.0
- */
 package controller;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-import controller.BehaviorHeros;
-
 import javax.swing.*;
 
 /**
- * observer key listner
+ * observer key listener
  */
  public class KeyListner implements KeyListener {
 
     /**
-     * key pressed checking
-     * @param key
-     * @return pressed key
+     * key witch is pressed
      */
-	 
-	 char key_pressed;
+    private char key_pressed;
 
     /**
      * constructor
@@ -33,6 +24,7 @@ import javax.swing.*;
     /**
      * mandatory method
      * @param e
+     *         event
      */
      public void keyTyped(KeyEvent e) {
     	 
@@ -41,6 +33,7 @@ import javax.swing.*;
     /**
      * mandatory method
      * @param e
+     *          event
      */
      public void keyPressed(KeyEvent e) {
     	 key_pressed = e.getKeyChar();
@@ -49,12 +42,14 @@ import javax.swing.*;
     /**
      * getter of KeyPressed
      * @return
+     *          key_pressed
      */
      public char getKeyPressed() {return key_pressed;}
 
     /**
      * mandatory method
      * @param e
+     *          event
      */
      public void keyReleased(KeyEvent e) {
     	 key_pressed = '%';
@@ -63,6 +58,7 @@ import javax.swing.*;
     /**
      * initialisation of key listener
      * @param Window
+     *              window
      */
     public void init_key_listner(JFrame Window){
         Window.addKeyListener(this);

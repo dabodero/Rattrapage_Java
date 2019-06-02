@@ -7,8 +7,6 @@ import controller.*;
 import view.Window;
 import view.Screen;
 import model.Connector;
-import model.Dirt;
-import model.EndBlock;
 
 /**
  * The Class Main.

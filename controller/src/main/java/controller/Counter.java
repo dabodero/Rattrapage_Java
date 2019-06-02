@@ -1,7 +1,3 @@
-/**
- * @author Basile LECOUTURIER basile.lecouturier@viacesi.fr
- * @version 1.0
- */
 package controller;
 
 /**
@@ -12,7 +8,7 @@ public class Counter {
     /**
      * number of diamond
      */
-    static int nbDiamond = 0;
+    private static int nbDiamond = 0;
 
     /**
      * constructor
@@ -24,6 +20,7 @@ public class Counter {
     /**
      * getter
      * @return
+     *      nbDiamond
      */
     public int getNbDiamond() {
         return nbDiamond;

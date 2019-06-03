@@ -14,7 +14,7 @@ Run some quality and performances tests
 
 **Deliverable**
 
-All the deliverables are in the folder "deliverables". We have Componants Diagram,Packages Diagram,Class Diagram,Surefire Report,JXR,GIT Report
+All the deliverables are in the folder "deliverables". We have Componants Diagram,Packages Diagram,Class Diagram,Surefire Report,JXR,GIT Report.
 
 **License**
 

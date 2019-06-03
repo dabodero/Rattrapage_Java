@@ -7,7 +7,7 @@ import java.awt.Color;
  * class window
  */
 public class Window{
-	private static JFrame window;
+	static JFrame window;
 
 	/**
 	 * constructor

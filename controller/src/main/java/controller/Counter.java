@@ -8,7 +8,7 @@ public class Counter {
     /**
      * number of diamond
      */
-    private static int nbDiamond = 0;
+    static int nbDiamond = 0;
 
     /**
      * constructor

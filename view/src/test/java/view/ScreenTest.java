@@ -18,7 +18,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import controller.Behavior;
-import controller.BehaviorSpritePath;
+import controller.SpritePath;
 import controller.KeyListner;
 import junit.framework.Assert;
 import view.Screen;

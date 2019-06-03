@@ -50,10 +50,14 @@ public class Behavior extends JPanel{
 		
 		/**
 	     * The update method, updates the sprite.
-	     * @param X
-	     * @param Y
+	     * @param X_
+         *          X position
+	     * @param Y_
+         *          Y position
 	     * @param window
+         *             the window
 	     * @param haveToRepaint
+         *              refreshment
 	     */
         public void update(int X_, int Y_, JFrame window, boolean haveToRepaint) 
         {
@@ -291,7 +295,7 @@ public class Behavior extends JPanel{
             gameover();
         }
 
-        else if(type_down_right == 2 && type_right == 2 && (type_down == 4 || type_down == 1)){
+        else if(type_down_right == 2 && type_right == 2 && (type_down == 4 || type_down == 1 || type_down == 3)){
 
             if (type_up == 6){
                 this.getBehaviorAt(X, Y -1, map).setUpdateID(this.getUpdateID());
@@ -301,7 +305,7 @@ public class Behavior extends JPanel{
             this.getBehaviorAt(X +1, Y+1, map).changeType(3);
             this.changeType(6);
         }
-        else if(type_down_right == 5 && type_right == 2 && (type_down == 4 || type_down == 1)){
+        else if(type_down_right == 5 && type_right == 2 && (type_down == 4 || type_down == 1 || type_down == 3)){
 
             this.getBehaviorAt(X +1, Y+1, map).setUpdateID(this.getUpdateID());
             this.getBehaviorAt(X +1, Y+1, map).changeType(3);
@@ -309,7 +313,7 @@ public class Behavior extends JPanel{
             gameover();
         }
 
-        else if(type_down_left == 2 && type_left == 2 && (type_down == 4 || type_down == 1)){
+        else if(type_down_left == 2 && type_left == 2 && (type_down == 4 || type_down == 1 || type_down == 3)){
 
             if (type_up == 6){
                 this.getBehaviorAt(X, Y -1, map).setUpdateID(this.getUpdateID());
@@ -319,7 +323,7 @@ public class Behavior extends JPanel{
             this.getBehaviorAt(X -1, Y+1, map).changeType(3);
             this.changeType(6);
         }
-        else if(type_down_left == 5 && type_left == 2 && (type_down == 4 || type_down == 1)){
+        else if(type_down_left == 5 && type_left == 2 && (type_down == 4 || type_down == 1 || type_down == 3)){
 
             this.getBehaviorAt(X -1, Y+1, map).setUpdateID(this.getUpdateID());
             this.getBehaviorAt(X -1, Y+1, map).changeType(3);

@@ -50,14 +50,10 @@ public class Behavior extends JPanel{
 		
 		/**
 	     * The update method, updates the sprite.
-	     * @param X_
-         *          position X_
-	     * @param Y_
-         *          position Y_
+	     * @param X
+	     * @param Y
 	     * @param window
-         *              the window
 	     * @param haveToRepaint
-         *                  refreshment
 	     */
         public void update(int X_, int Y_, JFrame window, boolean haveToRepaint) 
         {

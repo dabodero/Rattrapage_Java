@@ -49,9 +49,9 @@ public class WindowTest {
 
 	@Test
 	public void test() {
-// ne fonctionne pas, trouve null
-		assertEquals(expected_Witdth,Window.window.getWidth());
-		assertEquals(expected_Height,Window.window.getHeight());
+		
+		assertEquals(expected_Witdth,this.window.getWidth());
+		assertEquals(expected_Height,this.window.getHeight());
 	}
 
 }

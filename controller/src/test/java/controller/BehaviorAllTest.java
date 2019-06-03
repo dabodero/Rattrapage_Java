@@ -32,7 +32,7 @@ public class BehaviorAllTest {
 	public void test() {
 		
 		try {
-			new controller.BehaviorRock(new SpritePath().rock, 15, 15);
+			new controller.BehaviorRock(new SpritePath().rock, 150, 15);
 			fail("Should throw exception");
 		} catch (final Exception e) {
 			final String expected = "X out of range";

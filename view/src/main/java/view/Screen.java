@@ -49,6 +49,7 @@ public class Screen extends JPanel {
 	 * constructor
 	 *
 	 * @param window
+	 * 				window
 	 */
 	public Screen(JFrame window)
 	{
@@ -62,7 +63,9 @@ public class Screen extends JPanel {
 	/**
 	 * Add a character to the screen
 	 * @param character
+	 * 					character
 	 * @param window
+	 * 					window
 	 */
 	public void addCharacter(Behavior character, JFrame window)
 	{
@@ -76,6 +79,7 @@ public class Screen extends JPanel {
 	
 	/**
 	 * Get the map
+	 * @return map
 	 */
 	public ArrayList<Behavior> getMapBehavior(){return map;}
 
@@ -90,7 +94,10 @@ public class Screen extends JPanel {
 	 * Get behavior at specific location
 	 *
 	 * @param X
+	 * 			X
 	 * @param Y
+	 * 			Y
+	 * @return behavior
 	 */
 	public Behavior getBehaviorAt(int X, int Y)
 	{
@@ -114,7 +121,9 @@ public class Screen extends JPanel {
 	 * Update hero on map
 	 *
 	 * @param screen
+	 * 				screen
 	 * @param counter
+	 * 				counter
 	 */
 	public void updateHeroOnMap(Screen screen, Counter counter)
 	{
@@ -231,6 +240,8 @@ public class Screen extends JPanel {
 	 * getBehavior by it's type
 	 *
 	 * @param type
+	 * 				type
+	 * @return behavior
 	 */
 	private Behavior getBehaviorByType(int type)
 	{
@@ -276,7 +287,8 @@ public class Screen extends JPanel {
 	
 	/**
 	 * Set a behavior invisible
-	 * @param behavior
+	 * @param behavior	
+	 * 					behavior
 	 */
 	public void setBehaviorInvisible(Behavior behavior)
 	{
@@ -286,6 +298,7 @@ public class Screen extends JPanel {
 	/**
 	 * Set a behavior visible
 	 * @param behavior
+	 * 					behavior
 	 */
 	public void setBehaviorVisible(Behavior behavior)
 	{

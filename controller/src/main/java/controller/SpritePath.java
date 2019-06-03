@@ -1,4 +1,7 @@
-
+/**
+ * @author Léo Sanchez leo.sanchez@viacesi.fr
+ * @version 1.0
+ */
 package controller;
 
 public class SpritePath {
@@ -12,4 +15,6 @@ public class SpritePath {
 	public String endBlock= "C:\\\\Users\\\\leosa\\\\Downloads\\\\projet_java\\\\sprite\\\\endBlock.png";
     public String octopus = "C:\\\\Users\\\\leosa\\\\Downloads\\\\projet_java\\\\sprite\\\\octopus.png";
 	public String butterfly = "C:\\\\Users\\\\leosa\\\\Downloads\\\\projet_java\\\\sprite\\\\butterfly.png";
+	public String overGameWin = "C:\\\\Users\\\\leosa\\\\Downloads\\\\projet_java\\\\sprite\\\\overGameWin.png";
+	public String overGameLose = "C:\\\\Users\\\\leosa\\\\Downloads\\\\projet_java\\\\sprite\\\\overGameLose.png";
 }

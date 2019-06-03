@@ -49,8 +49,12 @@ public class Behavior extends JPanel{
 		private JLabel label;
 		
 		/**
-         * The update method, update the position of the sprites.
-         */
+	     * The update method, updates the sprite.
+	     * @param X
+	     * @param Y
+	     * @param window
+	     * @param haveToRepaint
+	     */
         public void update(int X_, int Y_, JFrame window, boolean haveToRepaint) 
         {
         	X=X_-1; 
@@ -63,8 +67,6 @@ public class Behavior extends JPanel{
     		window.repaint();
     		}
         }
-
-
 
     /**
      * refresh the map
@@ -111,9 +113,6 @@ public class Behavior extends JPanel{
             }
         }
 
-
-
-
     /**
      * constructor
      * @param spritePath_
@@ -129,7 +128,6 @@ public class Behavior extends JPanel{
        	Y=Y_;
        	spritePath = spritePath_;
     }
-
 
     /**
      *update octopus
@@ -166,7 +164,7 @@ public class Behavior extends JPanel{
      * update Butterfly
      * @param window
      *          the window
-     *@param map
+     * @param map
      *          the map
      */
     private void updateButterfly(JFrame window, ArrayList<Behavior> map){
@@ -197,7 +195,7 @@ public class Behavior extends JPanel{
      * gravity of the rock
      * @param window
      *          the window
-     *@param map
+     * @param map
      *          the map
      */
     private void updateRock(JFrame window, ArrayList<Behavior> map)
@@ -465,14 +463,14 @@ public class Behavior extends JPanel{
   * Game over
   */
     private static void gameover(){
-    	OverScreen gameover = new OverScreen("You lose, the game is over you should retry :)");
+    	OverScreen gameover = new OverScreen(false);
     }
 
     /**
      * Win
      */
     public static void win(){
-    	OverScreen gameover = new OverScreen("You won congratulations ! :)");
+    	OverScreen gameover = new OverScreen(true);
     }
     
 }

@@ -14,13 +14,17 @@ public class Screen extends JPanel {
 	
 	private KeyListner key;
 	
+	/**
+	 * Get the appropriate size
+	 *
+	 */
 	public Dimension getPreferredSize() {
-		
-				
-			
-						  
-			  return new Dimension(1000, 1030);
+		return new Dimension(1000, 1030);
 	}
+	
+	/**
+	 * Make a sleep
+	 */
 	public void delay()
 	{
 		try{Thread.sleep(200);}catch(InterruptedException e){System.out.println(e);} 
@@ -41,6 +45,11 @@ public class Screen extends JPanel {
 			}
 	}
 	
+	/**
+	 * constructor
+	 *
+	 * @param window
+	 */
 	public Screen(JFrame window)
 	{
 		this.setLayout(null);
@@ -50,6 +59,11 @@ public class Screen extends JPanel {
 		key.init_key_listner(window);
 	}
 	
+	/**
+	 * Add a character to the screen
+	 * @param character
+	 * @param window
+	 */
 	public void addCharacter(Behavior character, JFrame window)
 	{
 		character.setImageIcon(new ImageIcon(new ImageIcon(character.getSpritePath()).getImage().getScaledInstance(62,62, Image.SCALE_DEFAULT)));
@@ -60,9 +74,23 @@ public class Screen extends JPanel {
 		map.add(character);
 	}
 	
+	/**
+	 * Get the map
+	 */
 	public ArrayList<Behavior> getMapBehavior(){return map;}
+	/**
+	 * Set the map to another
+	 *
+	 * @param map
+	 */
 	public void setMap(ArrayList<Behavior> map_) {Collections.copy(map, map_);}
 	
+	/**
+	 * Get behavior at specific location
+	 *
+	 * @param X
+	 * @param Y
+	 */
 	public Behavior getBehaviorAt(int X, int Y)
 	{
 		int i = 0;
@@ -81,6 +109,12 @@ public class Screen extends JPanel {
 		return new Behavior("", 1, 1); // Default
 	}
 	
+	/**
+	 * Update hero on map
+	 *
+	 * @param screen
+	 * @param counter
+	 */
 	public void updateHeroOnMap(Screen screen, Counter counter)
 	{
 		if(key.getKeyPressed() == 'z') {
@@ -192,6 +226,11 @@ public class Screen extends JPanel {
  	 }
 	}
 	
+	/**
+	 * getBehavior by it's type
+	 *
+	 * @param type
+	 */
 	private Behavior getBehaviorByType(int type)
 	{
 		int i = 0;
@@ -210,6 +249,11 @@ public class Screen extends JPanel {
 		return new Behavior("", 1, 1); // Default
 	}
 	
+	/**
+	 * update all the behavior
+	 *
+	 * @param window
+	 */
 	public void update(JFrame window) {
 		int i = 0;
 		int max = map.size();
@@ -228,11 +272,19 @@ public class Screen extends JPanel {
 		}
 	}
 	
+	/**
+	 * Set a behavior invisible
+	 * @param behavior
+	 */
 	public void setBehaviorInvisible(Behavior behavior)
 	{
 		behavior.getJLabel().setVisible(false);
 	}
 	
+	/**
+	 * Set a behavior visible
+	 * @param behavior
+	 */
 	public void setBehaviorVisible(Behavior behavior)
 	{
 		behavior.getJLabel().setVisible(true);

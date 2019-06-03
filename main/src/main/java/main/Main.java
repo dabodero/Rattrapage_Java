@@ -29,16 +29,10 @@ public abstract class Main {
      fenetre.addScreen(screen);
 
      Connector test = new Connector();
-     test.run(screen, fenetre.getWindow(), 2);
+     test.run(screen, fenetre.getWindow(), 3);
      
      fenetre.repaint();
      Counter counter = new Counter();
-     
-     screen.getBehaviorAt(10, 11).changeType(7);
-     screen.getBehaviorAt(9, 11).changeType(2);
-     screen.getBehaviorAt(11, 11).changeType(2);
-     screen.getBehaviorAt(12, 11).changeType(2);
-    
      
      int boucle=1;
      while(boucle==1)

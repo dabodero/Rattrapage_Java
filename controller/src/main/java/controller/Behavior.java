@@ -4,7 +4,6 @@ import java.awt.Image;
 import java.util.ArrayList;
 
 import javax.swing.ImageIcon;
-import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
@@ -47,39 +46,14 @@ public class Behavior extends JPanel{
       
         private ImageIcon icon;
 		private JLabel label;
-		
-		/**
-	     * The update method, updates the sprite.
-	     * @param X_
-         *          X position
-	     * @param Y_
-         *          Y position
-	     * @param window
-         *             the window
-	     * @param haveToRepaint
-         *              refreshment
-	     */
-        public void update(int X_, int Y_, JFrame window, boolean haveToRepaint) 
-        {
-        	X=X_-1; 
-        	Y=Y_-1;
-        	label.setBounds(62*X, 62*Y, 62, 62);
-    		X++;
-    		Y++;
-    		if(haveToRepaint)
-    		{
-    		window.repaint();
-    		}
-        }
+
 
     /**
      * refresh the map
-     * @param window
-     *          the window
      * @param map
      *          the map
      */
-        public void update(JFrame window, ArrayList<Behavior> map)
+        public void update(ArrayList<Behavior> map)
         {
             type_up = getBehaviorAt(getX(), getY() -1, map).getType();
             type_down = getBehaviorAt(getX(), getY() +1, map).getType();
@@ -97,20 +71,20 @@ public class Behavior extends JPanel{
                 case 2:
                     break;
                 case 3:
-                    this.updateDiamond(window, map);
+                    this.updateDiamond(map);
                     break;
                 case 4:
-                    this.updateRock(window, map);
+                    this.updateRock(map);
                     break;
                 case 5:
                     break;
                 case 7:
                     break;
                 case 8:
-                    this.updateOctopus(window, map);
+                    this.updateOctopus(map);
                     break;
                 case 9:
-                	this.updateButterfly(window, map);
+                	this.updateButterfly(map);
                     break;
                 default:
                     break;
@@ -135,12 +109,10 @@ public class Behavior extends JPanel{
 
     /**
      *update octopus
-     * @param window
-     *          the window
      * @param map
      *          the map
      */
-    private void updateOctopus(JFrame window, ArrayList<Behavior> map){
+    private void updateOctopus(ArrayList<Behavior> map){
     	if(this.getBehaviorAt(X+1, Y, map).getType() == 5 || this.getBehaviorAt(X-1, Y, map).getType() == 5)
     	{
     		gameover();
@@ -166,12 +138,10 @@ public class Behavior extends JPanel{
 
     /**
      * update Butterfly
-     * @param window
-     *          the window
      * @param map
      *          the map
      */
-    private void updateButterfly(JFrame window, ArrayList<Behavior> map){
+    private void updateButterfly(ArrayList<Behavior> map){
     	if(this.getBehaviorAt(X, Y+1, map).getType() == 5 || this.getBehaviorAt(X, Y-1, map).getType() == 5)
     	{
     		gameover();
@@ -197,12 +167,10 @@ public class Behavior extends JPanel{
 
     /**
      * gravity of the rock
-     * @param window
-     *          the window
      * @param map
      *          the map
      */
-    private void updateRock(JFrame window, ArrayList<Behavior> map)
+    private void updateRock(ArrayList<Behavior> map)
     {
         if(type_down == 2){
             if(type_up == 6){
@@ -269,12 +237,10 @@ public class Behavior extends JPanel{
     
     /**
      * gravity of the Diamond
-     * @param window
-     *          the window
      *@param map
      *          the map
      */
-    private void updateDiamond(JFrame window, ArrayList<Behavior> map)
+    private void updateDiamond(ArrayList<Behavior> map)
     {
         if(type_down == 2){
             if(type_up == 6){
@@ -345,11 +311,8 @@ public class Behavior extends JPanel{
      *        type of each type around
      */
     public int getType() {return type;}
-		public int getTypeUp() {return type_up;}
-		public int getTypeDown() {return type_down;}
-		public int getTypeLeft() {return type_left;}
-		public int getTypeRight() {return type_right;}
-		void setType(int TYPE) {type = TYPE;}
+
+    void setType(int TYPE) {type = TYPE;}
 		public ImageIcon getImageIcon() {return icon;}
 		public JLabel getJLabel() {return label;}
 		public void setImageIcon(ImageIcon image) {icon = image;}
@@ -371,17 +334,7 @@ public class Behavior extends JPanel{
         	icon = new ImageIcon(new ImageIcon(spritePath).getImage().getScaledInstance(62,62, Image.SCALE_DEFAULT));
         	label.setIcon(icon);
     }
-    
-    /**
-     * Delete the behavior
-     * @param panel
-     *          window part
-     */
-    public void deleteBehavior(JPanel panel)
-    {
-    		panel.remove(label);
-    }
-    
+
     /**
      * get the behavior at a specific location
      * @param X

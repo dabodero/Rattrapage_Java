@@ -264,7 +264,7 @@ public class Screen extends JPanel {
 				if(map.get(i).getUpdateID() != updateID) 
 				{
 					map.get(i).setUpdateID(updateID);
-					map.get(i).update(window, map);
+					map.get(i).update(map);
 				}
 				
 				i++;

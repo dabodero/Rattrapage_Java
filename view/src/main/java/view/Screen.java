@@ -78,10 +78,11 @@ public class Screen extends JPanel {
 	 * Get the map
 	 */
 	public ArrayList<Behavior> getMapBehavior(){return map;}
+
 	/**
 	 * Set the map to another
-	 *
-	 * @param map
+	 * @param map_
+	 * 			map
 	 */
 	public void setMap(ArrayList<Behavior> map_) {Collections.copy(map, map_);}
 	
@@ -253,6 +254,7 @@ public class Screen extends JPanel {
 	 * update all the behavior
 	 *
 	 * @param window
+	 * 			the window
 	 */
 	public void update(JFrame window) {
 		int i = 0;

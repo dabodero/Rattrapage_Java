@@ -1,12 +1,7 @@
 package controller;
 
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
-import controller.SpritePath;
-
-import javax.imageio.ImageIO;
 import javax.swing.*;
+import java.awt.image.BufferedImage;
 
 /**
  * class overScreen
@@ -18,6 +13,7 @@ class OverScreen {
     /**
      * Create the window, depends on if it is a win or a lost
      * @param win
+     *          win
      */
     OverScreen(boolean win)
 	{
@@ -54,7 +50,8 @@ class OverScreen {
         	jLabelObject.setIcon(new ImageIcon(path.overGameLose));
         	panel.add(jLabelObject);
         }
-        
+
+        assert false;
         ImageIcon icon=new ImageIcon(img);
         
         JLabel lbl=new JLabel();

@@ -1,4 +1,5 @@
-Boulder Dash Project | Group 1
+**Boulder Dash Project** 
+
 Here is the depository of our group, for the JAVA Project " Boulder Dash ". Every modification of the software need to be uploaded here to allow a good project following.
 
 1. Project Summary

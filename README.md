@@ -1,3 +1,29 @@
-# JPU-BlankProject
+Boulder Dash Project | Group 1
+Here is the depository of our group, for the JAVA Project " Boulder Dash ". Every modification of the software need to be uploaded here to allow a good project following.
 
-Base de démarrage pour le projet Jave/POO/UML des 1ières années Exia-Cesi
+1. Project Summary
+The goal of this project is clear : reproduce a game named " Boulder Dash " ( NES version ) in Java language. The conception of this video game make us pass throw few important step :
+
+List all the gameplay rules of the game ( like the physics, goals and player/mobs capacity ).
+Make an Unified Modeling Language.
+Create the associated code
+Run some quality and performances tests
+2. Deliverable
+
+All the deliverables are in the folder "deliverables". We have Componants Diagram,Packages Diagram,Class Diagram,Surefire Report,JXR,GIT Report
+
+3. Boulder Dash
+3.1. Installation
+Step 1 : Install JRE if you don't have it on your operating system.
+Step 2 : Download the last Boulder Dash release HERE
+Step 3 : Install an localhost mySQL server, and create an new database with this script
+3.2. Execution
+Step 1 : Launch your mySQL server
+Step 2 : Launch the BoulderDashG1.jar
+Step 3 : Enjoy
+4. License
+4.1. AbandonWare
+Abandonware is a product, typically software, ignored by its owner and manufacturer, and for which no support is available. Although such software is usually still under copyright, the owner may not be tracking copyright violations.
+
+In intellectual rights context, abandonware is a software (or hardware) special case of the general concept of orphan works.
+

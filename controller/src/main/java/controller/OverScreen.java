@@ -16,7 +16,7 @@ class OverScreen {
 	SpritePath path;
 
     /**
-     * constructor
+     * Create the window, depends on if it is a win or a lost
      * @param win
      */
     OverScreen(boolean win)
@@ -35,7 +35,7 @@ class OverScreen {
         }
         panel.add(label);  
         frame.add(panel);  
-        frame.setSize(500, 80);  
+        frame.setSize(500, 300);  
         frame.setLocationRelativeTo(null); 
         frame.setResizable(false);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);  
@@ -44,14 +44,15 @@ class OverScreen {
         
         BufferedImage img = null;
         if(win) {
-		try {
-			img = ImageIO.read(new File(path.overGameWin));
-		} catch (IOException e) {e.printStackTrace();}}
+        	JLabel jLabelObject = new JLabel();
+        	jLabelObject.setIcon(new ImageIcon(path.overGameWin));
+        	panel.add(jLabelObject);
+		}
         else
         {
-        	try {
-    			img = ImageIO.read(new File(path.overGameLose));
-    		} catch (IOException e) {e.printStackTrace();}
+        	JLabel jLabelObject = new JLabel();
+        	jLabelObject.setIcon(new ImageIcon(path.overGameLose));
+        	panel.add(jLabelObject);
         }
         
         ImageIcon icon=new ImageIcon(img);

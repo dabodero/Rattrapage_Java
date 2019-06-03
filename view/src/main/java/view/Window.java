@@ -17,7 +17,6 @@ public class Window{
 	 */
 	public Window(String text) 
 	{
-		
 		window = new JFrame();
 		window.setTitle(text);
 		window.setLocation(400, 10);
@@ -26,7 +25,6 @@ public class Window{
 		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		window.setResizable(false);
 		window.setSize(1000, 1020);
-		
 	}
 
 	/**

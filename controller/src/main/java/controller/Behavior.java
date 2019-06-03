@@ -371,6 +371,7 @@ public class Behavior extends JPanel{
         	icon = new ImageIcon(new ImageIcon(spritePath).getImage().getScaledInstance(62,62, Image.SCALE_DEFAULT));
         	label.setIcon(icon);
     }
+    
     /**
      * Delete the behavior
      * @param panel
@@ -380,6 +381,7 @@ public class Behavior extends JPanel{
     {
     		panel.remove(label);
     }
+    
     /**
      * get the behavior at a specific location
      * @param X

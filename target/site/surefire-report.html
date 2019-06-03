@@ -93,12 +93,12 @@ function toggleDisplay(elementId) {
 <th>Success Rate</th>
 <th>Time</th></tr>
 <tr class="b">
-<td>6</td>
+<td>5</td>
 <td>0</td>
-<td>1</td>
 <td>0</td>
-<td>83.333%</td>
-<td>0.704</td></tr></table><br />
+<td>0</td>
+<td>100%</td>
+<td>0.468</td></tr></table><br />
 <p>Note: failures are anticipated and checked for with assertions while errors are unanticipated.</p><br /></div>
 <div class="section">
 <h2><a name="Package_List"></a>Package List</h2><a name="Package_List"></a>
@@ -119,15 +119,15 @@ function toggleDisplay(elementId) {
 <td>0</td>
 <td>0</td>
 <td>100%</td>
-<td>0.121</td></tr>
+<td>0.077</td></tr>
 <tr class="a">
 <td><a href="#view">view</a></td>
-<td>2</td>
-<td>0</td>
 <td>1</td>
 <td>0</td>
-<td>50%</td>
-<td>0.202</td></tr>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+<td>0.119</td></tr>
 <tr class="b">
 <td><a href="#model">model</a></td>
 <td>2</td>
@@ -135,7 +135,7 @@ function toggleDisplay(elementId) {
 <td>0</td>
 <td>0</td>
 <td>100%</td>
-<td>0.381</td></tr></table><br />
+<td>0.272</td></tr></table><br />
 <p>Note: package statistics are not computed recursively, they only sum up all of its testsuites numbers.</p>
 <div class="section">
 <h3><a name="controller"></a>controller</h3><a name="controller"></a>
@@ -157,7 +157,7 @@ function toggleDisplay(elementId) {
 <td>0</td>
 <td>0</td>
 <td>100%</td>
-<td>0.121</td></tr>
+<td>0.077</td></tr>
 <tr class="a">
 <td><a href="#controllerCounterTest"><img src="images/icon_success_sml.gif" alt="" /></a></td>
 <td><a href="#controllerCounterTest">CounterTest</a></td>
@@ -180,15 +180,6 @@ function toggleDisplay(elementId) {
 <th>Success Rate</th>
 <th>Time</th></tr>
 <tr class="b">
-<td><a href="#viewScreenTest"><img src="images/icon_warning_sml.gif" alt="" /></a></td>
-<td><a href="#viewScreenTest">ScreenTest</a></td>
-<td>1</td>
-<td>0</td>
-<td>1</td>
-<td>0</td>
-<td>0%</td>
-<td>0.006</td></tr>
-<tr class="a">
 <td><a href="#viewWindowTest"><img src="images/icon_success_sml.gif" alt="" /></a></td>
 <td><a href="#viewWindowTest">WindowTest</a></td>
 <td>1</td>
@@ -196,7 +187,7 @@ function toggleDisplay(elementId) {
 <td>0</td>
 <td>0</td>
 <td>100%</td>
-<td>0.196</td></tr></table></div>
+<td>0.119</td></tr></table></div>
 <div class="section">
 <h3><a name="model"></a>model</h3><a name="model"></a>
 <table border="1" class="bodyTable">
@@ -217,7 +208,7 @@ function toggleDisplay(elementId) {
 <td>0</td>
 <td>0</td>
 <td>100%</td>
-<td>0.381</td></tr></table></div><br /></div>
+<td>0.272</td></tr></table></div><br /></div>
 <div class="section">
 <h2><a name="Test_Cases"></a>Test Cases</h2><a name="Test_Cases"></a>
 <p>[<a href="#Summary">Summary</a>] [<a href="#Package_List">Package List</a>] [<a href="#Test_Cases">Test Cases</a>]</p>
@@ -227,7 +218,7 @@ function toggleDisplay(elementId) {
 <tr class="a">
 <td><img src="images/icon_success_sml.gif" alt="" /></td>
 <td><a name="TC_controller.BehaviorAllTest.test"></a>test</td>
-<td>0.121</td></tr></table></div>
+<td>0.077</td></tr></table></div>
 <div class="section">
 <h3><a name="CounterTest"></a>CounterTest</h3><a name="controllerCounterTest"></a>
 <table border="1" class="bodyTable">
@@ -236,58 +227,23 @@ function toggleDisplay(elementId) {
 <td><a name="TC_controller.CounterTest.test"></a>test</td>
 <td>0</td></tr></table></div>
 <div class="section">
-<h3><a name="ScreenTest"></a>ScreenTest</h3><a name="viewScreenTest"></a>
-<table border="1" class="bodyTable">
-<tr class="a">
-<td><a href="#view.ScreenTest.test"><img src="images/icon_error_sml.gif" alt="" /></a></td>
-<td><a name="TC_view.ScreenTest.test"></a><a href="#view.ScreenTest.test">test</a>
-<div class="detailToggle" style="display:inline"><a href="javascript:toggleDisplay(&apos;view.ScreenTest.test&apos;);"><span style="display:inline;" id="view.ScreenTest.testoff"> + </span><span style="display:none;" id="view.ScreenTest.teston"> - </span>[ Detail ]</a></div></td>
-<td>0.006</td></tr>
-<tr class="b">
-<td></td>
-<td>Should throw exception</td>
-<td></td></tr>
-<tr class="a">
-<td></td>
-<td>
-<div id="view.ScreenTest.testerror" style="display:none;">
-<div>
-<pre>java.lang.AssertionError: Should throw exception
-	at org.junit.Assert.fail(Assert.java:89)
-	at view.ScreenTest.test(ScreenTest.java:54)</pre></div></div></td>
-<td></td></tr></table></div>
-<div class="section">
 <h3><a name="WindowTest"></a>WindowTest</h3><a name="viewWindowTest"></a>
 <table border="1" class="bodyTable">
 <tr class="a">
 <td><img src="images/icon_success_sml.gif" alt="" /></td>
 <td><a name="TC_view.WindowTest.test"></a>test</td>
-<td>0.196</td></tr></table></div>
+<td>0.119</td></tr></table></div>
 <div class="section">
 <h3><a name="ConnectorTest"></a>ConnectorTest</h3><a name="modelConnectorTest"></a>
 <table border="1" class="bodyTable">
 <tr class="a">
 <td><img src="images/icon_success_sml.gif" alt="" /></td>
 <td><a name="TC_model.ConnectorTest.test1"></a>test1</td>
-<td>0.268</td></tr>
+<td>0.2</td></tr>
 <tr class="b">
 <td><img src="images/icon_success_sml.gif" alt="" /></td>
 <td><a name="TC_model.ConnectorTest.test2"></a>test2</td>
-<td>0.113</td></tr></table></div><br /></div>
-<div class="section">
-<h2><a name="Failure_Details"></a>Failure Details</h2><a name="Failure_Details"></a>
-<p>[<a href="#Summary">Summary</a>] [<a href="#Package_List">Package List</a>] [<a href="#Test_Cases">Test Cases</a>]</p><br />
-<table border="1" class="bodyTable">
-<tr class="a">
-<td><img src="images/icon_error_sml.gif" alt="" /></td>
-<td><a name="view.ScreenTest.test"></a>test</td></tr>
-<tr class="b">
-<td></td>
-<td>java.lang.AssertionError: Should throw exception</td></tr>
-<tr class="a">
-<td></td>
-<td>
-<div id="testerror"><a href="./xref-test/view/ScreenTest.html#54">view.ScreenTest:54</a></div></td></tr></table><br /></div>
+<td>0.072</td></tr></table></div><br /></div>
       </div>
     </div>
     <div class="clear">

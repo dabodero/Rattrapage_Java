@@ -28,29 +28,30 @@
 <a class="jxr_linenumber" name="L20" href="#L20">20</a>  <em class="jxr_javadoccomment">     * @param args</em>
 <a class="jxr_linenumber" name="L21" href="#L21">21</a>  <em class="jxr_javadoccomment">     *            the arguments</em>
 <a class="jxr_linenumber" name="L22" href="#L22">22</a>  <em class="jxr_javadoccomment">     * @throws Exception </em>
-<a class="jxr_linenumber" name="L23" href="#L23">23</a>  <em class="jxr_javadoccomment">     */</em>
-<a class="jxr_linenumber" name="L24" href="#L24">24</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">void</strong> main(<strong class="jxr_keyword">final</strong> String[] args) <strong class="jxr_keyword">throws</strong> Exception {
-<a class="jxr_linenumber" name="L25" href="#L25">25</a>      	
-<a class="jxr_linenumber" name="L26" href="#L26">26</a>       <a href="../view/Window.html">Window</a> fenetre = <strong class="jxr_keyword">new</strong> <a href="../view/Window.html">Window</a>(<span class="jxr_string">"Boulder Dash"</span>);
-<a class="jxr_linenumber" name="L27" href="#L27">27</a>       
-<a class="jxr_linenumber" name="L28" href="#L28">28</a>       <a href="../view/Screen.html">Screen</a> screen = <strong class="jxr_keyword">new</strong> <a href="../view/Screen.html">Screen</a>(fenetre.getWindow());
-<a class="jxr_linenumber" name="L29" href="#L29">29</a>       fenetre.addScreen(screen);
-<a class="jxr_linenumber" name="L30" href="#L30">30</a>  
-<a class="jxr_linenumber" name="L31" href="#L31">31</a>       <a href="../model/Connector.html">Connector</a> test = <strong class="jxr_keyword">new</strong> <a href="../model/Connector.html">Connector</a>();
-<a class="jxr_linenumber" name="L32" href="#L32">32</a>       test.run(screen, fenetre.getWindow(), 3);
-<a class="jxr_linenumber" name="L33" href="#L33">33</a>       
-<a class="jxr_linenumber" name="L34" href="#L34">34</a>       fenetre.repaint();
-<a class="jxr_linenumber" name="L35" href="#L35">35</a>       <a href="../controller/Counter.html">Counter</a> counter = <strong class="jxr_keyword">new</strong> <a href="../controller/Counter.html">Counter</a>();
-<a class="jxr_linenumber" name="L36" href="#L36">36</a>       
-<a class="jxr_linenumber" name="L37" href="#L37">37</a>       <strong class="jxr_keyword">int</strong> boucle=1;
-<a class="jxr_linenumber" name="L38" href="#L38">38</a>       <strong class="jxr_keyword">while</strong>(boucle==1)
-<a class="jxr_linenumber" name="L39" href="#L39">39</a>       { 	 
-<a class="jxr_linenumber" name="L40" href="#L40">40</a>      	 screen.delay();
-<a class="jxr_linenumber" name="L41" href="#L41">41</a>      	 screen.updateHeroOnMap(screen, counter);
-<a class="jxr_linenumber" name="L42" href="#L42">42</a>      	 screen.update(fenetre.getWindow());
-<a class="jxr_linenumber" name="L43" href="#L43">43</a>       }
-<a class="jxr_linenumber" name="L44" href="#L44">44</a>      }
-<a class="jxr_linenumber" name="L45" href="#L45">45</a>  }
+<a class="jxr_linenumber" name="L23" href="#L23">23</a>  <em class="jxr_javadoccomment">     * 			exception</em>
+<a class="jxr_linenumber" name="L24" href="#L24">24</a>  <em class="jxr_javadoccomment">     */</em>
+<a class="jxr_linenumber" name="L25" href="#L25">25</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">void</strong> main(<strong class="jxr_keyword">final</strong> String[] args) <strong class="jxr_keyword">throws</strong> Exception {
+<a class="jxr_linenumber" name="L26" href="#L26">26</a>      	
+<a class="jxr_linenumber" name="L27" href="#L27">27</a>       <a href="../view/Window.html">Window</a> fenetre = <strong class="jxr_keyword">new</strong> <a href="../view/Window.html">Window</a>(<span class="jxr_string">"Boulder Dash"</span>);
+<a class="jxr_linenumber" name="L28" href="#L28">28</a>       
+<a class="jxr_linenumber" name="L29" href="#L29">29</a>       <a href="../view/Screen.html">Screen</a> screen = <strong class="jxr_keyword">new</strong> <a href="../view/Screen.html">Screen</a>(fenetre.getWindow());
+<a class="jxr_linenumber" name="L30" href="#L30">30</a>       fenetre.addScreen(screen);
+<a class="jxr_linenumber" name="L31" href="#L31">31</a>  
+<a class="jxr_linenumber" name="L32" href="#L32">32</a>       <a href="../model/Connector.html">Connector</a> test = <strong class="jxr_keyword">new</strong> <a href="../model/Connector.html">Connector</a>();
+<a class="jxr_linenumber" name="L33" href="#L33">33</a>       test.run(screen, fenetre.getWindow(), 3);
+<a class="jxr_linenumber" name="L34" href="#L34">34</a>       
+<a class="jxr_linenumber" name="L35" href="#L35">35</a>       fenetre.repaint();
+<a class="jxr_linenumber" name="L36" href="#L36">36</a>       <a href="../controller/Counter.html">Counter</a> counter = <strong class="jxr_keyword">new</strong> <a href="../controller/Counter.html">Counter</a>();
+<a class="jxr_linenumber" name="L37" href="#L37">37</a>       
+<a class="jxr_linenumber" name="L38" href="#L38">38</a>       <strong class="jxr_keyword">int</strong> boucle=1;
+<a class="jxr_linenumber" name="L39" href="#L39">39</a>       <strong class="jxr_keyword">while</strong>(boucle==1)
+<a class="jxr_linenumber" name="L40" href="#L40">40</a>       { 	 
+<a class="jxr_linenumber" name="L41" href="#L41">41</a>      	 screen.delay();
+<a class="jxr_linenumber" name="L42" href="#L42">42</a>      	 screen.updateHeroOnMap(screen, counter);
+<a class="jxr_linenumber" name="L43" href="#L43">43</a>      	 screen.update(fenetre.getWindow());
+<a class="jxr_linenumber" name="L44" href="#L44">44</a>       }
+<a class="jxr_linenumber" name="L45" href="#L45">45</a>      }
+<a class="jxr_linenumber" name="L46" href="#L46">46</a>  }
 </pre>
 <hr/>
 <div id="footer">Copyright &#169; 2019. All rights reserved.</div>

@@ -15,6 +15,7 @@ public class BehaviorEndBlock extends Behavior{
 	 * 			Y position
 	 * @throws Exception
 	 * 			exception
+	 * 			
      */
 	public BehaviorEndBlock(String spritePath_, int X_, int Y_) throws Exception {
         super(spritePath_, X_, Y_);

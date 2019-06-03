@@ -16,18 +16,8 @@ Run some quality and performances tests
 
 All the deliverables are in the folder "deliverables". We have Componants Diagram,Packages Diagram,Class Diagram,Surefire Report,JXR,GIT Report
 
-3. Boulder Dash
-
-3.1. Installation
-Step 1 : Install JRE if you don't have it on your operating system.
-Step 2 : Download the last Boulder Dash release HERE
-Step 3 : Install an localhost mySQL server, and create an new database with this script
-3.2. Execution
-Step 1 : Launch your mySQL server
-Step 2 : Launch the BoulderDashG1.jar
-Step 3 : Enjoy
-4. License
-4.1. AbandonWare
+3. License
+3.1. AbandonWare
 
 Abandonware is a product, typically software, ignored by its owner and manufacturer, and for which no support is available. Although such software is usually still under copyright, the owner may not be tracking copyright violations.
 

@@ -14,6 +14,7 @@ Run some quality and performances tests
 
 **Deliverable**
 
+Javadoc is in the folder "Javadoc".
 All the deliverables are in the folder "deliverables". We have Componants Diagram,Packages Diagram,Class Diagram,Surefire Report,JXR,GIT Report.
 
 **License**

@@ -10,6 +10,8 @@ import org.junit.Test;
 
 public class CounterTest {
 
+// variables for test //
+	int expected_nb_diamond = 1; 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
 	}
@@ -29,9 +31,9 @@ public class CounterTest {
 	@Test
 	public void test() {
 		
-		new Counter();
-		Counter.addDiamond();
-		assertTrue(Counter.nbDiamond == 1);
+		new Counter(); // create new counter
+		Counter.addDiamond(); // add a diamond in the counter
+		assertTrue(Counter.nbDiamond == expected_nb_diamond); // check if the Counter is updated
 	}
 
 }

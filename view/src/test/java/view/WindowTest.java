@@ -1,10 +1,6 @@
 package view;
 
 import static org.junit.Assert.*;
-
-
-import javax.swing.JFrame;
-
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -14,12 +10,23 @@ import view.Window;
 
 public class WindowTest {
 
-	static JFrame window;
+// Creation of new window //
+	Window window = new Window("text");
+	
+// variables for  all the test //
+
 	int expected_Witdth = 1000;
 	int expected_Height = 1020;
-
+	String expected_Title = "text";
+	int expected_Width_location = 400;
+	int expected_Height_location = 10;
+	boolean expected_Visibility = true;
+	boolean expected_setResizable = false;
+	
+	
 	@BeforeClass
 	public static void setUpBeforeClass() {
+	
 	}
 
 	@AfterClass
@@ -28,18 +35,6 @@ public class WindowTest {
 
 	@Before
 	public void setUp()  {
-
-		
-		{
-			window = new JFrame();
-			window.setLocation(400, 10);
-			window.pack();
-			window.setVisible(true);
-			window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-			window.setResizable(false);
-			window.setSize(1000, 1020);
-		}
-		
 		
 	}
 
@@ -47,11 +42,30 @@ public class WindowTest {
 	public void tearDown()  {
 	}
 
+	
 	@Test
-	public void test() {
-		
-		assertEquals(expected_Witdth,this.window.getWidth());
-		assertEquals(expected_Height,this.window.getHeight());
+	public void testHeight() {	
+			assertEquals(expected_Witdth,window.getWindow().getWidth()); // Check if the Width of the Window is good
 	}
+		@Test
+			public void testWidth() {
+			assertEquals(expected_Height,window.getWindow().getHeight()); // Check if the Height of the Window is good
+		}
+		@Test
+		public void testTitle() {
+		assertEquals(expected_Title,window.getWindow().getTitle());	// Check if the Title of the Window is good
 
+	}
+		@Test
+		public void testVisibility() {
+			assertEquals(expected_Visibility,window.getWindow().isVisible()); // Check if the Window is visible
+
+	}
+		@Test
+		public void testResizable() {
+			assertEquals(expected_setResizable, window.getWindow().isResizable()); // Check if the Window is resizable
+
+	}
+		
 }
+

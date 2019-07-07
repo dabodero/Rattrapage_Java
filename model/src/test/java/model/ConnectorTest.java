@@ -4,17 +4,13 @@ import static org.junit.Assert.*;
 
 
 import java.sql.DriverManager;
-import java.sql.SQLException;
 
-import controller.SpritePath;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import controller.BehaviorDiamond;
-import controller.BehaviorRock;
 
 public class ConnectorTest {
 
@@ -36,44 +32,16 @@ public class ConnectorTest {
 	}
 
 	@Test
-	public void test1() {
-		
-		
-			
+	public void DBConnection() {
 		    try {		     
-		      DriverManager.getConnection(Connector.url, Connector.user, Connector.passwd);
+		      DriverManager.getConnection(Connector.url, Connector.user, Connector.passwd); // try a connection to Database
 		    } catch (Exception e){
-		        e.printStackTrace();
+		        e.printStackTrace(); //print the error
 		        fail("Not yet implemented");
 		        System.exit(0);
 		        
 		        }
 		 
 		    }
-		 
 
-	
-
-
-@Test
-public void test2() throws Exception {
-	
-					    		
-		try {
-			BehaviorRock rock = new controller.BehaviorRock(new SpritePath().rock, 15, 15);
-			BehaviorDiamond diamond = new controller.BehaviorDiamond(new SpritePath().Diamond, 16, 16);
-				
-			assertNotSame(rock,diamond);
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-
-		
-		}
-	}
-
-
-
-
+}

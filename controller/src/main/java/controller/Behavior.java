@@ -12,7 +12,7 @@ import javax.swing.JPanel;
  */
 public class Behavior extends JPanel{
 
-    /** elements around entity type*/
+	/** elements around entity type*/
     private int type; // Type of the block
         private int type_up; // Indicates of what is composed the up block
         private int type_down;	// Same
@@ -108,7 +108,7 @@ public class Behavior extends JPanel{
     }
 
     /**
-     *update octopus
+     *updates the position of the octopus according to the elements around it
      * @param map
      *          the map
      */
@@ -137,7 +137,7 @@ public class Behavior extends JPanel{
     }
 
     /**
-     * update Butterfly
+     * update updates the position of the octopus according to the elements around it
      * @param map
      *          the map
      */
@@ -166,7 +166,7 @@ public class Behavior extends JPanel{
     }
 
     /**
-     * gravity of the rock
+     * add gravity for Rock according to the elements around it
      * @param map
      *          the map
      */
@@ -236,7 +236,7 @@ public class Behavior extends JPanel{
     }
     
     /**
-     * gravity of the Diamond
+     * add gravity for Diamond according to the elements around it
      *@param map
      *          the map
      */
@@ -343,8 +343,10 @@ public class Behavior extends JPanel{
      *          Y position
      * @param map
      *          map
+     * @return
+     * 			Behavior by default
      */
-    private Behavior getBehaviorAt(int X, int Y, ArrayList<Behavior> map)
+    static Behavior getBehaviorAt(int X, int Y, ArrayList<Behavior> map)
 	{
 		int i = 0;
 		int max = map.size();
